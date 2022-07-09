@@ -1,0 +1,108 @@
+@import mixins
+@import global
+
+.button
+	@include adaptiveProp('font-size', 16, 12, 768, 320, 'max-width')
+	font-weight: 700
+	line-height: 130%
+	padding: 0.8em 1.25em
+	outline: none
+	border: 1px solid $color-blue
+	border-radius: 4px
+	cursor: pointer
+	transition: all 0.3s ease
+	&--white
+		background: #FFFFFF
+		color: $color-blue
+		@media screen and ( any-hover: hover )
+			&:hover
+				transform: scale(1.05)
+				background-color: $color-blue
+				color: $color-white
+	&--blue
+		background: $color-blue
+		color: $color-white
+		@media screen and ( any-hover: hover )
+			&:hover
+				transform: scale(1.05)
+				background-color: $color-dark-blue
+				border-color: $color-dark-blue
+
+.button__icon
+	padding: 0.2em
+	width: 3em
+	height: 3em
+	position: relative
+	overflow: hidden
+	border: none
+	svg
+		position: absolute
+		top: 50%
+		left: 50%
+		width: 60%
+		height: 60%
+		transition: all 0.3s ease
+		transform: translate(-50%,-50%)
+
+.button__icon--compare
+	background-color: transparent
+	color: $color-gray
+	@media screen and ( any-hover: hover )
+		&:hover
+			transform: scale(1.15)
+	.compare
+	&.compare-checked
+		.compare
+			color: $color-dark-blue
+
+.button__icon--heart
+	background-color: transparent
+	color: $color-gray
+	@media screen and ( any-hover: hover )
+		&:hover
+			transform: scale(1.15)
+			.heart
+				color: $color-blue
+	.heart
+		transform: scale(1) translate(-50%,-50%)
+		transform-origin: left top
+		opacity: 1
+	.heart-checked
+		transform: scale(0) translate(-50%,-50%)
+		transform-origin: left top
+		opacity: 0
+		color: $color-red
+	&.favorite-checked
+		.heart
+			transform: scale(0) translate(-50%,-50%)
+			opacity: 0
+		.heart-checked
+			transform: scale(1) translate(-50%,-50%)
+			opacity: 1
+
+.button__icon--cart
+	background: $color-blue
+	color: $color-white
+	@media screen and ( any-hover: hover )
+		&:hover
+			transform: scale(1.05)
+			background-color: $color-dark-blue
+			border-color: $color-dark-blue
+	.cart
+		transform: translate(-50%,-50%)
+	.cart-added
+		transform: translate(-500%,-50%)
+	&.added-to-cart
+		background-color: $color-light-blue
+		border-color: $color-light-blue
+		@media screen and ( any-hover: hover )
+			&:hover
+				transform: scale(1.05)
+				background-color: $color-blue
+				.cart-added
+					color: $color-white
+		.cart-added
+			transform: translate(-50%,-50%)
+			color: $color-dark-blue
+		.cart
+			transform: translate(450%,-50%)
