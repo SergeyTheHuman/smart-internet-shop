@@ -5,9 +5,10 @@
 $color-white: #ffffff
 $color-black: #000000
 $color-blue: #4878A6
-$color-dark-blue: #2A5275
+$color-dark-blue: #2a5275
 $color-light-blue: #EDF2F6
 $color-gray: #C8CACB
+$color-dark-gray: #838688
 $color-red: #F15152
 
 $font-size: 16
@@ -37,10 +38,9 @@ body,
 html
 	height: 100%
 	font-size: #{$font-size}px
+	overflow-x: hidden
 
 body
-	padding-top: 100px
-	overflow-x: hidden
 	color: $color-black
 	background: $color-white
 	font-family: $font-family
@@ -55,8 +55,10 @@ a
 	color: inherit
 	text-decoration: none
 
-.wrapper
+.container
 	@include container($container)
+	@media screen and ( max-width: 479.98px )
+		@include container($container, 10)
 
 .lock-scroll
 	overflow: hidden

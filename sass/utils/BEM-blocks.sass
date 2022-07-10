@@ -1,6 +1,7 @@
 @import mixins
 @import global
 
+// =============== MAIN BUTTONS STYLES ================
 .button
 	@include adaptiveProp('font-size', 16, 12, 768, 320, 'max-width')
 	font-weight: 700
@@ -27,6 +28,8 @@
 				transform: scale(1.05)
 				background-color: $color-dark-blue
 				border-color: $color-dark-blue
+	&:focus
+		outline: 2px solid $color-dark-gray
 
 .button__icon
 	padding: 0.2em
@@ -44,13 +47,13 @@
 		transition: all 0.3s ease
 		transform: translate(-50%,-50%)
 
+// =============== BUTTONS ================
 .button__icon--compare
 	background-color: transparent
 	color: $color-gray
 	@media screen and ( any-hover: hover )
 		&:hover
 			transform: scale(1.15)
-	.compare
 	&.compare-checked
 		.compare
 			color: $color-dark-blue
@@ -106,3 +109,49 @@
 			color: $color-dark-blue
 		.cart
 			transform: translate(450%,-50%)
+
+// =============== HEADER ACTIONS ================
+.button__icon--header
+	&-search,
+	&-viewed,
+	&-cart,
+	&-compare,
+	&-search,
+	&-heart
+		background-color: transparent
+		color: $color-gray
+		@media screen and ( any-hover: hover )
+			&:hover
+				transform: scale(1.15)
+				svg
+					color: $color-blue
+	&-heart
+		.heart
+			transform: scale(1) translate(-50%,-50%)
+			transform-origin: left top
+			opacity: 1
+
+// =============== LOGO ================
+.logo
+	max-width: 100%
+
+// =============== SEARCH FORM ================
+.search
+	display: flex
+	justify-content: center
+	align-items: center
+	border-bottom: 1px solid $color-gray
+	// .search__input
+	&__input
+		font-size: 1.25rem
+		line-height: 1.2em
+		font-weight: 500
+		border: none
+		outline: none
+		min-height: 40px
+		max-width: 100px
+	// .search__button
+	&__button
+		color: inherit
+		width: 40px
+		height: 40px

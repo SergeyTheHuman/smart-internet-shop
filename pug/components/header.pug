@@ -1,3 +1,105 @@
-.wrapper
-	header.header
-		
+header.header
+	.header__top
+		.container.header__top-container
+			a(href="#").header__logo.logo
+				img.header__logo-img(src='@img/content-icons/logo.svg')
+			.header__content
+				.header__info
+					a(href="tel:+78126605054").header__info-phone +7 (812) 660-50-54
+					a(href="tel:+79581119503").header__info-phone +7 (958) 111-95-03
+					.header__info-schedule Пн-вс: с 10:00 до 21:00
+				.header__actions
+					form.header__search.search
+						button.search__button.button.button__icon.button__icon--header-search(type="submit")
+							+svg('search__button-icon','search')
+						input.search__input(type="text" placeholder="Поиск")
+					button.header__viewed.button.button__icon.button__icon--header-viewed
+						+svg('viewed', 'watch')
+					button.header__heart.button.button__icon.button__icon--header-heart
+						+svg('heart', 'favorite')
+					button.header__compare.button.button__icon.button__icon--header-compare
+						+svg('compare', 'compare')
+					button.header__cart.button.button__icon.button__icon--header-cart
+						+svg('cart','cart')
+					button.header__login.button.button--blue Войти
+	.header__menu
+		.container.header__menu-container
+			nav.header__menu-nav.nav
+				.nav__home
+					.nav__home-icon
+						+svg('nav__home-svg', 'home')
+					h4.nav__home-title Главная
+				.nav__catalog.catalog
+					.catalog__icon
+						+svg('catalog__icon-svg', 'burger-menu')
+					h4.catalog__title Каталог товаров
+					ul.catalog__list
+						.catalog__list-title Каталог
+							+svg('catalog__list-cross', 'cross')
+						li.catalog__item
+							img.catalog__item-img(src='@img/content-icons/scooter.svg')
+							a.catalog__item-link(href="#") Гироскутеры
+						li.catalog__item
+							img.catalog__item-img(src='@img/content-icons/electro-scooter.svg')
+							a.catalog__item-link(href="#") Электросамокаты
+						li.catalog__item
+							img.catalog__item-img(src='@img/content-icons/unicycle.svg')
+							a.catalog__item-link(href="#") Моноколеса
+						li.catalog__item
+							img.catalog__item-img(src='@img/content-icons/segway.svg')
+							a.catalog__item-link(href="#") Сигвеи и мини-сигвеи
+						li.catalog__item
+							img.catalog__item-img(src='@img/content-icons/slow-bike.svg')
+							a.catalog__item-link(href="#") Электроскутеры
+						li.catalog__item
+							img.catalog__item-img(src='@img/content-icons/electro-bicycle.svg')
+							a.catalog__item-link(href="#") Электровелосипеды
+						li.catalog__item
+							img.catalog__item-img(src='@img/content-icons/electro-skate.svg')
+							a.catalog__item-link(href="#") Электроскейты
+						li.catalog__item
+							img.catalog__item-img(src='@img/content-icons/electro-car.svg')
+							a.catalog__item-link(href="#") Электромобили
+						li.catalog__item
+							img.catalog__item-img(src='@img/content-icons/headphones.svg')
+							a.catalog__item-link(href="#") Аксессуары
+						li.catalog__item
+							img.catalog__item-img(src='@img/content-icons/game-controller.svg')
+							a.catalog__item-link(href="#") Умные игрушки
+						li.catalog__item
+							img.catalog__item-img(src='@img/content-icons/smart-clock.svg')
+							a.catalog__item-link(href="#") Умные часы
+				.nav__cart
+					.nav__cart-icon
+						+svg('nav__cart-svg', 'cart')
+					h4.nav__cart-title Корзина
+				.nav__search
+					.nav__search-icon
+						+svg('nav__search-svg', 'search')
+					h4.nav__search-title Поиск
+					form.nav__search-form
+						.nav__search-caption Поиск
+							+svg('nav__search-cross', 'cross')
+						.nav__search-search
+							input.nav__search-input(type="text" placeholder="Введите запрос")
+							button.nav__search-button.button.button__icon.button__icon--header-search(type="submit")
+								+svg('search__button-icon','search')
+				.nav__list
+					.nav__list-icon
+						+svg('nav__list-svg', 'more')
+					.nav__list-title Ещё
+					ul.nav__ul
+						.nav__ul-title Ещё
+							+svg('nav__ul-cross', 'cross')
+						li.nav__item
+							a.nav__item-link(href="#") О компании
+						li.nav__item
+							a.nav__item-link(href="#") Акции
+						li.nav__item
+							a.nav__item-link(href="#") Рассрочка 0|0|18 
+						li.nav__item
+							a.nav__item-link(href="#") Сервис и гарантия
+						li.nav__item
+							a.nav__item-link(href="#") Опт/дропшиппинг 
+						li.nav__item
+							a.nav__item-link(href="#") Контакты
