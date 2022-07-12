@@ -8,18 +8,24 @@ html(lang="ru")
 		title Main Page
 	body
 		include components/header
-			//- .container 
-			//- 	.btns
-			//- 		button.button.button--blue В корзину
-			//- 		button.button.button--white Купить в 1 клик
-			//- 		button.button.button__icon.button__icon--cart
-			//- 			+svg('cart','cart')
-			//- 			+svg('cart-added','cart-added')
-			//- 		button.button.button__icon.button__icon--heart
-			//- 			+svg('heart', 'favorite')
-			//- 			+svg('heart-checked', 'favorite-checked')
-			//- 		button.button.button__icon.button__icon--compare
-			//- 			+svg('compare', 'compare')
+		include components/hero
+		.container.container__cards(style='margin-top: 30px; display: flex; gap: 20px;') 
+			include components/product-card
+			//- include components/product-card
+			//- include components/product-card
+			//- include components/product-card
+		//- .container 
+		//- 	.btns
+		//- 		button.button.button--blue В корзину
+		//- 		button.button.button--white Купить в 1 клик
+		//- 		button.button.button__icon.border.button__icon--cart
+		//- 			+svg('cart','cart')
+		//- 			+svg('cart-added','cart-added')
+		//- 		button.button.button__icon.border.button__icon--heart
+		//- 			+svg('heart', 'favorite')
+		//- 			+svg('heart-checked', 'favorite-checked')
+		//- 		button.button.button__icon.border.button__icon--compare
+		//- 			+svg('compare', 'compare')
 
 		include components/footer
 		include utils/scripts

@@ -1,105 +1,57 @@
 import { isWebp } from './components/isWebp.js'
+import Swiper from 'swiper/bundle'
+import './components/listeners.js'
 
 isWebp()
 
-const $headerSearchBtn = document.querySelector('.button__icon--header-search')
-const $headerViewedBtn = document.querySelector('.button__icon--header-viewed')
-const $headerHeartBtn = document.querySelector('.button__icon--header-heart')
-const $headerCompareBtn = document.querySelector('.button__icon--header-compare')
-const $headerCartBtn = document.querySelector('.button__icon--header-cart')
-
-const $cartBtns = document.querySelectorAll('.button__icon--cart')
-const $favoriteBtns = document.querySelectorAll('.button__icon--heart')
-const $compareBtns = document.querySelectorAll('.button__icon--compare')
-
-$headerSearchBtn.addEventListener('click', (e) => {
-	e.preventDefault()
-	console.log('Нажата кнопка поиска')
-})
-$headerViewedBtn.addEventListener('click', (e) => {
-	e.preventDefault()
-	console.log('Нажата кнопка "просмотренные"')
-})
-$headerHeartBtn.addEventListener('click', (e) => {
-	e.preventDefault()
-	console.log('Нажата кнопка "избранные"')
-})
-$headerCompareBtn.addEventListener('click', (e) => {
-	e.preventDefault()
-	console.log('Нажата кнопка сравнения')
-})
-$headerCartBtn.addEventListener('click', (e) => {
-	e.preventDefault()
-	console.log('Нажата кнопка корзины')
+const swiper = new Swiper('.hero__swiper', {
+	slidesPerView: 1,
+	spaceBetween: 20,
+	speed: 800,
+	pagination: {
+		el: '.hero__swiper-pagination',
+		type: 'bullets',
+		clickable: true,
+	},
+	autoplay: {
+		delay: 2000,
+	},
 })
 
-$cartBtns.forEach((el) =>
-	el.addEventListener('click', (e) => {
-		if (!el.classList.contains('added-to-cart')) {
-			el.classList.add('added-to-cart')
+const $products = document.querySelectorAll('.product-card')
+if ($products) {
+	$products.forEach((el) => {
+		//Prices vars
+		const $priceBlock = el.querySelector('[data-price]')
+		const discount = parseInt($priceBlock.getAttribute('data-discount-percent'))
+		const mainprice = parseInt($priceBlock.getAttribute('data-price'))
+		const $newPrice = $priceBlock.querySelector('.product-card__new-price')
+		//Rating vars
+		const $ratingBlock = document.querySelector('[data-rating-total]')
+
+		if (discount) {
+			const $oldPriceHtml = `
+				<div class="product-card__old-price">${mainprice} ₽</div>
+			`
+			let priceWithDiscount = (mainprice * (1 - discount * 0.01)).toFixed(1)
+			let priceDiff = (mainprice - priceWithDiscount).toFixed(1)
+			$newPrice.textContent = `${priceWithDiscount} ₽`
+			const $discountHtml = `
+				<div class="product-card__discount"><span>${discount}%</span> — ${priceDiff} ₽</div>
+			`
+
+			$priceBlock.insertAdjacentHTML('afterbegin', $oldPriceHtml)
+			$priceBlock.insertAdjacentHTML('beforeend', $discountHtml)
 		} else {
-			el.classList.remove('added-to-cart')
+			$newPrice.textContent = `${mainprice} ₽`
 		}
-	})
-)
-$favoriteBtns.forEach((el) =>
-	el.addEventListener('click', (e) => {
-		if (!el.classList.contains('favorite-checked')) {
-			el.classList.add('favorite-checked')
-		} else {
-			el.classList.remove('favorite-checked')
-		}
-	})
-)
-$compareBtns.forEach((el) =>
-	el.addEventListener('click', (e) => {
-		if (!el.classList.contains('compare-checked')) {
-			el.classList.add('compare-checked')
-		} else {
-			el.classList.remove('compare-checked')
-		}
-	})
-)
 
-document.addEventListener('DOMContentLoaded', () => {
-	const $catalogTitle = document.querySelector('.catalog__title')
-	if (window.innerWidth < 992) {
-		$catalogTitle.textContent = 'Каталог'
-	} else {
-		$catalogTitle.textContent = 'Каталог товаров'
-	}
-})
-window.addEventListener('resize', (e) => {
-	const $catalogTitle = document.querySelector('.catalog__title')
-	if (window.innerWidth < 992) {
-		$catalogTitle.textContent = 'Каталог'
-	} else {
-		$catalogTitle.textContent = 'Каталог товаров'
-	}
-})
-const $buttonMore = document.querySelector('.nav__list')
-$buttonMore.addEventListener('click', (e) => {
-	document.querySelectorAll('.active').forEach((el) => el.classList.remove('active'))
-	$buttonMore.classList.add('active')
-})
-
-const $buttonCatalog = document.querySelector('.catalog')
-$buttonCatalog.addEventListener('click', (e) => {
-	document.querySelectorAll('.active').forEach((el) => el.classList.remove('active'))
-	$buttonCatalog.classList.add('active')
-})
-
-const $buttonSearch = document.querySelector('.nav__search')
-$buttonSearch.addEventListener('click', (e) => {
-	document.querySelectorAll('.active').forEach((el) => el.classList.remove('active'))
-	$buttonSearch.classList.add('active')
-})
-
-const $closeBtns = document.querySelectorAll('[class*="-cross"]')
-$closeBtns.forEach((el) => {
-	el.addEventListener('click', (e) => {
-		e.stopPropagation()
-		const $currentMenu = e.target.closest('.active')
-		$currentMenu.classList.remove('active')
+		el.addEventListener('click', (e) => {
+			//Rating actions
+			if (e.target.classList.contains('product-card__rating-item')) {
+				const ratingValue = parseInt(e.target.getAttribute('data-rating-value'))
+				e.target.closest('[data-rating-total]').dataset.ratingTotal = ratingValue
+			}
+		})
 	})
-})
+}
