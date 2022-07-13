@@ -1,0 +1,62 @@
+.news
+	&__container
+	&__title
+		display: inline-block
+		margin-right: 30px
+		@media screen and ( max-width: 669.98px )
+			margin-right: 15px
+		@media screen and ( max-width: 424.98px )
+			display: block
+	&__readall
+	&__news
+		margin-top: 30px
+		width: 100%
+		display: flex
+		justify-content: center
+		gap: 20px
+		@media screen and ( max-width: 767.98px )
+			flex-direction: column
+			flex-wrap: wrap
+			align-items: stretch
+			gap: 10px
+	&__item
+		line-height: 120%
+		background-color: #EDF2F6
+		border-radius: 8px
+		padding: 2% 4%
+		flex: 1 0 48%
+		min-height: 180px
+		display: flex
+		justify-content: center
+		flex-direction: column
+		transition: all 0.3s ease
+		@media screen and ( any-hover: hover )
+			&:hover
+				box-shadow: 0px 0px 20px 5px rgba(34, 60, 80, 0.3)
+		@media screen and ( max-width: 767.98px )
+			padding: 15px
+		&-title
+			font-weight: 700
+			font-size: 1.75rem
+			transition: color 0.3s ease
+			@media screen and ( any-hover: hover )
+				&:hover
+					color: lighten(#2A5275, 10)
+			@media screen and ( max-width: 767.98px )
+				font-size: 1.5rem
+		&-text
+			flex-grow: 1
+			margin: 20px 0
+			font-weight: 400
+			font-size: 1rem
+		&-info
+			display: flex
+			justify-content: space-between
+			align-items: center
+		&-readmore
+			@media screen and ( max-width: 767.98px )
+				font-size: 1rem
+		&-date
+			font-weight: 500
+			font-size: 1rem
+			color: $color-dark-gray

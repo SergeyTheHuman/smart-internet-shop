@@ -95,3 +95,22 @@ mixin sectionBanners(data={})
 			a(href="#").banners__item
 				.banners__item-text= data.banner2.text
 				img.banners__item-image(src=`@img/banners/${data.banner2.image}`, alt=`${data.banner2.image}`)
+				
+mixin sectionNews(data={})
+	section.section.news
+		.container.news__container
+			h2.news__title.section-title= data.title
+			a(href="#").news__readall.section-all.section-all--border= data.linkText
+			.news__news
+				.news__item
+					a(href="#").news__item-title= data.news1.title
+					p.news__item-text= data.news1.text
+					.news__item-info
+						a(href="#").news__item-readmore.section-all.section-all--border Подробнее
+						.news__item-date= data.news1.date
+				.news__item
+					a(href="#").news__item-title= data.news2.title
+					p.news__item-text= data.news2.text
+					.news__item-info
+						a(href="#").news__item-readmore.section-all.section-all--border Подробнее
+						.news__item-date= data.news2.date
