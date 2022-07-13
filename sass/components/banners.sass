@@ -1,0 +1,44 @@
+.banners
+	&__container
+		width: 100%
+		display: flex
+		justify-content: center
+		gap: 20px
+		@media screen and ( max-width: 767.98px )
+			flex-direction: column
+			flex-wrap: wrap
+			align-items: stretch
+			flex: 1 1 100%
+			padding: 3% 3%
+			gap: 10px
+	&__item
+		padding: 1% 5%
+		background-color: #EDF2F6
+		border-radius: 8px
+		flex: 0 0 48%
+		display: flex
+		justify-content: space-between
+		align-items: center
+		gap: 20px
+		min-height: 180px
+		@media screen and ( max-width: 991.98px )
+			padding: 2%
+		@media screen and ( max-width: 767.98px )
+			flex: 1 0 100%
+			padding: 3% 3%
+			gap: 10px
+		&-text
+			width: 48%
+			font-weight: 700
+			font-size: 1.75rem
+			line-height: 120%
+			max-width: 230px
+			@media screen and ( max-width: 1023.98px )
+				font-size: 1.5rem
+			@media screen and ( max-width: 767.98px )
+				font-size: 1.25rem
+		&-image
+			max-width: 48%
+			height: 160px
+			object-fit: contain
+			object-position: right

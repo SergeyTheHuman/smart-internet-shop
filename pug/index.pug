@@ -17,7 +17,43 @@ html(lang="ru")
 			title: `Новинки`,
 			linkText: `Все товары`
 		})
-		include components/banners
+		+sectionBanners({
+			banner1: {
+				text: `Скидки до 30% на сигвеи`,
+				image: `sigwey.png`
+			},
+			banner2: {
+				text: `Неделя смарт часов`,
+				image: `watch.png`
+			},
+		})
+		+sectionProducts({
+			title: `Сигвеи`,
+			linkText: `Все товары`
+		})
+		+sectionProducts({
+			title: `Моноколеса`,
+			linkText: `Все товары`
+		})
+		+sectionBanners({
+			banner1: {
+				text: `Распродажа до — 50%`,
+				image: `percent.png`
+			},
+			banner2: {
+				text: `Smart Balance Premium по специальной цене`,
+				image: `gyroscooter.png`
+			},
+		})
+		+sectionProducts({
+			title: `Электровелосипеды`,
+			linkText: `Все товары`
+		})
+
+		include components/footer
+		include utils/scripts
+
+
 
 		//- .container 
 		//- 	.btns
@@ -31,6 +67,3 @@ html(lang="ru")
 		//- 			+svg('heart-checked', 'favorite-checked')
 		//- 		button.button.button__icon.border.button__icon--compare
 		//- 			+svg('compare', 'compare')
-
-		include components/footer
-		include utils/scripts

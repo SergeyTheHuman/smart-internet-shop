@@ -12,7 +12,7 @@ mixin productCard(data = {})
 				.product-card__banners-hit Хит продаж
 				.product-card__banners-new Новинка
 		a(href='#').product-card__image
-			img(src=`@img/${data.image}`, alt=`${data.image}`)
+			img(src=`@img/products/${data.image}`, alt=`${data.image}`)
 		.product-card__descr
 			a(href='#').product-card__category= data.category
 			a(href='#').product-card__name= data.name
@@ -85,3 +85,13 @@ mixin sectionProducts(data = {linkText: `Все товары`})
 						hit: true,
 						aqua: true,
 					})
+
+mixin sectionBanners(data={})
+	section.banners.section
+		.container.banners__container
+			a(href="#").banners__item
+				.banners__item-text= data.banner1.text
+				img.banners__item-image(src=`@img/banners/${data.banner1.image}`, alt=`${data.banner1.image}`)
+			a(href="#").banners__item
+				.banners__item-text= data.banner2.text
+				img.banners__item-image(src=`@img/banners/${data.banner2.image}`, alt=`${data.banner2.image}`)
