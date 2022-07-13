@@ -9,11 +9,16 @@ html(lang="ru")
 	body
 		include components/header
 		include components/hero
-		.container.container__cards(style='margin-top: 30px; display: flex; gap: 20px;') 
-			include components/product-card
-			//- include components/product-card
-			//- include components/product-card
-			//- include components/product-card
+		+sectionProducts({
+			title: `Хиты продаж`,
+			linkText: `Все товары`
+		})
+		+sectionProducts({
+			title: `Новинки`,
+			linkText: `Все товары`
+		})
+		include components/banners
+
 		//- .container 
 		//- 	.btns
 		//- 		button.button.button--blue В корзину

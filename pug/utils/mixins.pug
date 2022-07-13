@@ -1,3 +1,87 @@
 mixin svg(myClass, svgID)
 	svg(class= myClass)
 		use(xlink:href= `@svg/${svgID}`) 
+
+mixin productCard(data = {})
+	article.product-card(class={new: data.new, aqua: data.aqua, hit: data.hit,})
+		.product-card__banners
+			.product-card__banners-benefits
+				.product-card__banners-aqua Аквазащита
+					img(src="@img/content-icons/water-drop.svg", alt="#")
+			.product-card__banners-profitable
+				.product-card__banners-hit Хит продаж
+				.product-card__banners-new Новинка
+		a(href='#').product-card__image
+			img(src=`@img/${data.image}`, alt=`${data.image}`)
+		.product-card__descr
+			a(href='#').product-card__category= data.category
+			a(href='#').product-card__name= data.name
+			.product-card__reactions
+				.product-card__rating(data-rating-total="2")
+					.product-card__rating-item(data-rating-value="5") ★
+					.product-card__rating-item(data-rating-value="4") ★
+					.product-card__rating-item(data-rating-value="3") ★
+					.product-card__rating-item(data-rating-value="2") ★
+					.product-card__rating-item(data-rating-value="1") ★
+				a(href='#').product-card__comments (17)
+					+svg('comment-icon', 'comment')
+			.product-card__row-top
+				.product-card__price(data-discount-percent=`${data.discountPercent}` data-price=`${data.price}`)
+					.product-card__new-price 
+				.product-card__actions
+					button.button.button__icon.border.button__icon--heart
+						+svg('heart', 'favorite')
+						+svg('heart-checked', 'favorite-checked')
+					button.button.button__icon.border.button__icon--compare
+						+svg('compare', 'compare')
+			.product-card__row-bottom
+				button.button.button--white Купить в 1 клик
+				button.button.button__icon.border.button__icon--cart
+					+svg('cart','cart')
+					+svg('cart-added','cart-added')
+
+mixin sectionProducts(data = {linkText: `Все товары`})
+	section.products.section
+		.container.products__container
+			h2.products__title.section-title= data.title
+			a(href="#").products__category.section-all.section-all--border= data.linkText
+			.products__products
+				if block
+					block
+				else 
+					+productCard({
+						image: 'product-1.jpg',
+						category: 'Сигвеи',
+						name: 'Гироскутер Smart Balance Well 6.5 Хип-Хоп',
+						discountPercent: '20',
+						price: '5990',
+						new: true,
+						aqua: true,
+						hit: true,
+					})
+					+productCard({
+						image: 'product-1.jpg',
+						category: 'Сигвеи',
+						name: 'Гироскутер Smart Balance Well 8.5 Рок',
+						discountPercent: '45',
+						price: '10990',
+						new: true,
+						aqua: true,
+					})
+					+productCard({
+						image: 'product-1.jpg',
+						category: 'Сигвеи',
+						name: 'Гироскутер Smart Balance Well 6.5 Хип-Хоп',
+						discountPercent: '',
+						price: '5990',
+						hit: true,
+					})
+					+productCard({
+						image: 'product-1.jpg',
+						category: 'Сигвеи',
+						name: 'Гироскутер Smart Balance Well 6.5 Хип-Хоп',
+						discountPercent: '15',
+						price: '8100',
+						hit: true,
+						aqua: true,
+					})

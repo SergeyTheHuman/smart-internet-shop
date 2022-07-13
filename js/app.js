@@ -18,6 +18,15 @@ const swiper = new Swiper('.hero__swiper', {
 	},
 })
 
+document.addEventListener('click', (e) => {
+	//Rating actions
+	if (e.target.classList.contains('product-card__rating-item')) {
+		const currentCard = e.target.closest('.product-card')
+		const ratingValue = parseInt(e.target.getAttribute('data-rating-value'))
+		e.target.closest('[data-rating-total]').dataset.ratingTotal = ratingValue
+	}
+})
+
 const $products = document.querySelectorAll('.product-card')
 if ($products) {
 	$products.forEach((el) => {
@@ -26,8 +35,6 @@ if ($products) {
 		const discount = parseInt($priceBlock.getAttribute('data-discount-percent'))
 		const mainprice = parseInt($priceBlock.getAttribute('data-price'))
 		const $newPrice = $priceBlock.querySelector('.product-card__new-price')
-		//Rating vars
-		const $ratingBlock = document.querySelector('[data-rating-total]')
 
 		if (discount) {
 			const $oldPriceHtml = `
@@ -45,13 +52,5 @@ if ($products) {
 		} else {
 			$newPrice.textContent = `${mainprice} ₽`
 		}
-
-		el.addEventListener('click', (e) => {
-			//Rating actions
-			if (e.target.classList.contains('product-card__rating-item')) {
-				const ratingValue = parseInt(e.target.getAttribute('data-rating-value'))
-				e.target.closest('[data-rating-total]').dataset.ratingTotal = ratingValue
-			}
-		})
 	})
 }

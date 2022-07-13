@@ -1,10 +1,21 @@
 .product-card
-	width: 326px
+	// max-width: 326px
+	min-width: 290px
 	padding: 20px
 	padding-top: 50px
 	border: 1px solid #EAEAF0
-	border-radius: 8px 0px 0px 8px
+	border-radius: 8px
 	position: relative
+	transition: all 0.3s ease
+	display: flex
+	// flex-grow: 1
+	justify-content: center
+	align-items: center
+	flex-direction: column
+	@media screen and ( any-hover: hover )
+		&:hover
+			box-shadow: 0px 0px 20px 5px rgba(34, 60, 80, 0.3)
+			transform: scale(1.05)
 	&.hit
 		.product-card__banners-hit
 			display: inline-block
@@ -60,15 +71,20 @@
 	// .product-card__image
 	&__image
 		margin-bottom: 10px
+		display: flex
+		flex-grow: 1
+		width: 100%
 		img
 			width: 100%
 			max-height: 250px
 			object-fit: contain
+			object-position: center
 	// .product-card__descr
 	&__descr
 		display: flex
 		justify-content: center
 		flex-direction: column
+		width: 100%
 	// .product-card__category
 	&__category
 		font-weight: 500
