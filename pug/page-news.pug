@@ -1,0 +1,86 @@
+doctype html
+html(lang="ru")
+	head
+		include utils/mixins
+		include utils/meta
+		include utils/links
+		//- include utils/fonts
+		title News Page
+	body
+		include components/header
+		.container
+			.breadcrumbs
+				a(href="./index.html").breadcrumbs__item Главная
+				a(href="#").breadcrumbs__item.breadcrumbs__item--current Новости
+		+sectionNews({
+			title: `Новости`,	
+		})
+			+newsItem({
+				image: 'news1.jpg',
+				title: `Открытие нового магазина`,
+				text: `Разнообразный и богатый опыт говорит нам, что консультация с широким активом требует от нас анализа анализа существующих паттернов поведения`,
+				date: `05 июня 2021`,
+			})
+			+newsItem({
+				title: `Работа в праздничные дни`,
+				text: `Принимая во внимание показатели успешности, социально-экономическое развитие играет определяющее значение для вывода текущих активов`,
+				date: `07 июня 2021`,
+			})
+			+newsItem({
+				image: 'news4.jpg',
+				title: `Открытие нового магазина`,
+				text: `Разнообразный и богатый опыт говорит нам, что консультация с широким активом требует от нас анализа анализа существующих паттернов поведения`,
+				date: `05 июня 2021`,
+			})
+			+newsItem({
+				image: 'news3.jpg',
+				title: `Работа в праздничные дни`,
+				text: `Принимая во внимание показатели успешности, социально-экономическое развитие играет определяющее значение для вывода текущих активов`,
+				date: `07 июня 2021`,
+			})
+			+newsItem({
+				title: `Открытие нового магазина`,
+				text: `Разнообразный и богатый опыт говорит нам, что консультация с широким активом требует от нас анализа анализа существующих паттернов поведения`,
+				date: `05 июня 2021`,
+			})
+			+newsItem({
+				title: `Работа в праздничные дни`,
+				text: `Принимая во внимание показатели успешности, социально-экономическое развитие играет определяющее значение для вывода текущих активов`,
+				date: `07 июня 2021`,
+			})
+			+newsItem({
+				image: 'news2.jpg',
+				title: `Открытие нового магазина`,
+				text: `Разнообразный и богатый опыт говорит нам, что консультация с широким активом требует от нас анализа анализа существующих паттернов поведения`,
+				date: `05 июня 2021`,
+			})
+			+newsItem({
+				image: 'news4.jpg',
+				title: `Работа в праздничные дни`,
+				text: `Принимая во внимание показатели успешности, социально-экономическое развитие играет определяющее значение для вывода текущих активов`,
+				date: `07 июня 2021`,
+			})
+		
+		.container
+			.pagination
+				a.pagination__item.pagination__item--disabled.pagination__item--prev
+				a.pagination__item.pagination__item--current 1
+				a.pagination__item 2
+				a.pagination__item.pagination__item--more …
+				a.pagination__item 15
+				a.pagination__item.pagination__item--next
+		include components/footer
+		include utils/scripts
+
+		//- .container 
+		//- 	.btns
+		//- 		button.button.button--blue В корзину
+		//- 		button.button.button--white Купить в 1 клик
+		//- 		button.button.button__icon.border.button__icon--cart
+		//- 			+svg('cart','cart')
+		//- 			+svg('cart-added','cart-added')
+		//- 		button.button.button__icon.border.button__icon--heart
+		//- 			+svg('heart', 'favorite')
+		//- 			+svg('heart-checked', 'favorite-checked')
+		//- 		button.button.button__icon.border.button__icon--compare
+		//- 			+svg('compare', 'compare')

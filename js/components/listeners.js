@@ -1,3 +1,5 @@
+import { Accordion } from './accordion.js'
+
 const $headerSearchBtn = document.querySelector('.button__icon--header-search')
 const $headerViewedBtn = document.querySelector('.button__icon--header-viewed')
 const $headerHeartBtn = document.querySelector('.button__icon--header-heart')
@@ -64,15 +66,13 @@ document.addEventListener('DOMContentLoaded', () => {
 	} else {
 		$catalogTitle.textContent = 'Каталог товаров'
 	}
-})
-window.addEventListener('resize', (e) => {
-	const $catalogTitle = document.querySelector('.catalog__title')
-	if (window.innerWidth < 992) {
-		$catalogTitle.textContent = 'Каталог'
-	} else {
-		$catalogTitle.textContent = 'Каталог товаров'
+	if (window.innerWidth < 550) {
+		const accordion1 = new Accordion('.footer__accordion--1')
+		const accordion2 = new Accordion('.footer__accordion--2')
+		const accordion3 = new Accordion('.footer__accordion--3')
 	}
 })
+
 const $buttonMore = document.querySelector('.nav__list')
 $buttonMore.addEventListener('click', (e) => {
 	document.querySelectorAll('.active').forEach((el) => el.classList.remove('active'))

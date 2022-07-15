@@ -1,6 +1,7 @@
 import { isWebp } from './components/isWebp.js'
 import Swiper from 'swiper/bundle'
 import './components/listeners.js'
+import { Accordion } from './components/accordion.js'
 
 isWebp()
 
@@ -16,6 +17,15 @@ const swiper = new Swiper('.hero__swiper', {
 	autoplay: {
 		delay: 2000,
 	},
+})
+
+const $catalogTitle = document.querySelector('.catalog__title')
+window.addEventListener('resize', (e) => {
+	if (window.innerWidth < 992) {
+		$catalogTitle.textContent = 'Каталог'
+	} else {
+		$catalogTitle.textContent = 'Каталог товаров'
+	}
 })
 
 document.addEventListener('click', (e) => {

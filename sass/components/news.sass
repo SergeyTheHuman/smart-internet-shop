@@ -11,30 +11,50 @@
 	&__news
 		margin-top: 30px
 		width: 100%
-		display: flex
-		justify-content: center
+		display: grid
+		grid-template-columns: repeat(2, 1fr)
 		gap: 20px
-		@media screen and ( max-width: 767.98px )
-			flex-direction: column
-			flex-wrap: wrap
-			align-items: stretch
+		@media screen and ( max-width: 991.98px )
+			grid-template-columns: 1fr
 			gap: 10px
 	&__item
 		line-height: 120%
-		background-color: #EDF2F6
 		border-radius: 8px
-		padding: 2% 4%
+		background-color: #EDF2F6
+		padding: 3%
 		flex: 1 0 48%
 		min-height: 180px
 		display: flex
-		justify-content: center
-		flex-direction: column
+		justify-content: space-between
+		align-items: center
+		gap: 20px
 		transition: all 0.3s ease
+		@media screen and ( max-width: 767.98px )
+			padding: 15px
+		@media screen and ( max-width: 576px )
+			flex-direction: column
 		@media screen and ( any-hover: hover )
 			&:hover
 				box-shadow: 0px 0px 20px 5px rgba(34, 60, 80, 0.3)
-		@media screen and ( max-width: 767.98px )
-			padding: 15px
+		&-image
+			height: auto
+			min-height: 100%
+			max-height: 250px
+			max-width: 150px
+			object-fit: cover
+			object-position: center
+			@media screen and ( max-width: 576px )
+				max-width: 100%
+				width: 100%
+				min-height: 100px
+				max-height: 200px
+		&-content
+			display: flex
+			justify-content: space-between
+			flex-direction: column
+			height: 100%
+			@media screen and ( max-width: 576px )
+				height: unset
 		&-title
 			font-weight: 700
 			font-size: 1.75rem

@@ -1,1 +1,78 @@
-
+footer.footer
+	.container.footer__container
+		.footer__top
+			.footer__column.footer__column--first
+				a(href="./index.html").footer__logo.logo
+					img.footer__logo-img(src='@img/content-icons/logo.svg')
+				.footer__contacts
+						a(href="tel:+78126605054").footer__contacts-phone +7 (812) 660-50-54
+						a(href="tel:+79581119503").footer__contacts-phone +7 (958) 111-95-03
+						.footer__contacts-schedule Пн-вс: с 10:00 до 21:00
+				.footer__address-wrapper
+					address.footer__address Проспект Стачек 67 к.5
+					address.footer__address Лиговский проспект 205
+					address.footer__address Гражданский проспект, 116 к.5
+			.footer__column
+				.footer__accordion.footer__accordion--1
+					.footer__accordion-item.accordion__item 
+						.footer__accordion-title.accordion__title  Для клиента
+							.footer__accordion-cross
+								+svg('accordion-cross','cross')
+						.footer__accordion-content.accordion__content
+							ul.footer__accordion-list
+								li.footer__accordion-li
+									a.footer__accordion-link(href="#") Как купить
+								li.footer__accordion-li
+									a.footer__accordion-link(href="#") Доставка и оплата
+								li.footer__accordion-li
+									a.footer__accordion-link(href="#") Кредит
+								li.footer__accordion-li
+									a.footer__accordion-link(href="#") Политика конфиденциальности
+								li.footer__accordion-li
+									a.footer__accordion-link(href="#") Вопросы и ответы (F.A.Q.)
+								li.footer__accordion-li
+									a.footer__accordion-link(href="#") Сервис и гарантия
+			.footer__column
+				.footer__accordion.footer__accordion--2
+					.footer__accordion-item.accordion__item 
+						.footer__accordion-title.accordion__title  О магазине
+							.footer__accordion-cross
+								+svg('accordion-cross','cross')
+						.footer__accordion-content.accordion__content
+							ul.footer__accordion-list
+								li.footer__accordion-li
+									a.footer__accordion-link(href="#") Отзывы
+								li.footer__accordion-li
+									a.footer__accordion-link(href="#") Наши преимущества
+								li.footer__accordion-li
+									a.footer__accordion-link(href="#") История компании
+								li.footer__accordion-li
+									a.footer__accordion-link(href="#") Сотрудничество
+								li.footer__accordion-li
+									a.footer__accordion-link(href="#") Партнёрская программа
+								li.footer__accordion-li
+									a.footer__accordion-link(href="#") Вакансии
+			.footer__column
+				.footer__accordion.footer__accordion--3
+					.footer__accordion-item.accordion__item 
+						.footer__accordion-title.accordion__title  Сотрудничество
+							.footer__accordion-cross
+								+svg('accordion-cross','cross')
+						.footer__accordion-content.accordion__content
+							ul.footer__accordion-list
+								li.footer__accordion-li
+									a.footer__accordion-link(href="#") Оптом
+								li.footer__accordion-li
+									a.footer__accordion-link(href="#") Дропшиппинг
+		.footer__bottom
+			.footer__copy SmartТехника © 2021 Все права защищены
+			.footer__social
+				a.footer__social-link
+					+svg('social-tw', 'twitter')
+				a.footer__social-link
+					+svg('social-fb', 'facebook')
+				a.footer__social-link
+					+svg('social-vk', 'vk')
+				a.footer__social-link
+					+svg('social-inst', 'instagram')
+			.footer__madeby Верстка: Иванов Сергей

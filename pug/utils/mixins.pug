@@ -100,17 +100,35 @@ mixin sectionNews(data={})
 	section.section.news
 		.container.news__container
 			h2.news__title.section-title= data.title
-			a(href="#").news__readall.section-all.section-all--border= data.linkText
+			if data.linkText
+				a(href="./page-news.html").news__readall.section-all.section-all--border= data.linkText
 			.news__news
-				.news__item
-					a(href="#").news__item-title= data.news1.title
-					p.news__item-text= data.news1.text
-					.news__item-info
-						a(href="#").news__item-readmore.section-all.section-all--border Подробнее
-						.news__item-date= data.news1.date
-				.news__item
-					a(href="#").news__item-title= data.news2.title
-					p.news__item-text= data.news2.text
-					.news__item-info
-						a(href="#").news__item-readmore.section-all.section-all--border Подробнее
-						.news__item-date= data.news2.date
+				if block
+					block
+
+mixin newsItem(data={})
+	.news__item
+		if data.image
+			img.news__item-image(src=`@img/news/${data.image}`, alt=`${data.image}`)
+			.news__item-content
+				.news__item-body
+					a(href="#").news__item-title= data.title
+					p.news__item-text= data.text
+				.news__item-info
+					a(href="#").news__item-readmore.section-all.section-all--border Подробнее
+					.news__item-date= data.date
+		else
+			.news__item-content
+				.news__item-body
+					a(href="#").news__item-title= data.title
+					p.news__item-text= data.text
+				.news__item-info
+					a(href="#").news__item-readmore.section-all.section-all--border Подробнее
+					.news__item-date= data.date
+
+
+			//- a(href="#").news__item-title= data.title
+			//- p.news__item-text= data.text
+			//- .news__item-info
+			//- 	a(href="#").news__item-readmore.section-all.section-all--border Подробнее
+			//- 	.news__item-date= data.date
