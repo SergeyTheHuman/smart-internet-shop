@@ -1,4 +1,4 @@
-import { Accordion } from './accordion.js'
+import { Accordion as AccISV } from './accordion.js'
 
 const $headerSearchBtn = document.querySelector('.button__icon--header-search')
 const $headerViewedBtn = document.querySelector('.button__icon--header-viewed')
@@ -67,9 +67,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		$catalogTitle.textContent = 'Каталог товаров'
 	}
 	if (window.innerWidth < 550) {
-		const accordion1 = new Accordion('.footer__accordion--1')
-		const accordion2 = new Accordion('.footer__accordion--2')
-		const accordion3 = new Accordion('.footer__accordion--3')
+		const accordion1 = new AccISV('.footer__accordion--1')
+		const accordion2 = new AccISV('.footer__accordion--2')
+		const accordion3 = new AccISV('.footer__accordion--3')
 	}
 })
 
