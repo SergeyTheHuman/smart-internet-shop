@@ -1,0 +1,79 @@
+doctype html
+html(lang="ru")
+	head
+		include utils/mixins
+		include utils/meta
+		include utils/links
+		//- include utils/fonts
+		title About us Page
+	body
+		include components/header
+		.container
+			.breadcrumbs
+				a(href="./index.html").breadcrumbs__item Главная
+				a(href="#").breadcrumbs__item.breadcrumbs__item--current О нас
+
+		section.about.section
+			.about__item
+				h1.about__title.about__title--main О нас
+				p.about__descr Официальный представитель производителей эксклюзивного электротранспорта и Смарт-Техники, Созданная в 2015 году компания Смарт-Техника стала одним из первых дистрибьютеров персонального электротранспорта в России и уже более трёх лет является официальным представителем таких производителей эксклюзивного электронного транспорта, как  #[span Yamato], #[span SmartONE], #[span HALTEN] и #[span Kugoo]
+				
+			.about__item
+				h2.about__title Постоянно растущая и развивающаяся Компания
+				p.about__descr На сегодняшней день Компания Смарт-Техника обладает собственным розничным магазинами в г. Санкт-Петербурге, официальными представительствами в различных районах г. СПб и Ленобласти, сетью складов в Петербурге, Москве и других крупных городах России. Мы постоянно растём и развиваемся. Доставка наших товаров осуществляется во все регионы Страны!
+
+			.about__item
+				h2.about__title Самый большой выбор персонального электротранспорта
+				.about__content-wrapper
+					p.about__descr Самый большой выбор персонального электротранспорта представлен в выставочных залах Смарт-Техника по адресам:
+					ul.about__address-list
+						li.about__li
+							address.about__address ул. Ленсовета 81; 
+						li.about__li
+							address.about__address ул. Дыбенко 23к1; 
+						li.about__li
+							address.about__address пр. Энгельса 113 к 2.
+					p.about__descr Расширение ассортимента происходит стабильно раз в полгода, и вы всегда найдёте у нас самые эксклюзивные модели электронного транспорта нового поколения!
+
+			.about__item.about__item--blue
+				h2.about__title Всегда в наличии большой выбор:
+				.about__choice-grid.choice-grid
+					a(href="./page-catalog.html").choice-grid__item
+						img.choice-grid__item-img(src='@img/content-icons/scooter.svg')
+						.choice-grid__item-link Гироскутеров
+					a(href="./page-catalog.html").choice-grid__item
+						img.choice-grid__item-img(src='@img/content-icons/segway.svg')
+						.choice-grid__item-link Сигвеев и мини сигвеев
+					a(href="./page-catalog.html").choice-grid__item
+						img.choice-grid__item-img(src='@img/content-icons/electro-scooter.svg')
+						.choice-grid__item-link Электросамокатов
+					a(href="./page-catalog.html").choice-grid__item
+						img.choice-grid__item-img(src='@img/content-icons/electro-skate.svg')
+						.choice-grid__item-link Электроскейтов
+					a(href="./page-catalog.html").choice-grid__item
+						img.choice-grid__item-img(src='@img/content-icons/electro-bicycle.svg')
+						.choice-grid__item-link Электровелосипедов
+					a(href="./page-catalog.html").choice-grid__item
+						img.choice-grid__item-img(src='@img/content-icons/icon-more.svg')
+						.choice-grid__item-link И многое другое
+
+			.about__item
+				h2.about__title Опытный и высококвалифицированный персонал
+				p.about__descr В компании работают опытные высококвалифицированные сотрудники, всегда готовые помочь вам с выбором персонального транспортного средства, ответить на все возможные вопросы и научить кататься на выбранной вами модели
+
+			.about__item
+				h2.about__title Возможность тест драйва
+				p.about__descr Благодаря месторасположению и инфраструктуре, прилегающей к магазинам территорий, наши посетители могут перед оформлением покупки пройти тест-драйв на любом из представленных в зале транспортных средств.
+				p.about__descr Для тест-драйва крупной техники необходима предварительная запись. Её можно осуществить по телефону: #[a(href="tel:+78125092343").about__link +7 (812) 509-23-43] или #[span через консультанта в магазине.]
+
+			.about__item
+				h2.about__title Цель и миссия компании Смарт-Техника.рф
+				p.about__descr #[span Цель компании Смарт Техника] — в 2020 году стать самым крупным магазином по продаже персонального электротранспорта в Санкт-Петербурге. А также открывать свои филиалы во всех крупных городах России, что происходит уже сейчас.
+				p.about__descr #[span Миссия компании Смарт Техника] — познакомить россиян с экологически чистыми видами транспорта и улучшить экологию Страны! Мы надеемся не просто привить нашей нации любовь к ЭКО-транспорту, а создать в стране новую культуру передвижения.
+
+			.about__item
+				p.about__contact Мы всегда рады взаимовыгодному сотрудничеству. 
+				p.about__contact Свои предложения отправляйте #[a(href="tel:+78125092343").about__link smartfamily.info@yandex.ru]
+
+		include components/footer
+		include utils/scripts

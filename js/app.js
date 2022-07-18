@@ -1,6 +1,5 @@
 import { isWebp } from './components/isWebp.js'
 import Swiper from 'swiper/bundle'
-import './components/listeners.js'
 import { Accordion as AccISV } from './components/accordion.js'
 import Accordion from 'accordion-js'
 import './components/custom-select.js'

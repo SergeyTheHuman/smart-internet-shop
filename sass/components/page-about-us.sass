@@ -1,0 +1,144 @@
+.about
+	width: 100%
+	margin-top: 30px
+	// .about__item
+	&__item
+		padding: 0 25px
+		width: 100%
+		max-width: calc(1300px + 25px * 2)
+		margin: 0 auto
+		@media screen and ( max-width: 480px )
+			padding: 0 15px
+		&--blue
+			max-width: none
+			background: $color-light-blue
+			padding: 40px 0
+			& > *
+				margin: 0 auto
+				max-width: calc(1300px + 25px * 2)
+				padding: 0 25px
+				@media screen and ( max-width: 480px )
+					padding: 0 15px
+
+		&:not(:last-child)
+			margin-bottom: 40px
+			@media screen and ( max-width: 768px )
+				margin-bottom: 25px
+	// .about__title
+	&__title
+		font-weight: 600
+		font-size: 1.5rem
+		line-height: 130%
+		@media screen and ( max-width: 768px )
+			font-size: 1.25rem
+		&:not(:last-child)
+			margin-bottom: 20px
+			@media screen and ( max-width: 768px )
+				margin-bottom: 15px
+		// .about__title--main
+		&--main
+			font-weight: 700
+			font-size: 2.25rem
+			margin-bottom: 30px
+			&:not(:last-child)
+				margin-bottom: 30px
+				@media screen and ( max-width: 768px )
+					margin-bottom: 20px
+	// .about__descr
+	&__descr
+		line-height: 130%
+		&:not(:last-child)
+			margin-bottom: 15px
+		span
+			font-weight: 700
+
+	// .about__content-wrapper
+	&__content-wrapper
+
+	// .about__address-list
+	&__address-list
+		margin-bottom: 15px
+
+	// .about__li
+	&__li
+		font-weight: 700
+		margin-bottom: 10px
+	// .about__address
+	&__address
+
+	// .about__choice-grid
+	&__choice-grid
+
+	// .about__link
+	&__link
+		font-weight: 700
+		color: $color-blue
+		position: relative
+		transition: color 0.3s ease
+		&::before
+			content: ''
+			position: absolute
+			bottom: -0.15em
+			left: 0
+			width: 100%
+			height: 2px
+			background-color: $color-blue
+			transform: scaleX(0)
+			transform-origin: left center
+			transition: all 0.3s ease
+			pointer-events: none
+		@media screen and ( any-hover: hover )
+			&:hover
+				color: $color-dark-blue
+				&::before
+					background-color: $color-dark-blue
+					transform: scaleX(1)
+	&__contact
+		font-weight: 700
+		font-size: 1.75rem
+		line-height: 120%
+		@media screen and ( max-width: 550px )
+			font-size: 1.5rem
+			a
+				font-size: 1.25rem
+
+.choice-grid
+	display: grid
+	grid-template-columns: repeat(3, 1fr)
+	gap: 30px
+	@media screen and ( max-width: 850px )
+		grid-template-columns: repeat(2, 1fr)
+	@media screen and ( max-width: 550px )
+		grid-template-columns: 1fr
+	// .choice-grid__item
+	&__item
+		display: flex
+		align-items: center
+		gap: 10px
+		padding: 15px 20px
+		border-radius: 15px
+		border: 2px solid transparent
+		transition: all 0.3s ease
+		@media screen and ( any-hover: hover )
+			&:hover
+				border-color: $color-blue
+				background-color: $color-white
+				transform: scale(1.05)
+				color: $color-dark-blue
+		@media screen and ( max-width: 768px )
+			padding: 0
+			width: 100%
+	// .choice-grid__item-img
+	&__item-img
+		width: 48px
+		height: 48px
+		object-fit: contain
+		object-position: center
+		@media screen and ( max-width: 550px )
+			width: 32px
+			height: 32px
+	// .choice-grid__item-link
+	&__item-link
+		flex-shrink: 1
+		font-size: 1.25rem
+		line-height: 130%
