@@ -52,12 +52,10 @@ const swiper = new Swiper('.hero__swiper', {
 	},
 })
 
-const accordionFilters = new Accordion('.catalog-section__filters', {
+
+const accordionFilters = new Accordion('.catalog-section__filters-wrapper	', {
 	duration: 300,
 	showMultiple: true,
-	onOpen: function (currentElement) {
-		console.log(currentElement)
-	},
 })
 
 customSelect('.catalog-products__select')
@@ -77,6 +75,12 @@ document.addEventListener('click', (e) => {
 		const currentCard = e.target.closest('.product-card')
 		const ratingValue = parseInt(e.target.getAttribute('data-rating-value'))
 		e.target.closest('[data-rating-total]').dataset.ratingTotal = ratingValue
+	}
+
+	//Filters
+	if (e.target.classList.contains('catalog-section__filters-open-btn')) {
+		const $filtersSidebar = document.querySelector('.catalog-section__filters')
+		$filtersSidebar.classList.toggle('opened')
 	}
 })
 

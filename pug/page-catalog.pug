@@ -20,113 +20,117 @@ html(lang="ru")
 				h2.catalog-section__title.section-title Каталог
 				.catalog-section__content
 					sidebar.catalog-section__filters
-						.ac.catalog-section__filter.catalog-filter
-							h2.ac-header.catalog-filter__title
-								button(type="button").ac-trigger.catalog-filter__button Цена
-							.ac-panel.catalog-filter__content-wrapper
-								.catalog-filter__content.price-filter
-									.price-filter__inputs
-										label.price-filter__label От
-											input.price-filter__input.price-filter__input--from(type="number" step="500" min="5000" max="30000")
-										label.price-filter__label До
-											input.price-filter__input.price-filter__input--to(	type="number" step="500" min="5000" max="30000")
-									.price-filter__range
-						.ac.catalog-section__filter.catalog-filter
-							h2.ac-header.catalog-filter__title
-								button(type="button").ac-trigger.catalog-filter__button Подсветка
-							.ac-panel.catalog-filter__content-wrapper
-								.catalog-filter__content.checkbox
-									label.checkbox__label 
-										input.checkbox__input--hidden(type="checkbox" name="light" value="Есть")
-										.checkbox__input
-											+svg('.checkbox__svg','checked')
-										| Есть #[span (78)]
-									label.checkbox__label 
-										input.checkbox__input--hidden(type="checkbox" name="light" value="Нет")
-										.checkbox__input
-											+svg('.checkbox__svg','checked')
-										| Нет  #[span (110)]
-						.ac.catalog-section__filter.catalog-filter
-							h2.ac-header.catalog-filter__title
-								button(type="button").ac-trigger.catalog-filter__button Мощность двигателя (Ватт)
-							.ac-panel.catalog-filter__content-wrapper
-								.catalog-filter__content.checkbox
-									label.checkbox__label 
-										input.checkbox__input--hidden(type="checkbox" name="power" value="30")
-										.checkbox__input
-											+svg('.checkbox__svg','checked')
-										| 30 #[span (54)]
-									label.checkbox__label 
-										input.checkbox__input--hidden(type="checkbox" name="power" value="40")
-										.checkbox__input
-											+svg('.checkbox__svg','checked')
-										| 40  #[span (22)]
-									label.checkbox__label 
-										input.checkbox__input--hidden(type="checkbox" name="power" value="50")
-										.checkbox__input
-											+svg('.checkbox__svg','checked')
-										| 50  #[span (37)]
-									label.checkbox__label 
-										input.checkbox__input--hidden(type="checkbox" name="power" value="60")
-										.checkbox__input
-											+svg('.checkbox__svg','checked')
-										| 60  #[span (40)]
-						.ac.catalog-section__filter.catalog-filter
-							h2.ac-header.catalog-filter__title
-								button(type="button").ac-trigger.catalog-filter__button Максимальная скорость (км/ч)
-							.ac-panel.catalog-filter__content-wrapper
-								.catalog-filter__content.checkbox
-									label.checkbox__label 
-										input.checkbox__input--hidden(type="checkbox" name="speed" value="35")
-										.checkbox__input
-											+svg('.checkbox__svg','checked')
-										| 35 (км/ч) #[span (67)]
-									label.checkbox__label 
-										input.checkbox__input--hidden(type="checkbox" name="speed" value="50")
-										.checkbox__input
-											+svg('.checkbox__svg','checked')
-										| 50 (км/ч)  #[span (37)]
-									label.checkbox__label 
-										input.checkbox__input--hidden(type="checkbox" name="speed" value="60")
-										.checkbox__input
-											+svg('.checkbox__svg','checked')
-										| 60 (км/ч)  #[span (14)]
-						.ac.catalog-section__filter.catalog-filter
-							h2.ac-header.catalog-filter__title
-								button(type="button").ac-trigger.catalog-filter__button Вес
-							.ac-panel.catalog-filter__content-wrapper
-								.catalog-filter__content.checkbox
-									label.checkbox__label 
-										input.checkbox__input--hidden(type="checkbox" name="weight" value="до 3 кг")
-										.checkbox__input
-											+svg('.checkbox__svg','checked')
-										| до 3 кг #[span (5)]
-									label.checkbox__label 
-										input.checkbox__input--hidden(type="checkbox" name="weight" value="от 3 до 5 кг")
-										.checkbox__input
-											+svg('.checkbox__svg','checked')
-										| от 3 до 5 кг  #[span (94)]
-									label.checkbox__label 
-										input.checkbox__input--hidden(type="checkbox" name="weight" value="от 5 кг")
-										.checkbox__input
-											+svg('.checkbox__svg','checked')
-										| от 5 кг  #[span (26)]
-						.ac.catalog-section__filter.catalog-filter
-							h2.ac-header.catalog-filter__title
-								button(type="button").ac-trigger.catalog-filter__button Размер
-							.ac-panel.catalog-filter__content-wrapper
-								.catalog-filter__content.checkbox
-									label.checkbox__label 
-										input.checkbox__input--hidden(type="checkbox" name="size" value="Для детей")
-										.checkbox__input
-											+svg('.checkbox__svg','checked')
-										| Для детей #[span (52)]
-									label.checkbox__label 
-										input.checkbox__input--hidden(type="checkbox" name="size" value="Для взрослых")
-										.checkbox__input
-											+svg('.checkbox__svg','checked')
-										| Для взрослых  #[span (85)]
-						button.catalog-section__filters-button.button.button--blue Применить
+						button.catalog-section__filters-open-btn.button.button--blue 
+							+svg('.filter-icon','filter')
+							| Фильтры
+						.catalog-section__filters-wrapper
+							.ac.catalog-section__filter.catalog-filter
+								h2.ac-header.catalog-filter__title
+									button(type="button").ac-trigger.catalog-filter__button Цена
+								.ac-panel.catalog-filter__content-wrapper
+									.catalog-filter__content.price-filter
+										.price-filter__inputs
+											label.price-filter__label От
+												input.price-filter__input.price-filter__input--from(type="number" step="500" min="5000" max="30000")
+											label.price-filter__label До
+												input.price-filter__input.price-filter__input--to(	type="number" step="500" min="5000" max="30000")
+										.price-filter__range
+							.ac.catalog-section__filter.catalog-filter
+								h2.ac-header.catalog-filter__title
+									button(type="button").ac-trigger.catalog-filter__button Подсветка
+								.ac-panel.catalog-filter__content-wrapper
+									.catalog-filter__content.checkbox
+										label.checkbox__label 
+											input.checkbox__input--hidden(type="checkbox" name="light" value="Есть")
+											.checkbox__input
+												+svg('.checkbox__svg','checked')
+											| Есть #[span (78)]
+										label.checkbox__label 
+											input.checkbox__input--hidden(type="checkbox" name="light" value="Нет")
+											.checkbox__input
+												+svg('.checkbox__svg','checked')
+											| Нет  #[span (110)]
+							.ac.catalog-section__filter.catalog-filter
+								h2.ac-header.catalog-filter__title
+									button(type="button").ac-trigger.catalog-filter__button Мощность двигателя (Ватт)
+								.ac-panel.catalog-filter__content-wrapper
+									.catalog-filter__content.checkbox
+										label.checkbox__label 
+											input.checkbox__input--hidden(type="checkbox" name="power" value="30")
+											.checkbox__input
+												+svg('.checkbox__svg','checked')
+											| 30 #[span (54)]
+										label.checkbox__label 
+											input.checkbox__input--hidden(type="checkbox" name="power" value="40")
+											.checkbox__input
+												+svg('.checkbox__svg','checked')
+											| 40  #[span (22)]
+										label.checkbox__label 
+											input.checkbox__input--hidden(type="checkbox" name="power" value="50")
+											.checkbox__input
+												+svg('.checkbox__svg','checked')
+											| 50  #[span (37)]
+										label.checkbox__label 
+											input.checkbox__input--hidden(type="checkbox" name="power" value="60")
+											.checkbox__input
+												+svg('.checkbox__svg','checked')
+											| 60  #[span (40)]
+							.ac.catalog-section__filter.catalog-filter
+								h2.ac-header.catalog-filter__title
+									button(type="button").ac-trigger.catalog-filter__button Максимальная скорость (км/ч)
+								.ac-panel.catalog-filter__content-wrapper
+									.catalog-filter__content.checkbox
+										label.checkbox__label 
+											input.checkbox__input--hidden(type="checkbox" name="speed" value="35")
+											.checkbox__input
+												+svg('.checkbox__svg','checked')
+											| 35 (км/ч) #[span (67)]
+										label.checkbox__label 
+											input.checkbox__input--hidden(type="checkbox" name="speed" value="50")
+											.checkbox__input
+												+svg('.checkbox__svg','checked')
+											| 50 (км/ч)  #[span (37)]
+										label.checkbox__label 
+											input.checkbox__input--hidden(type="checkbox" name="speed" value="60")
+											.checkbox__input
+												+svg('.checkbox__svg','checked')
+											| 60 (км/ч)  #[span (14)]
+							.ac.catalog-section__filter.catalog-filter
+								h2.ac-header.catalog-filter__title
+									button(type="button").ac-trigger.catalog-filter__button Вес
+								.ac-panel.catalog-filter__content-wrapper
+									.catalog-filter__content.checkbox
+										label.checkbox__label 
+											input.checkbox__input--hidden(type="checkbox" name="weight" value="до 3 кг")
+											.checkbox__input
+												+svg('.checkbox__svg','checked')
+											| до 3 кг #[span (5)]
+										label.checkbox__label 
+											input.checkbox__input--hidden(type="checkbox" name="weight" value="от 3 до 5 кг")
+											.checkbox__input
+												+svg('.checkbox__svg','checked')
+											| от 3 до 5 кг  #[span (94)]
+										label.checkbox__label 
+											input.checkbox__input--hidden(type="checkbox" name="weight" value="от 5 кг")
+											.checkbox__input
+												+svg('.checkbox__svg','checked')
+											| от 5 кг  #[span (26)]
+							.ac.catalog-section__filter.catalog-filter
+								h2.ac-header.catalog-filter__title
+									button(type="button").ac-trigger.catalog-filter__button Размер
+								.ac-panel.catalog-filter__content-wrapper
+									.catalog-filter__content.checkbox
+										label.checkbox__label 
+											input.checkbox__input--hidden(type="checkbox" name="size" value="Для детей")
+											.checkbox__input
+												+svg('.checkbox__svg','checked')
+											| Для детей #[span (52)]
+										label.checkbox__label 
+											input.checkbox__input--hidden(type="checkbox" name="size" value="Для взрослых")
+											.checkbox__input
+												+svg('.checkbox__svg','checked')
+											| Для взрослых  #[span (85)]
+							button.catalog-section__filters-button.button.button--blue Применить
 					.catalog-section__products.catalog-products
 						.catalog-products__control
 							.catalog-products__added-filters.added-filters

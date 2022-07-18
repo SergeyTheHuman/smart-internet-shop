@@ -7,17 +7,51 @@
 		justify-content: center
 		align-items: flex-start
 		gap: 20px
+		@media screen and ( max-width: 991.98px )
+			flex-direction: column
+			gap: 0
 	&__filters
+		overflow: hidden
 		flex: 0 0 310px
 		max-width: 310px
+		&.opened
+			.catalog-section__filters-wrapper
+				transform: translateY(0px) scaleY(1)
+				height: auto
+				margin-bottom: 10px
+		@media screen and ( max-width: 991.98px )
+			flex: unset
+			width: 100%
+			max-width: none
+			margin-bottom: 10px
+		&-open-btn
+			display: none
+			justify-content: center
+			align-items: center
+			gap: 10px
+			width: 100%
+			position: relative
+			z-index: 2
+			@media screen and ( max-width: 991.98px )
+				display: flex
+			svg
+				width: 24px
+				height: 24px
+				object-fit: contain
 		&-button
 			width: 100%
 			margin-top: 10px
 			@media screen and ( any-hover: hover )
 				&:hover
 					transform: scale(1)
+	&__filters-wrapper
+		transform: translateY(-120%) scaleY(0)
+		height: 0
+		transition: height 0.3s ease, transform 0.3s ease
 	&__products
 		flex: 1 1 auto
+		@media screen and ( max-width: 991.98px )
+			width: 100%
 
 .catalog-products
 	&__control
@@ -30,9 +64,11 @@
 	&__sort
 		width: 240px
 		flex-shrink: 0
+		@media screen and ( max-width: 991.98px )
+			margin-left: auto
 	&__products-grid
 		display: grid
-		grid-template-columns: repeat(3, 1fr)
+		grid-template-columns: repeat(auto-fill, minmax(290px, 1fr))
 		gap: 20px
 		& > .product-card
 			@media screen and (any-hover: hover)
@@ -40,7 +76,7 @@
 					transform: scale(1.02)
 	&__more
 		order: 1000
-		grid-column: 3 span
+		grid-column: 1 / -1
 		background: $color-white
 		border: 1px solid #EAEAF0
 		border-radius: 8px
@@ -69,6 +105,8 @@
 	display: flex
 	align-items: center
 	gap: 10px
+	@media screen and ( max-width: 991.98px )
+		display: none
 	&__items
 		display: flex
 		align-items: center
