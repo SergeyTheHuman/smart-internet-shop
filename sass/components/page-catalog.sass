@@ -45,9 +45,10 @@
 				&:hover
 					transform: scale(1)
 	&__filters-wrapper
-		transform: translateY(-120%) scaleY(0)
-		height: 0
-		transition: height 0.3s ease, transform 0.3s ease
+		@media screen and ( max-width: 991.98px )
+			transform: translateY(-120%) scaleY(0)
+			height: 0
+			transition: height 0.3s ease, transform 0.3s ease
 	&__products
 		flex: 1 1 auto
 		@media screen and ( max-width: 991.98px )

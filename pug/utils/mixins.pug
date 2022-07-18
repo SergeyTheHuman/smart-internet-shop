@@ -112,18 +112,18 @@ mixin newsItem(data={})
 			img.news__item-image(src=`@img/news/${data.image}`, alt=`${data.image}`)
 			.news__item-content
 				.news__item-body
-					a(href="#").news__item-title= data.title
+					a(href="./page-news-one.html").news__item-title= data.title
 					p.news__item-text= data.text
 				.news__item-info
-					a(href="#").news__item-readmore.section-all.section-all--border Подробнее
+					a(href="./page-news-one.html").news__item-readmore.section-all.section-all--border Подробнее
 					.news__item-date= data.date
 		else
 			.news__item-content
 				.news__item-body
-					a(href="#").news__item-title= data.title
+					a(href="./page-news-one.html").news__item-title= data.title
 					p.news__item-text= data.text
 				.news__item-info
-					a(href="#").news__item-readmore.section-all.section-all--border Подробнее
+					a(href="./page-news-one.html").news__item-readmore.section-all.section-all--border Подробнее
 					.news__item-date= data.date
 
 
