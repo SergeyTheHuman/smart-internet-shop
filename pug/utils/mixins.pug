@@ -3,8 +3,9 @@ mixin svg(myClass, svgID)
 		use(xlink:href= `@svg/${svgID}`) 
 
 mixin productCard(data = {})
-	article.product-card(class={new: data.new, aqua: data.aqua, hit: data.hit,})
+	article.product-card(class={new: data.new, aqua: data.aqua, hit: data.hit, delete: data.delete,})
 		.product-card__banners
+			button.btn-reset.product-card__banners-delete Удалить
 			.product-card__banners-benefits
 				.product-card__banners-aqua Аквазащита
 					img(src="@img/content-icons/water-drop.svg", alt="#")

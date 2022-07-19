@@ -1,0 +1,151 @@
+doctype html
+html(lang="ru")
+	head
+		include utils/mixins
+		include utils/meta
+		include utils/links
+		//- include utils/fonts
+		title Compare Page
+	body
+		include components/header
+		.container
+			.breadcrumbs
+				a(href="./index.html").breadcrumbs__item Главная
+				a(href="#").breadcrumbs__item.breadcrumbs__item--current Сравнение товаров
+		
+		section.compare
+			.container.compare__container
+				h2.compare__title.section-title Сравнение товаров
+				.compare__wrapper
+					.compare__controls
+						.compare__choice.compare-choice
+							select.compare-choice__select
+								option.compare-choice__option(value="Все товары") Все товары
+								option.compare-choice__option(value="Все товары") Все товары
+								option.compare-choice__option(value="Все товары") Все товары
+						.compare__different.checkbox
+							label.checkbox__label 
+								input.checkbox__input--hidden(type="checkbox" name="different" value="Только различающиеся")
+								.checkbox__input
+									+svg('.checkbox__svg','checked')
+								| Только различающиеся
+					.compare__products
+						.compare-swiper
+							.swiper-wrapper
+								.swiper-slide 
+									+productCard({
+										image: 'product-1.jpg',
+										category: 'Сигвеи',
+										name: 'Гироскутер Smart Balance Well 6.5 Хип-Хоп',
+										discountPercent: '20',
+										price: '5990',
+										delete: true
+									})
+								.swiper-slide 
+									+productCard({
+										image: 'product-1.jpg',
+										category: 'Сигвеи',
+										name: 'Гироскутер Smart Balance Well 8.5 Рок',
+										discountPercent: '45',
+										price: '10990',
+										delete: true
+									})
+								.swiper-slide 
+									+productCard({
+										image: 'product-1.jpg',
+										category: 'Сигвеи',
+										name: 'Гироскутер Smart Balance Well 6.5 Хип-Хоп',
+										discountPercent: '',
+										price: '5990',
+										delete: true
+									})
+								.swiper-slide 
+									+productCard({
+										image: 'product-1.jpg',
+										category: 'Сигвеи',
+										name: 'Гироскутер Smart Balance Well 6.5 Хип-Хоп',
+										discountPercent: '20',
+										price: '5990',
+										delete: true
+									})
+								.swiper-slide 
+									+productCard({
+										image: 'product-1.jpg',
+										category: 'Сигвеи',
+										name: 'Гироскутер Smart Balance Well 8.5 Рок',
+										discountPercent: '45',
+										price: '10990',
+										delete: true
+									})
+						.swiper-pagination.compare-pagination
+						.swiper-button-prev.compare-button-prev
+						.swiper-button-next.compare-button-next
+				.compare__table-wrapper
+					table.compare__table
+							tbody 
+								tr
+									td Тип:
+									td Сигвей
+									td Сигвей
+									td Сигвей
+									td Сигвей
+									td Сигвей
+								tr.compare__tr--different
+									td Название:
+									td Гироскутер Smart Balance Well 6.5 Хип-Хоп
+									td Гироскутер Smart Balance Well 8.5 Рок
+									td Гироскутер Smart Balance Well 6.5 Хип-Хоп
+									td Гироскутер Smart Balance Well 8.5 Рок
+									td Гироскутер Smart Balance Well 6.5 Хип-Хоп
+								tr
+									td Макс. скорость до (км/ч):
+									td 25
+									td 25
+									td 25
+									td 25
+									td 25
+								tr
+									td Мощность двигателя
+									td 300
+									td 300
+									td 300
+									td 300
+									td 300
+								tr.compare__tr--different
+									td Тип переднего тормоза
+									td Дисковый механический
+									td Дисковый механический
+									td -
+									td E-ABS
+									td -
+								tr
+									td Круиз-контроль
+									td Есть
+									td Есть
+									td Есть
+									td Есть
+									td Есть
+								tr.compare__tr--different
+									td Пробег на одном заряде
+									td 36
+									td 30
+									td 36
+									td 30
+									td 36
+								tr.compare__tr--different
+									td Размер
+									td Взрослый
+									td Взрослый
+									td Детский
+									td Детский
+									td Взрослый
+								tr
+									td Запасное колесо
+									td Нет
+									td Нет
+									td Нет
+									td Нет
+									td Нет
+								
+		include components/footer
+		include utils/scripts

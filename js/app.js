@@ -7,6 +7,9 @@ import noUiSlider from 'nouislider'
 
 isWebp()
 
+// header catalog title
+const $catalogTitle = document.querySelector('.catalog__title')
+
 // price slider vars
 const $priceRange = document.querySelector('.price-filter__range')
 const $inputPriceFrom = document.querySelector('.price-filter__input--from')
@@ -24,6 +27,16 @@ const $buttonMore = document.querySelector('.nav__list')
 const $buttonCatalog = document.querySelector('.catalog')
 const $buttonSearch = document.querySelector('.nav__search')
 const $closeBtns = document.querySelectorAll('[class*="-cross"]')
+
+// page compare vars
+const $compareWrapper = document.querySelector('.compare__wrapper')
+const $compareControls = document.querySelector('.compare__controls')
+const $compareCheckbox = document.querySelector('.compare__different')
+
+// compare page
+const $checkboxOnlyDifferentFake = document.querySelector('.compare__different')
+const $checkboxOnlyDifferent = document.querySelector('.checkbox__input--hidden')
+const $compareTable = document.querySelector('.compare__table')
 
 if ($priceRange && $inputPriceFrom && $inputPriceTo) {
 	noUiSlider.create($priceRange, {
@@ -54,7 +67,7 @@ if ($priceRange && $inputPriceFrom && $inputPriceTo) {
 }
 
 if (document.querySelector('.hero__swiper')) {
-	const swiper = new Swiper('.hero__swiper', {
+	const heroSwiper = new Swiper('.hero__swiper', {
 		slidesPerView: 1,
 		spaceBetween: 20,
 		speed: 800,
@@ -69,6 +82,38 @@ if (document.querySelector('.hero__swiper')) {
 	})
 }
 
+if (document.querySelector('.compare-swiper')) {
+	const compareSwiper = new Swiper('.compare-swiper', {
+		slidesPerView: 1,
+		spaceBetween: 20,
+		grabCursor: true,
+		navigation: {
+			prevEl: '.compare-button-prev',
+			nextEl: '.compare-button-next',
+		},
+		pagination: {
+			el: '.compare-pagination',
+			type: 'bullets',
+		},
+		breakpoints: {
+			375: {
+				slidesPerView: 1.4,
+			},
+			550: {
+				slidesPerView: 2,
+			},
+			992: {
+				slidesPerView: 'auto',
+				spaceBetween: 10,
+			},
+			1280: {
+				slidesPerView: 3,
+				spaceBetween: 10,
+			},
+		},
+	})
+}
+
 if (document.querySelector('.catalog-section__filters-wrapper')) {
 	const accordionFilters = new Accordion('.catalog-section__filters-wrapper', {
 		duration: 300,
@@ -79,23 +124,42 @@ if (document.querySelector('.catalog-section__filters-wrapper')) {
 if (document.querySelector('.catalog-products__select')) {
 	customSelect('.catalog-products__select')
 }
+if (document.querySelector('.compare-choice__select')) {
+	customSelect('.compare-choice__select')
+}
 
-const $catalogTitle = document.querySelector('.catalog__title')
 window.addEventListener('resize', (e) => {
+	// Changing text content of catalog
 	if (window.innerWidth < 992) {
 		$catalogTitle.textContent = 'Каталог'
 	} else {
 		$catalogTitle.textContent = 'Каталог товаров'
+	}
+
+	// Checkbox on compare page
+	if (window.innerWidth < 821) {
+		$compareWrapper.appendChild($compareCheckbox)
+	} else {
+		$compareControls.appendChild($compareCheckbox)
 	}
 })
 
 document.addEventListener('DOMContentLoaded', () => {
-	const $catalogTitle = document.querySelector('.catalog__title')
+	// Changing text content of catalog
 	if (window.innerWidth < 992) {
 		$catalogTitle.textContent = 'Каталог'
 	} else {
 		$catalogTitle.textContent = 'Каталог товаров'
 	}
+
+	// Checkbox on compare page
+	if (window.innerWidth < 821) {
+		$compareWrapper.appendChild($compareCheckbox)
+	} else {
+		$compareControls.appendChild($compareCheckbox)
+	}
+
+	// Footer accordion
 	if (window.innerWidth < 550) {
 		const accordion1 = new AccISV('.footer__accordion--1')
 		const accordion2 = new AccISV('.footer__accordion--2')
@@ -131,7 +195,6 @@ document.addEventListener('click', (e) => {
 		console.log('Нажата кнопка "избранные"')
 	}
 	if (e.target.classList.contains('button__icon--header-compare')) {
-		e.preventDefault()
 		console.log('Нажата кнопка сравнения')
 	}
 	if (e.target.classList.contains('button__icon--header-cart')) {
@@ -181,6 +244,14 @@ document.addEventListener('click', (e) => {
 	if (e.target.closest('.nav__search')) {
 		document.querySelectorAll('.active').forEach((el) => el.classList.remove('active'))
 		$buttonSearch.classList.add('active')
+	}
+})
+
+$checkboxOnlyDifferent.addEventListener('change', () => {
+	if ($checkboxOnlyDifferent.checked) {
+		$compareTable.classList.add('only-different')
+	} else {
+		$compareTable.classList.remove('only-different')
 	}
 })
 
