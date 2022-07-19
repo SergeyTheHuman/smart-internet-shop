@@ -128,6 +128,10 @@ if (document.querySelector('.compare-choice__select')) {
 	customSelect('.compare-choice__select')
 }
 
+if (document.querySelectorAll('.favorite__select')) {
+	document.querySelectorAll('.favorite__select').forEach((el) => customSelect(el))
+}
+
 window.addEventListener('resize', (e) => {
 	// Changing text content of catalog
 	if (window.innerWidth < 992) {
@@ -137,10 +141,12 @@ window.addEventListener('resize', (e) => {
 	}
 
 	// Checkbox on compare page
-	if (window.innerWidth < 821) {
-		$compareWrapper.appendChild($compareCheckbox)
-	} else {
-		$compareControls.appendChild($compareCheckbox)
+	if ($compareCheckbox && $compareWrapper && $compareControls) {
+		if (window.innerWidth < 821) {
+			$compareWrapper.appendChild($compareCheckbox)
+		} else {
+			$compareControls.appendChild($compareCheckbox)
+		}
 	}
 })
 
@@ -153,10 +159,12 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	// Checkbox on compare page
-	if (window.innerWidth < 821) {
-		$compareWrapper.appendChild($compareCheckbox)
-	} else {
-		$compareControls.appendChild($compareCheckbox)
+	if ($compareCheckbox && $compareWrapper && $compareControls) {
+		if (window.innerWidth < 821) {
+			$compareWrapper.appendChild($compareCheckbox)
+		} else {
+			$compareControls.appendChild($compareCheckbox)
+		}
 	}
 
 	// Footer accordion
@@ -191,7 +199,6 @@ document.addEventListener('click', (e) => {
 		console.log('Нажата кнопка "просмотренные"')
 	}
 	if (e.target.classList.contains('button__icon--header-heart')) {
-		e.preventDefault()
 		console.log('Нажата кнопка "избранные"')
 	}
 	if (e.target.classList.contains('button__icon--header-compare')) {
@@ -247,13 +254,15 @@ document.addEventListener('click', (e) => {
 	}
 })
 
-$checkboxOnlyDifferent.addEventListener('change', () => {
-	if ($checkboxOnlyDifferent.checked) {
-		$compareTable.classList.add('only-different')
-	} else {
-		$compareTable.classList.remove('only-different')
-	}
-})
+if ($checkboxOnlyDifferent) {
+	$checkboxOnlyDifferent.addEventListener('change', () => {
+		if ($checkboxOnlyDifferent.checked) {
+			$compareTable.classList.add('only-different')
+		} else {
+			$compareTable.classList.remove('only-different')
+		}
+	})
+}
 
 $closeBtns.forEach((el) => {
 	el.addEventListener('click', (e) => {
