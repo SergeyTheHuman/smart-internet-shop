@@ -1,0 +1,280 @@
+.product-one
+	display: flex
+	align-items: flex-start
+	margin-top: 30px
+	gap: 20px
+	@media screen and ( max-width: 992px )
+		flex-direction: column
+	&__title
+		font-weight: 700
+		font-size: 2.25rem
+		line-height: 130%
+		@media screen and ( max-width: 550px )
+			font-size: 1.75rem
+	&__image
+		flex: 0 1 40%
+		height: 530px
+		position: relative
+		@media screen and ( max-width: 992px )
+			width: 100%
+			flex: none
+		@media screen and ( max-width: 550px )
+			height: 330px
+		img
+			width: 100%
+			height: 470px
+			object-fit: contain
+			@media screen and ( max-width: 550px )
+				height: 270px
+	&__thumbs
+		height: 60px
+		width: 190px
+		overflow: hidden
+		margin: 0 auto
+		& .swiper-slide
+			width: 60px
+			height: 60px
+			transition: transform 0.3s ease
+			cursor: pointer
+			user-select: none
+			@media screen and ( any-hover: hover )
+				&:hover
+					transform: scale(1.2)
+			img
+				width: 60px
+				height: 60px
+				object-fit: cover
+	&__descr
+		flex: 0 1 60%
+		@media screen and ( max-width: 992px )
+			width: 100%
+			flex: none
+	&__reacts
+		margin-top: 30px
+		margin-bottom: 20px
+		border: 1px solid #EAEAF0
+		border-radius: 10px
+		padding: 30px
+	& .product-card__reactions
+		margin-bottom: 0
+	& .product-card__row-top
+		margin-bottom: 0
+		justify-content: flex-start
+		@media screen and ( max-width: 650px )
+			flex-direction: column
+	& .product-card__price
+		display: flex
+		align-items: center
+		flex-wrap: wrap
+		width: 210px
+		gap: 5px
+		@media screen and ( max-width: 650px )
+			width: 100%
+		.product-card__new-price
+			width: 100%
+			order: 1000
+			font-size: 2rem
+	& .product-card__actions
+		flex-grow: 1
+		flex-direction: column
+		align-items: flex-end
+		@media screen and ( max-width: 650px )
+			margin-top: -40px
+			width: 100%
+		.product-card__actions--big
+			width: 100%
+			display: flex
+			justify-content: space-between
+			gap: 10px
+			@media screen and ( max-width: 425px )
+				flex-direction: column
+			button
+				width: 48%
+				@media screen and ( max-width: 425px )
+					width: 100%
+	&__info
+		display: flex
+		justify-content: center
+		align-items: center
+		gap: 20px
+		@media screen and ( max-width: 768px )
+			flex-direction: column
+	&__item
+		border: 1px solid #EAEAF0
+		border-radius: 10px
+		padding: 30px
+		&-title
+			font-weight: 700
+			display: flex
+			align-items: center
+			gap: 10px
+			img
+				width: 24px
+				height: 24px
+				object-fit: contain
+				object-position: center
+		&-text
+			margin-top: 10px
+
+.product-tabs
+	margin-top: 40px
+	&__item[data-tabs-target='characteristics']
+		.product-tabs__content
+			padding: 40px 0px 20px 0px
+	&__buttons
+		display: flex
+		align-items: center
+		background-color: $color-light-blue
+		border-radius: 8px
+		padding: 0 20px
+		@media screen and ( max-width: 550px )
+			padding: 0 20px
+		@media screen and ( max-width: 425px )
+			flex-wrap: wrap
+	&__button
+		font-weight: 700
+		font-size: 16px
+		line-height: 130%
+		padding: 25px 20px
+		@media screen and ( max-width: 550px )
+			padding: 15px 10px
+			font-size: 14px
+		@media screen and ( max-width: 425px )
+			flex-grow: 1
+			text-align: center
+	&__content
+		padding: 40px 20px 20px 20px
+		p
+			line-height: 120%
+			&:not(:last-child)
+				margin-bottom: 10px
+	&__title
+		font-weight: 700
+		font-size: 1.75rem
+		line-height: 120%
+		margin-bottom: 30px
+		@media screen and ( max-width: 550px )
+			font-size: 1.25rem
+		&--regular
+			font-weight: 400
+	&__table
+		width: 100%
+		td
+			font-weight: 400
+			font-size: 16px
+			line-height: 130%
+			padding: 25px 20px
+			@media screen and ( max-width: 425px )
+				padding: 15px 0px
+				&:not(:first-child)
+					padding-left: 15px
+		& tr:not(:last-child)
+			border-bottom: 1px solid #C8CACB
+		& tr > td:first-child
+			font-weight: 700
+	&__content--reviews
+		display: grid
+		grid-template-columns: repeat(5, 1fr)
+		column-gap: 3vw
+		@media screen and ( max-width: 992px )
+			grid-template-columns: repeat(2, 1fr)
+			column-gap: 0
+			row-gap: 20px
+		@media screen and ( max-width: 650px )
+			grid-template-columns: 1fr
+
+		& > h4
+			grid-column: 1 / -1
+	&__reviews
+		grid-column: span 3
+		@media screen and ( max-width: 992px )
+			grid-column: span 2
+		@media screen and ( max-width: 650px )
+			grid-column: span 1
+	&__write-us
+		grid-column: span 2
+		@media screen and ( max-width: 992px )
+			grid-column: span 1
+		@media screen and ( max-width: 650px )
+			grid-column: span 1
+
+.tabs__button
+	transition: box-shadow 0.3s ease, color 0.3s ease
+	&:not(.tabs__button--active)
+		cursor: pointer !important
+.tabs__button--active
+	pointer-events: none !important
+	box-shadow: inset 0px -2px 0px #2A5275
+	color: #2A5275
+.tabs__item
+	display: none !important
+.tabs__item--active
+	display: block !important
+
+.write-us
+	&__title
+		font-weight: 700
+		margin-bottom: 15px
+	&__text
+		margin-bottom: 15px
+	&__button
+		text-align: center
+
+.thumbs__prev,
+.thumbs__next
+	z-index: 2
+	width: 47px
+	height: 47px
+	border-radius: 50%
+	background-color: $color-light-blue
+	border: 1px solid transparent
+	transition: all 0.3s ease
+	&::after
+		content: ""
+		position: absolute
+		top: 50%
+		transform: translate(-50%,-50%)
+		width: 0
+		height: 0
+		border-style: solid
+		transition: border-color 0.3s ease
+.thumbs__prev
+	top: unset
+	bottom: 5px
+	left: calc(15% - 30px)
+	@media screen and ( max-width: 992px )
+		left: unset
+		right: 75%
+	@media screen and ( max-width: 550px )
+		right: 85%
+	&::after
+		left: 47.5%
+		border-width: 6.5px 6px 6.5px 0
+		border-color: transparent $color-black transparent transparent
+.thumbs__next
+	top: unset
+	bottom: 5px
+	right: calc(15% - 30px)
+	left: unset
+	@media screen and ( max-width: 992px )
+		right: unset
+		left: 75%
+	@media screen and ( max-width: 550px )
+		left: 85%
+	&::after
+		left: 52.5%
+		border-width: 6.5px 0 6.5px 6px
+		border-color: transparent transparent transparent $color-black
+
+.thumbs__prev.swiper-button-disabled
+	border: 1px solid $color-gray
+	background-color: $color-white
+	opacity: 1
+	&::after
+		border-color: transparent $color-gray transparent transparent
+.thumbs__next.swiper-button-disabled
+	border: 1px solid $color-gray
+	background-color: $color-white
+	opacity: 1
+	&::after
+		border-color: transparent transparent transparent $color-gray

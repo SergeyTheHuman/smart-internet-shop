@@ -1,0 +1,183 @@
+doctype html
+html(lang="ru")
+	head
+		include utils/mixins
+		include utils/meta
+		include utils/links
+		//- include utils/fonts
+		title Product one Page
+	body
+		include components/header
+		.container
+			.breadcrumbs
+				a(href="./index.html").breadcrumbs__item Главная
+				a(href="./page-catalog.html").breadcrumbs__item Гироскутеры
+				a(href="#").breadcrumbs__item.breadcrumbs__item--current Гироскутер Smart Balance Well 6.5 Хип-Хоп (АКВАЗАЩИТА)
+
+		section.product-one__section.section
+			.container
+				article.product-one
+					.product-one__image
+						img.product-one__main-img(src="@img/products/product-11.jpg", alt="product-11")
+						.product-one__thumbs
+							.swiper-wrapper
+								.swiper-slide
+									img.thumb-img(src="@img/products/product-11.jpg", alt="product-11")
+								.swiper-slide
+									img.thumb-img(src="@img/hero/apple-watch.png", alt="product-11")
+								.swiper-slide
+									img.thumb-img(src="@img/products/product-11.jpg", alt="product-11")
+								.swiper-slide
+									img.thumb-img(src="@img/hero/apple-watch.png", alt="product-11")
+								.swiper-slide
+									img.thumb-img(src="@img/products/product-11.jpg", alt="product-11")
+								.swiper-slide
+									img.thumb-img(src="@img/hero/apple-watch.png", alt="product-11")
+						.swiper-button-prev.thumbs__prev
+						.swiper-button-next.thumbs__next
+					.product-one__descr
+						h2.product-one__title Гироскутер Smart Balance Well 6.5 Хип-Хоп (АКВАЗАЩИТА)
+						.product-one__reacts
+							.product-card__reactions
+								.product-card__rating(data-rating-total="2")
+									.product-card__rating-item(data-rating-value="5") ★
+									.product-card__rating-item(data-rating-value="4") ★
+									.product-card__rating-item(data-rating-value="3") ★
+									.product-card__rating-item(data-rating-value="2") ★
+									.product-card__rating-item(data-rating-value="1") ★
+								a(href='#').product-card__comments (17)
+									+svg('comment-icon', 'comment')
+							.product-card__row-top
+								.product-card__price(data-discount-percent=`15` data-price=`6800`)
+									.product-card__new-price 
+								.product-card__actions
+									.product-card__actions--small
+										button.button.button__icon.border.button__icon--heart
+											+svg('heart', 'favorite')
+											+svg('heart-checked', 'favorite-checked')
+										button.button.button__icon.border.button__icon--compare
+											+svg('compare', 'compare')
+									.product-card__actions--big
+										button.button.button--blue В корзину
+										button.button.button--white Купить в 1 клик
+						.product-one__info
+							.product-one__item
+								.product-one__item-title 
+									img(src="@img/content-icons/delivery.svg", alt="delivery")
+									| Доставка
+								.product-one__item-text Доставим по Санкт-Петербургу в течение 2 часов и бесплатно. Стоимость доставки в другие города уточняйте у менеджера.
+							.product-one__item
+								.product-one__item-title 	
+									img(src="@img/content-icons/wallet.svg", alt="delivery")
+									| Оплата
+								.product-one__item-text Принимаем к оплате как наличный, так и безналичный расчёт. Возможна оплата электронными кошельками.
+				.product-one__tabs
+					.product-tabs
+						.product-tabs__buttons
+							.product-tabs__button.tabs__button(data-tabs-path='description').tabs__button--active Описание
+							.product-tabs__button.tabs__button(data-tabs-path='characteristics') Характеристики
+							.product-tabs__button.tabs__button(data-tabs-path='reviews') Отзывы #[span (3)]
+						.product-tabs__item.tabs__item(data-tabs-target='description').tabs__item--active
+							.product-tabs__content
+								h4.product-tabs__title Описание гироскутера Smart Balance Well 6.5
+								p Вопрос безопасности всегда стоит очень остро, в этом году производители решили его следующим образом — снабдили модель качественной задней и передней подсветкой, поэтому пользователь может не переживать о том, что его будет незаметно на дороге в тёмное время суток.
+								p На руле имеется яркий качественный дисплей, где отображается вся актуальная и необходимая информация — скорость, пробег и др. Кроме того, на руле имеется кнопка включения и выключения подсветки, звуковой сигнал и кнопка настроек. Таким образом, все необходимое для управления самокатом находится у пользователя под рукой.
+								p Для комфорта прогулок электросамокат снабжён передним и задним амортизаторами. Вы можете перемещаться не только по ровному городскому асфальту, но и по неровностям, которые не затруднят ваше перемещение.
+								p Складной механизм и небольшой вес (11 кг) делают модель эргономичной. В сложенном виде самокат занимает совсем мало места — его легко перевозить как в багажнике машины, так и в общественном транспорте. При складывании самокат фиксируется с помощью крючка к заднему крылу. А для того, чтобы разложить его, необходимо, нажав на заднее крыло, приподнять руль. Характерный щелчок говорит о том, что самокат разложен полностью и готов к эксплуатации.
+								p Стоит отметить, что электросамокат очень быстро стартует — вам не надо отталкиваться или разгоняться. Выдерживает до 120 кг, в процессе изготовления использовались только качественные материалы.
+								p Быстрый, лёгкий, компактный — прекрасный выбор для ценителей удобства!
+						.product-tabs__item.tabs__item(data-tabs-target='characteristics')
+							.product-tabs__content
+								h4.product-tabs__title Характеристики гироскутера Smart Balance Well 6.5
+								table.product-tabs__table
+									tbody 
+										tr
+											td Тип:
+											td Сигвей
+										tr.compare__tr--different
+											td Название:
+											td Гироскутер Smart Balance Well 6.5 Хип-Хоп
+										tr
+											td Макс. скорость до (км/ч):
+											td 25
+										tr
+											td Мощность двигателя
+											td 300
+										tr.compare__tr--different
+											td Тип переднего тормоза
+											td Дисковый механический
+										tr
+											td Круиз-контроль
+											td Есть
+										tr.compare__tr--different
+											td Пробег на одном заряде
+											td 36
+										tr.compare__tr--different
+											td Размер
+											td Взрослый
+										tr
+											td Запасное колесо
+											td Нет
+						.product-tabs__item.tabs__item(data-tabs-target='reviews')
+							.product-tabs__content.product-tabs__content--reviews
+								h4.product-tabs__title.product-tabs__title--regular Отзывы на гироскутер Smart Balance Well 6.5
+								.product-tabs__reviews
+									.product-tabs__review.review 
+										.review__info
+											img.review__photo(src="@img/reviews/sasha.jpg", alt="sasha")
+											.review__name Александра
+											.review__date 12 июня 2022
+											.review__rating
+												.product-card__reactions
+													.product-card__rating(data-rating-total="4")
+														.product-card__rating-item(data-rating-value="5") ★
+														.product-card__rating-item(data-rating-value="4") ★
+														.product-card__rating-item(data-rating-value="3") ★
+														.product-card__rating-item(data-rating-value="2") ★
+														.product-card__rating-item(data-rating-value="1") ★
+										.review__message
+											.review__title Отличный гироскутер!
+											.review__text Катаюсь каждый день после работы, заряд держит отлично!
+									.product-tabs__review.review 
+										.review__info
+											img.review__photo(src="@img/reviews/sasha.jpg", alt="sasha")
+											.review__name Александра
+											.review__date 12 июня 2022
+											.review__rating
+												.product-card__reactions
+													.product-card__rating(data-rating-total="4")
+														.product-card__rating-item(data-rating-value="5") ★
+														.product-card__rating-item(data-rating-value="4") ★
+														.product-card__rating-item(data-rating-value="3") ★
+														.product-card__rating-item(data-rating-value="2") ★
+														.product-card__rating-item(data-rating-value="1") ★
+										.review__message
+											.review__title Отличный гироскутер!
+											.review__text Катаюсь каждый день после работы, заряд держит отлично!
+									.product-tabs__review.review 
+										.review__info
+											img.review__photo(src="@img/reviews/sasha.jpg", alt="sasha")
+											.review__name Александра
+											.review__date 12 июня 2022
+											.review__rating
+												.product-card__reactions
+													.product-card__rating(data-rating-total="4")
+														.product-card__rating-item(data-rating-value="5") ★
+														.product-card__rating-item(data-rating-value="4") ★
+														.product-card__rating-item(data-rating-value="3") ★
+														.product-card__rating-item(data-rating-value="2") ★
+														.product-card__rating-item(data-rating-value="1") ★
+										.review__message
+											.review__title Отличный гироскутер!
+											.review__text Катаюсь каждый день после работы, заряд держит отлично!
+								.product-tabs__write-us.write-us
+									.write-us__title Напишите своё мнение о товаре
+									.write-us__text Сделайте выбор других покупалетей легче
+									.write-us__button.button.button--blue Написать отзыв
+
+		+sectionProducts({
+			title: `Рекомендуем`,
+			linkText: `-`
+		})
+		include components/footer
+		include utils/scripts

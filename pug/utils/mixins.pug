@@ -12,11 +12,11 @@ mixin productCard(data = {})
 			.product-card__banners-profitable
 				.product-card__banners-hit Хит продаж
 				.product-card__banners-new Новинка
-		a(href='#').product-card__image
+		a(href='./page-product-one.html').product-card__image
 			img(src=`@img/products/${data.image}`, alt=`${data.image}`)
 		.product-card__descr
-			a(href='#').product-card__category= data.category
-			a(href='#').product-card__name= data.name
+			a(href='./page-catalog.html').product-card__category= data.category
+			a(href='./page-product-one.html').product-card__name= data.name
 			.product-card__reactions
 				.product-card__rating(data-rating-total="2")
 					.product-card__rating-item(data-rating-value="5") ★
@@ -45,7 +45,8 @@ mixin sectionProducts(data = {linkText: `Все товары`})
 	section.products.section
 		.container.products__container
 			h2.products__title.section-title= data.title
-			a(href="#").products__category.section-all.section-all--border= data.linkText
+			if data.linkText!='-'
+				a(href="#").products__category.section-all.section-all--border= data.linkText
 			.products__products
 				if block
 					block

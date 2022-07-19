@@ -4,6 +4,7 @@ import { Accordion as AccISV } from './components/accordion.js'
 import Accordion from 'accordion-js'
 import './components/custom-select.js'
 import noUiSlider from 'nouislider'
+import { Tabs } from './components/tabs.js'
 
 isWebp()
 
@@ -37,6 +38,14 @@ const $compareCheckbox = document.querySelector('.compare__different')
 const $checkboxOnlyDifferentFake = document.querySelector('.compare__different')
 const $checkboxOnlyDifferent = document.querySelector('.checkbox__input--hidden')
 const $compareTable = document.querySelector('.compare__table')
+
+// product cards
+const $products = document.querySelectorAll('.product-card')
+const $productOne = document.querySelectorAll('.product-one')
+
+if (document.querySelector('.product-tabs')) {
+	const productTabs = new Tabs('.product-tabs')
+}
 
 if ($priceRange && $inputPriceFrom && $inputPriceTo) {
 	noUiSlider.create($priceRange, {
@@ -110,6 +119,18 @@ if (document.querySelector('.compare-swiper')) {
 				slidesPerView: 3,
 				spaceBetween: 10,
 			},
+		},
+	})
+}
+
+if (document.querySelector('.product-one__thumbs')) {
+	const thumbsSwiper = new Swiper('.product-one__thumbs', {
+		slidesPerView: 3,
+		spaceBetween: 8,
+		grabCursor: true,
+		navigation: {
+			prevEl: '.thumbs__prev',
+			nextEl: '.thumbs__next',
 		},
 	})
 }
@@ -252,6 +273,16 @@ document.addEventListener('click', (e) => {
 		document.querySelectorAll('.active').forEach((el) => el.classList.remove('active'))
 		$buttonSearch.classList.add('active')
 	}
+
+	// Thumbs slider
+	if (e.target.classList.contains('thumb-img')) {
+		const self = e.target
+		const src = self.getAttribute('src')
+		const mainImgParent = e.target.closest('.product-one__image')
+		const mainImg = mainImgParent.querySelector('.product-one__main-img')
+
+		mainImg.setAttribute('src', src)
+	}
 })
 
 if ($checkboxOnlyDifferent) {
@@ -272,7 +303,6 @@ $closeBtns.forEach((el) => {
 	})
 })
 
-const $products = document.querySelectorAll('.product-card')
 if ($products) {
 	$products.forEach((el) => {
 		//Prices vars
@@ -286,6 +316,34 @@ if ($products) {
 				<div class="product-card__old-price">${mainprice} ₽</div>
 			`
 			let priceWithDiscount = (mainprice * (1 - discount * 0.01)).toFixed(1)
+			let priceDiff = (mainprice - priceWithDiscount).toFixed(1)
+			$newPrice.textContent = `${priceWithDiscount} ₽`
+			const $discountHtml = `
+				<div class="product-card__discount"><span>${discount}%</span> — ${priceDiff} ₽</div>
+			`
+
+			$priceBlock.insertAdjacentHTML('afterbegin', $oldPriceHtml)
+			$priceBlock.insertAdjacentHTML('beforeend', $discountHtml)
+		} else {
+			$newPrice.textContent = `${mainprice} ₽`
+		}
+	})
+}
+
+if ($productOne) {
+	console.log($productOne)
+	$productOne.forEach((el) => {
+		//Prices vars
+		const $priceBlock = el.querySelector('[data-price]')
+		const discount = parseInt($priceBlock.getAttribute('data-discount-percent'))
+		const mainprice = parseInt($priceBlock.getAttribute('data-price'))
+		const $newPrice = $priceBlock.querySelector('.product-card__new-price')
+
+		if (discount) {
+			const $oldPriceHtml = `
+				<div class="product-card__old-price">${mainprice} ₽</div>
+			`
+			let priceWithDiscount = (mainprice * (1 - discount * 0.01)).toFixed(0)
 			let priceDiff = (mainprice - priceWithDiscount).toFixed(1)
 			$newPrice.textContent = `${priceWithDiscount} ₽`
 			const $discountHtml = `

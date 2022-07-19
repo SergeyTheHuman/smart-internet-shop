@@ -69,29 +69,6 @@
 		align-items: center
 		pointer-events: none
 
-// .button__quantity
-// 	position: relative
-// 	overflow: unset !important
-// 	&::after
-// 		content: '4'
-// 		font-family: 'Exo2'
-// 		position: absolute
-// 		font-weight: 400
-// 		font-size: 14px
-// 		line-height: 100%
-// 		top: -5px
-// 		right: -5px
-// 		width: 20px
-// 		height: 20px
-// 		border-radius: 50%
-// 		background-color: $color-dark-blue
-// 		color: $color-white
-// 		text-align: center
-// 		display: flex
-// 		justify-content: center
-// 		align-items: center
-// 		pointer-events: none
-
 // =============== BUTTONS ================
 .button__icon--compare
 	background-color: transparent
@@ -257,3 +234,95 @@
 			@media screen and ( max-width: 767.98px )
 				&::after
 					bottom: 0px
+
+// =============== REVIEW ================
+.review
+	padding: 40px
+	background-color: $color-light-blue
+	border-radius: 10px
+	@media screen and ( max-width: 650px )
+		padding: 20px
+	@media screen and ( max-width: 450px )
+		margin: 0 -20px
+		padding: 20px 10px
+	&:not(:last-child)
+		margin-bottom: 20px
+	&__info
+		display: flex
+		gap: 20px
+		align-items: center
+		margin-bottom: 20px
+		@media screen and ( max-width: 650px )
+			gap: 15px
+			flex-wrap: wrap
+		@media screen and ( max-width: 450px )
+			gap: 10px
+	&__photo
+		width: 50px
+		height: 50px
+		object-fit: cover
+		border-radius: 50%
+	&__name
+		font-weight: 700
+	&__date
+		font-weight: 700
+		font-size: 16px
+		color: $color-dark-gray
+	&__rating
+		& > .product-card__reactions
+			margin-bottom: 5px
+	&__message
+	&__title
+		font-weight: 700
+		margin-bottom: 10px
+	&__text
+
+// =============== CHECKBOX ================
+.checkbox
+	display: grid
+	grid-template-columns: 1fr
+	gap: 12px
+	&__label
+		font-size: 1rem
+		line-height: 130%
+		display: flex
+		align-items: center
+		gap: 12px
+		cursor: pointer
+		user-select: none
+		transition: color 0.3s ease
+		@media screen and ( any-hover: hover )
+			&:hover
+				color: $color-blue
+				& > .checkbox__input
+					border-color: $color-blue
+		span
+			color: $color-dark-gray
+	& .checkbox__input--hidden:checked + .checkbox__input
+		background-color: #4878A6
+		svg
+			display: block
+	&__input
+		width: 24px
+		height: 24px
+		border: 1.5px solid #EAEAF0
+		background-color: transparent
+		display: flex
+		justify-content: center
+		align-items: center
+		border-radius: 4px
+		transition: border-color 0.3s ease
+		svg
+			display: none
+			width: 16px
+			height: 16px
+			color: $color-white
+	&__input--hidden
+		appearance: none
+		-moz-appearance: none
+		-webkit-appearance: none
+		width: 0
+		height: 0
+		visibility: hidden
+		font-size: 0
+		position: absolute
