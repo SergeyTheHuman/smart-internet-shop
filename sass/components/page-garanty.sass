@@ -1,0 +1,115 @@
+.garanty
+	line-height: 130%
+
+	// .garanty__container
+	&__container
+		margin-top: 30px
+
+	// .garanty__item
+	&__item
+		&:not(:last-child)
+			margin-bottom: 40px
+
+	// .garanty__title
+	&__title
+		font-weight: 600
+		font-size: 1.5rem
+		line-height: 120%
+		margin-bottom: 20px
+		@media screen and ( max-width: 480px )
+			font-size: 1.25rem
+		// .garanty__title--main
+		&--main
+			font-weight: 700
+			font-size: 2.25rem
+			margin: 1em 0 0.65em 0
+			@media screen and ( max-width: 480px )
+				font-size: 1.75rem
+		// .garanty__title--gray
+		&--gray
+			color: $color-dark-gray
+
+	// .garanty__descr
+	&__descr
+		font-size: 1rem
+		// .garanty__descr--yellow
+		&--yellow
+			background-color: yellow
+		&:not(:last-child)
+			margin-bottom: 10px
+		span
+			font-weight: 700
+
+	// .garanty__table-wrapper
+	&__table-wrapper
+		overflow-x: auto
+	// .garanty__table
+	&__table
+		margin-bottom: 20px
+		width: 1300px
+		overflow-x: scroll
+		thead
+			font-weight: 600
+			th
+				text-align: left
+		tbody
+			& td:first-child
+				font-weight: 600
+		table, th, td
+			border: 1px solid $color-gray
+			padding: 15px 10px
+
+	// .garanty__descr--bold
+	&__descr--bold
+		font-weight: 700
+	// .garanty__ol
+	&__ol
+
+	// .garanty__ul
+	&__ul
+		margin-bottom: 20px
+
+	// .garanty__contact
+	&__contact
+		font-weight: 700
+		font-size: 1.75rem
+		line-height: 120%
+		&:not(:last-child)
+			margin-bottom: 10px
+	// .garanty__link
+	&__link
+		display: inline-block
+
+.section
+
+.garanty-ol
+	list-style-type: decimal
+	list-style-position: inside
+	&--bold
+		& > li::marker
+			font-weight: 700
+	// .garanty-ol__item
+	&__item
+		&:not(:last-child)
+			margin-bottom: 20px
+	// .garanty-ol__title
+	&__title
+		font-weight: 700
+		margin-bottom: 10px
+		display: inline-block
+	// .garanty-ol__descr
+	&__descr
+
+.garanty-ul
+	list-style-type: disc
+	list-style-position: inside
+	&--padding-left
+		padding-left: 20px
+	// .garanty-ul__item
+	&__item
+		&:not(:last-child)
+			margin-bottom: 10px
+
+.about
+	// .about__link
+	&__link
