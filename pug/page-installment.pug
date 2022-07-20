@@ -1,0 +1,135 @@
+doctype html
+html(lang="ru")
+	head
+		include utils/mixins
+		include utils/meta
+		include utils/links
+		//- include utils/fonts
+		title About us Page
+	body
+		include components/header
+		.container
+			.breadcrumbs
+				a(href="./index.html").breadcrumbs__item Главная
+				a(href="#").breadcrumbs__item.breadcrumbs__item--current Рассрочка 0|0|18
+
+		section.installment.section
+			.container.installment__container
+				h1.installment__title.installment__title--main Рассрочка 0|0|18
+				p.installment__descr В магазинах Смарт-техника.рф можно приобрести любой товар в рассрочку без процентов и первоначального взноса
+				img.installment__image(src="@img/installment/installment.png", alt="installment")
+				h3.installment__title Как работает рассрочка
+				p.installment__descr ТЕПЕРЬ КАРТУ ХАЛВА МОЖНО ОФОРМИТЬ В СЕТИ НАШИХ МАГАЗИНОВ СОВЕРШЕННО БЕСПЛАТНО. Это займёт не более 10 минут. С собой необходимо иметь лишь паспорт.
+				p.installment__descr С картой «Халва» сотрудничают более 200 000 партнёров от продуктовых магазинов до компаний продающих крупную бытовую технику и даже мебель, у которых покупки можно делать в бесплатную рассрочку. Сумма каждой такой покупки делится на равные части (по количеству месяцев рассрочки у партнёра). Раз в месяц «части» по всем покупкам суммируются и выставляются единым Платежом по рассрочке (дата выставления платежа равна дате оформления карты). 
+				p.installment__descr.installment__descr--yellow Проценты по вашей рассрочке за покупку в нашем магазине платит за вас НАШ МАГАЗИН
+				.installment__table-wrapper
+					table.installment__table
+						tbody(align="center")
+							tr
+								td
+									.table-cell__wrapper
+										.table-cell--icon
+											img(src="@img/content-icons/shopper.svg", alt="shopper")
+											.table-cell__text
+												span Электросамокат
+												span 40 000 ₽ / 4 мес.
+								td
+									.table-cell__wrapper
+										.table-cell__text
+											span Август
+											span покупка
+								td
+									.table-cell__wrapper
+										.table-cell__text
+											span Сентябрь
+											span 10000 ₽
+								td
+									.table-cell__wrapper
+										.table-cell__text
+											span Октябрь
+											span 10000 ₽
+								td
+									.table-cell__wrapper
+										.table-cell__text
+											span Ноябрь
+											span 10000 ₽
+								td
+									.table-cell__wrapper
+										.table-cell__text
+											span Декабрь
+											span 10000 ₽
+							tr
+								td.table-cell--icon
+									.table-cell__wrapper
+										img(src="@img/content-icons/shopper.svg", alt="shopper")
+										.table-cell__text
+											span Техника для дома
+											span 1 500 ₽ / 3 мес.
+								td
+									.table-cell__wrapper
+										.table-cell__text
+											span Август
+											span покупка
+								td
+									.table-cell__wrapper
+										.table-cell__text
+											span Сентябрь
+											span 500 ₽
+								td
+									.table-cell__wrapper
+										.table-cell__text
+											span Октябрь
+											span 500 ₽
+								td
+									.table-cell__wrapper
+										.table-cell__text
+											span Ноябрь
+											span 500 ₽
+								td
+									.table-cell__wrapper
+										.table-cell__text
+											span Декабрь
+							tr
+								td(colspan=2).table-cell--icon.table-cell--summ
+									.table-cell__wrapper
+										img(src="@img/content-icons/installment.svg", alt="installment")
+										.table-cell__text
+											span Общий платеж
+								td
+									.table-cell__wrapper
+										.table-cell__text
+											span Сентябрь
+											span 10500 ₽
+								td
+									.table-cell__wrapper
+										.table-cell__text
+											span Октябрь
+											span 10500 ₽
+								td
+									.table-cell__wrapper
+										.table-cell__text
+											span Ноябрь
+											span 10500 ₽
+								td
+									.table-cell__wrapper
+										.table-cell__text
+											span Декабрь
+											span 10000 ₽
+				p.installment__descr Подключите подписку "Халва Десятка" и делайте любые покупки у партнеров с единым увеличенным сроком рассрочки 10 месяцев. 
+				p.installment__descr Можно расширить срок до 18-ти месяцев.
+				.installment__actions
+					form.installment__form.installment-form
+						h4.installment-form__title Оформить РАССРОЧКУ
+						label.installment-form__label.label Имя
+							input(type="text" name="name" required).installment-form__input.input
+						label.installment-form__label.label Номер
+							input(type="tel" name="phone" required).installment-form__input.input
+						button.installment-form__button.button.button--blue Отправить
+					.installment__info
+						h4.installment__info-title Мобильное приложение «Совкомбанк – Халва»
+						ul.installment__info-list Мобильный банковский офис, который всегда с вами:
+							li.installment__info-li контроль вашей карты «Халва»
+							li.installment__info-li наиболее востребованные банковские функции
+							li.installment__info-li круглосуточный чат с поддержкой
+		include components/footer
+		include utils/scripts
