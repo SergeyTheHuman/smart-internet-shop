@@ -17,16 +17,15 @@ html(lang="ru")
 			title: `Новинки`,
 			linkText: `Все товары`
 		})
-		+sectionBanners({
-			banner1: {
+		+sectionBanners()
+			+promoItem({
 				text: `Скидки до 30% на сигвеи`,
 				image: `sigwey.png`
-			},
-			banner2: {
+			})
+			+promoItem({
 				text: `Неделя смарт часов`,
 				image: `watch.png`
-			},
-		})
+			})
 		+sectionProducts({
 			title: `Сигвеи`,
 			linkText: `Все товары`
@@ -35,16 +34,7 @@ html(lang="ru")
 			title: `Моноколеса`,
 			linkText: `Все товары`
 		})
-		+sectionBanners({
-			banner1: {
-				text: `Распродажа до — 50%`,
-				image: `percent.png`
-			},
-			banner2: {
-				text: `Smart Balance Premium по специальной цене`,
-				image: `gyroscooter.png`
-			},
-		})
+		+sectionBanners()
 		+sectionProducts({
 			title: `Электровелосипеды`,
 			linkText: `Все товары`

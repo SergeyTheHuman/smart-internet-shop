@@ -89,15 +89,25 @@ mixin sectionProducts(data = {linkText: `Все товары`})
 					})
 
 mixin sectionBanners(data={})
-	section.banners.section
+	.banners.section
 		.container.banners__container
-			a(href="#").banners__item
-				.banners__item-text= data.banner1.text
-				img.banners__item-image(src=`@img/banners/${data.banner1.image}`, alt=`${data.banner1.image}`)
-			a(href="#").banners__item
-				.banners__item-text= data.banner2.text
-				img.banners__item-image(src=`@img/banners/${data.banner2.image}`, alt=`${data.banner2.image}`)
-				
+			if block
+				block
+			else 
+				+promoItem({
+					text: `Распродажа до — 50%`,
+					image: `percent.png`
+				})
+				+promoItem({
+					text: `Smart Balance Premium по специальной цене`,
+					image: `gyroscooter.png`
+				})
+
+mixin promoItem(data={})
+	a(href="./page-promo-one.html").banners__item
+		.banners__item-text= data.text
+		img.banners__item-image(src=`@img/banners/${data.image}`, alt=`${data.image}`)
+
 mixin sectionNews(data={})
 	section.section.news
 		.container.news__container
@@ -127,10 +137,3 @@ mixin newsItem(data={})
 				.news__item-info
 					a(href="./page-news-one.html").news__item-readmore.section-all.section-all--border Подробнее
 					.news__item-date= data.date
-
-
-			//- a(href="#").news__item-title= data.title
-			//- p.news__item-text= data.text
-			//- .news__item-info
-			//- 	a(href="#").news__item-readmore.section-all.section-all--border Подробнее
-			//- 	.news__item-date= data.date

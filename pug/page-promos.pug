@@ -1,0 +1,64 @@
+doctype html
+html(lang="ru")
+	head
+		include utils/mixins
+		include utils/meta
+		include utils/links
+		//- include utils/fonts
+		title Promos Page
+	body
+		include components/header
+		.container
+			.breadcrumbs
+				a(href="./index.html").breadcrumbs__item Главная
+				a(href="#").breadcrumbs__item.breadcrumbs__item--current Акции
+		section.promos
+			.container.promos__container
+				h2.promos__title.section-title Акции
+			+sectionBanners()
+				+promoItem({
+					text: `Скидки до 30% на сигвеи`,
+					image: `sigwey.png`
+				})
+				+promoItem({
+					text: `Неделя смарт часов`,
+					image: `watch.png`
+				})
+			+sectionBanners()
+				+promoItem({
+					text: `Распродажа до — 50%`,
+					image: `percent.png`
+				})
+				+promoItem({
+					text: `Smart Balance Premium по специальной цене`,
+					image: `gyroscooter.png`
+				})
+			+sectionBanners()
+				+promoItem({
+					text: `Скидки до 30% на сигвеи`,
+					image: `sigwey.png`
+				})
+				+promoItem({
+					text: `Неделя смарт часов`,
+					image: `watch.png`
+				})
+			+sectionBanners()
+				+promoItem({
+					text: `Распродажа до — 50%`,
+					image: `percent.png`
+				})
+				+promoItem({
+					text: `Smart Balance Premium по специальной цене`,
+					image: `gyroscooter.png`
+				})
+		
+		.container
+			.pagination
+				a.pagination__item.pagination__item--disabled.pagination__item--prev
+				a.pagination__item.pagination__item--current 1
+				a.pagination__item 2
+				a.pagination__item.pagination__item--more …
+				a.pagination__item 15
+				a.pagination__item.pagination__item--next
+		include components/footer
+		include utils/scripts
