@@ -1,0 +1,34 @@
+doctype html
+html(lang="ru")
+	head
+		include utils/mixins
+		include utils/meta
+		include utils/links
+		//- include utils/fonts
+		title promo One Page
+	body
+		include components/header
+		.container
+			.breadcrumbs
+				a(href="./index.html").breadcrumbs__item Главная
+				a(href="./page-promos.html").breadcrumbs__item Акции
+				a(href="#").breadcrumbs__item.breadcrumbs__item--current Акция 1
+
+		.container
+			.promo-item
+				h2.promo-item__title.promo-item__title--main Скидка в ДЕНЬ РОЖДЕНИЯ (неделя до/после)
+				.promo-item__content
+					.promo-item__text 
+						p Приобретение Электротранспорта, Smart-Техники и мелкой бытовой техники влечет за собой большие денежные траты. Сеть магазинов Смарт-маркт предлагает покупателям широкий ассортимент товаров по Самым доступным ценам в России. Чтобы шоппинг стал наиболее выгодным, руководство компании разработало уникальную программу лояльности для Именинников.
+					h3.promo-item__title Условия Акции:
+					ol.promo-item__list.promo-list
+						li.promo-list__li Скидку можно получить при предъявлении любого удостоверения подтверждающего, что у клиента День Рождения.
+						li.promo-list__li Скидка действует за неделю до дня рождения включительно и неделю после дня рождения включительно
+						li.promo-list__li Скидка составляет 10% от стоимости основного товара, н оне должна превышать номинал в 1000 рублей.
+						li.promo-list__li Скидки не суммируются т.к. мы разрабатываем для Вас наилучшие условия для покупки Техники
+						li.promo-list__li Если срок Менее 7 дней до Дня Рождения или более 7 дней после Дня Рождения скидка оговаривается в индивидуальном порядке и может достигать Максимальных значений
+				.promo-item__image
+					img(src="@img/banners/cake.png", alt="cake")
+		
+		include components/footer
+		include utils/scripts
