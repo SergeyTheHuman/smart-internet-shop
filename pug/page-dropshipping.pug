@@ -1,0 +1,48 @@
+doctype html
+html(lang="ru")
+	head
+		include utils/mixins
+		include utils/meta
+		include utils/links
+		//- include utils/fonts
+		title Dropshipping Page
+	body
+		include components/header
+		.container
+			.breadcrumbs
+				a(href="./index.html").breadcrumbs__item Главная
+				a(href="#").breadcrumbs__item.breadcrumbs__item--current Дропшиппинг
+
+		section.section.dropshipping
+			.container.dropshipping__container
+				h2.dropshipping__title.section-title Дропшиппинг
+				.dropshipping__text
+					p.garanty__descr.dropshipping__descr Хотите начать прибыльный бизнес с минимальными вложениями? Предлагаем стать нашим партнёром на основе дропшипинга! Вы сможете продавать десятки моделей гироскутеров, моноколёс, мини-сигвеев и электросамокатов на своём сайте, не заботясь о закупке товара и организации доставки. 
+					p.garanty__descr.dropshipping__descr Дропшипинг – это модель продаж, в которой вы через свой сайт привлекаете клиентов и продаёте им товар, а обработка заказов производится крупным партнёром. Ваши вложения ограничиваются созданием и продвижением интернет-сайта.
+					p.garanty__descr.dropshipping__descr Продажа гироскутеров на основе дропшиппинга строится следующим образом: 
+					ol.garanty__ol.garanty-ol.garanty-ul--padding-left
+						li.garanty-ul__item Вы создаёте сайт, на котором продаёте гироскутеры, представленные в нашем магазине. Весь наш ассортимент – в вашем распоряжении. Ваша задача сводится к продвижению своего сайта и привлечению покупателей. 
+						li.garanty-ul__item Покупателей вы перенаправляете к нам. Мы организуем доставку и приём оплаты. 
+						li.garanty-ul__item Вы получаете свой процент от совершённой покупки.
+					h2.garanty__title Модель дропшиппинга позволяет начать своё дело даже новичку в бизнесе. 
+					p.garanty__descr.dropshipping__descr Вам не нужно вкладывать деньги в товар, заключать договоры с производителями, договариваться о доставке и растаможке. Вам не потребуются ни склады, ни торговые помещения, ни персонал. Создать интернет-магазин гироскутеров на основе дропшиппинга – несложно и недорого! 
+
+				form.dropshipping__form.contacts-form
+					h4.contacts-form__title Заполните форму и мы свяжемся с вами
+					.contacts-form__col(data-contacts-col='first')
+						label.contacts-form__label.label Имя
+							input(type="text" name="name" placeholder='Введите имя' required).contacts-form__input.input
+						label.contacts-form__label.label Телефон
+							input(type="tel" name="phone" placeholder='Введите номер телефон' required).contacts-form__input.input
+						button(type="submit").contacts-form__button.button.button--blue Отправить
+					.contacts-form__col(data-contacts-col='last')
+						label.contacts-form__label.label Сообщение
+							textarea(name="message", cols="30", rows="10" placeholder='Введите сообщение').contacts-form__input.input
+						.contacts-form__checkbox.checkbox
+							label.checkbox__label 
+								input.checkbox__input--hidden(type="checkbox" name="agreement" value="Согласен")
+								.checkbox__input
+									+svg('.checkbox__svg','checked')
+								| Отправляя данную форму вы соглашаетесь с политикой конфиденциальности
+		include components/footer
+		include utils/scripts

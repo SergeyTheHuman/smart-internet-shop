@@ -162,6 +162,10 @@
 			opacity: 0
 			color: $color-red
 		&.favorite-checked
+			@media screen and ( any-hover: hover )
+				&:hover
+					.heart-checked
+						color: #F15152
 			.heart
 				transform: scale(0) translate(-50%,-50%)
 				opacity: 0
