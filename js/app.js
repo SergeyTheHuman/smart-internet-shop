@@ -20,6 +20,7 @@ const $inputPriceTo = document.querySelector('.price-filter__input--to')
 const $headerSearchBtn = document.querySelector('.button__icon--header-search')
 const $headerViewedBtn = document.querySelector('.button__icon--header-viewed')
 const $headerHeartBtn = document.querySelector('.button__icon--header-heart')
+const $headerHeartSpan = document.querySelector('.header__heart span')
 const $headerCompareBtn = document.querySelector('.button__icon--header-compare')
 const $headerCartBtn = document.querySelector('.button__icon--header-cart')
 
@@ -220,6 +221,28 @@ document.addEventListener('DOMContentLoaded', () => {
 			$contactsFormLastColumn.appendChild($buttonContactsPage)
 		} else {
 			$contactsFormFirstColumn.appendChild($buttonContactsPage)
+		}
+	}
+
+	// Header favorite button
+	if ($headerHeartBtn) {
+		if ($headerHeartSpan.textContent > 0) {
+			$headerHeartSpan.style.display = 'flex'
+			$headerHeartBtn.classList.add('favorite-checked')
+		} else {
+			$headerHeartSpan.style.display = 'none'
+			$headerHeartBtn.classList.remove('favorite-checked')
+		}
+	}
+	// Header favorite button
+	const $headerCompareSpan = $headerCompareBtn.querySelector('span')
+	if ($headerCompareBtn) {
+		if ($headerCompareSpan.textContent > 0) {
+			$headerCompareSpan.style.display = 'flex'
+			$headerCompareBtn.classList.add('compare-checked')
+		} else {
+			$headerCompareSpan.style.display = 'none'
+			$headerCompareBtn.classList.remove('compare-checked')
 		}
 	}
 })

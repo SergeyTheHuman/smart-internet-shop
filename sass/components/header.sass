@@ -85,7 +85,6 @@
 			width: 100%
 			background-color: $color-dark-blue
 			z-index: 5
-
 	// .header__menu-container
 	&__menu-container
 		position: relative
@@ -327,6 +326,22 @@
 			text-align: left
 			&:not(:last-child)
 				border-bottom: 1px solid $color-gray
+		&--double
+			display: flex
+			align-items: center
+			gap: 10px
+			& .nav__item-link:first-child
+				position: relative
+				&::after
+					content: '/'
+					position: absolute
+					right: -10px
+					top: 50%
+					transform: translateY(-50%)
+					color: $color-white
+					@media screen and ( max-width: 991.98px )
+						color: $color-black
+
 	// .nav__item-link
 	&__item-link
 		transition: color 0.3s ease

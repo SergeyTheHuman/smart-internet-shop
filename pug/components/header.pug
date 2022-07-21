@@ -17,7 +17,8 @@ header.header
 						+svg('viewed', 'watch')
 					a(href="./page-favorite.html").header__heart.button.button__icon.button__icon--header-heart
 						+svg('heart', 'favorite')
-						span 11
+						+svg('heart-checked', 'favorite-checked')
+						span 7
 					a(href="./page-compare.html").header__compare.button.button__icon.button__icon--header-compare
 						+svg('compare', 'compare')
 						span 5
@@ -101,7 +102,8 @@ header.header
 							a.nav__item-link(href="./page-installment.html") Рассрочка 0|0|18 
 						li.nav__item
 							a.nav__item-link(href="./page-garanty.html") Сервис и гарантия
-						li.nav__item
-							a.nav__item-link(href="#") Опт/дропшиппинг 
+						li.nav__item.nav__item--double
+							a.nav__item-link(href="./page-wholesale.html") Опт
+							a.nav__item-link(href="#") Дропшиппинг 
 						li.nav__item
 							a.nav__item-link(href="./page-contacts.html") Контакты

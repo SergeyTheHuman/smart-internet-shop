@@ -1,0 +1,50 @@
+doctype html
+html(lang="ru")
+	head
+		include utils/mixins
+		include utils/meta
+		include utils/links
+		//- include utils/fonts
+		title Wholesale Page
+	body
+		include components/header
+		.container
+			.breadcrumbs
+				a(href="./index.html").breadcrumbs__item Главная
+				a(href="#").breadcrumbs__item.breadcrumbs__item--current Оптом
+
+		section.section.wholesale
+			.container.wholesale__container
+				h2.wholesale__title.section-title Оптом
+				.wholesale__text
+					p.garanty__descr.wholesale__descr Наш интернет-магазин специализируется на продаже различных моделей электротранспорта:
+					ul.garanty__ul.garanty-ul.garanty-ul--padding-left
+						li.garanty-ul__item гироскутеров 
+						li.garanty-ul__item мини-сигвеев 
+						li.garanty-ul__item моноколёс 
+						li.garanty-ul__item электросамокатов
+					p.garanty__descr.wholesale__descr Мы продаём гироскутеры как в розницу, так и оптом, по специальным ценам. Приглашаем к сотрудничеству оптовых покупателей! 
+					p.garanty__descr.wholesale__descr Вы хотите купить гироскутер в Москве оптом? Познакомьтесь с нашими оптовыми ценами, и вы убедитесь: наше предложение действительно выгодное. С нами сотрудничают десятки партнёров в Москве и регионах, закупая гироскутеры оптом: цена намного ниже розничной, что позволяет получать хороший доход от бизнеса. 
+					p.garanty__descr.wholesale__descr Продавая гироскутеры оптом в Москве, мы готовы организовать доставку любых моделей и в регионы России. Сотрудничайте с нами – это выгодно! 
+					p.garanty__descr.wholesale__descr Самые выгодные цены - от 5000 руб.!
+
+				form.wholesale__form.contacts-form
+					h4.contacts-form__title Заполните форму и мы свяжемся с вами
+					.contacts-form__col(data-contacts-col='first')
+						label.contacts-form__label.label Имя
+							input(type="text" name="name" placeholder='Введите имя' required).contacts-form__input.input
+						label.contacts-form__label.label Телефон
+							input(type="tel" name="phone" placeholder='Введите номер телефон' required).contacts-form__input.input
+						button(type="submit").contacts-form__button.button.button--blue Отправить
+					.contacts-form__col(data-contacts-col='last')
+						label.contacts-form__label.label Сообщение
+							textarea(name="message", cols="30", rows="10" placeholder='Введите сообщение').contacts-form__input.input
+						.contacts-form__checkbox.checkbox
+							label.checkbox__label 
+								input.checkbox__input--hidden(type="checkbox" name="agreement" value="Согласен")
+								.checkbox__input
+									+svg('.checkbox__svg','checked')
+								| Отправляя данную форму вы соглашаетесь с политикой конфиденциальности
+		include components/footer
+		script(src="https://api-maps.yandex.ru/2.1/?apikey=e2a57b7e-656f-493c-941e-fb1a44daefc4&lang=ru_RU")
+		include utils/scripts

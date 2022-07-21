@@ -147,12 +147,27 @@
 				transform: scale(1.15)
 				svg
 					color: $color-blue
+	&-compare.compare-checked
+		.compare
+			color: $color-dark-blue
 	&-heart
 		.heart
 			transform: scale(1) translate(-50%,-50%)
 			transform-origin: left top
 			opacity: 1
-
+	&-heart
+		.heart-checked
+			transform: scale(0) translate(-50%,-50%)
+			transform-origin: left top
+			opacity: 0
+			color: $color-red
+		&.favorite-checked
+			.heart
+				transform: scale(0) translate(-50%,-50%)
+				opacity: 0
+			.heart-checked
+				transform: scale(1) translate(-50%,-50%)
+				opacity: 1
 // =============== LOGO ================
 .logo
 	max-width: 100%
