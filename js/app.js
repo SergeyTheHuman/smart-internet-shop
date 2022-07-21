@@ -150,8 +150,13 @@ if (document.querySelector('.catalog-section__filters-wrapper')) {
 if (document.querySelector('.catalog-products__select')) {
 	customSelect('.catalog-products__select')
 }
+
 if (document.querySelector('.compare-choice__select')) {
 	customSelect('.compare-choice__select')
+}
+
+if (document.querySelectorAll('.viewed__select')) {
+	document.querySelectorAll('.viewed__select').forEach((el) => customSelect(el))
 }
 
 if (document.querySelectorAll('.favorite__select')) {
@@ -239,7 +244,6 @@ document.addEventListener('click', (e) => {
 		console.log('Нажата кнопка поиска')
 	}
 	if (e.target.classList.contains('button__icon--header-viewed')) {
-		e.preventDefault()
 		console.log('Нажата кнопка "просмотренные"')
 	}
 	if (e.target.classList.contains('button__icon--header-heart')) {

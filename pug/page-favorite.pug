@@ -15,115 +15,68 @@ html(lang="ru")
 
 		section.favorite.section
 			.container.favorite__container
-				h2.favorite__title.section-title Просмотренные товары
-				.favorite__controls
-					select.favorite__select
-						option.favorite__option(value="expensive") Все товары
-						option.favorite__option(value="Все товары") Все товары
-						option.favorite__option(value="Все товары") Все товары
-					select.favorite__select
-						option.favorite__option(value="expensive") Сначала дорогие
-						option.favorite__option(value="cheap") Сначала дешевые
-						option.favorite__option(value="rating") По рейтингу
-						option.favorite__option(value="popular") По популярности
-				.products__products.favorite__grid
-					+productCard({
-						image: 'product-1.jpg',
-						category: 'Сигвеи',
-						name: 'Гироскутер Smart Balance Well 6.5 Хип-Хоп',
-						discountPercent: '20',
-						price: '5990',
-						new: true,
-						aqua: true,
-						hit: true,
-					})
-					+productCard({
-						image: 'product-1.jpg',
-						category: 'Сигвеи',
-						name: 'Гироскутер Smart Balance Well 8.5 Рок',
-						discountPercent: '45',
-						price: '10990',
-						new: true,
-						aqua: true,
-					})
-					+productCard({
-						image: 'product-1.jpg',
-						category: 'Сигвеи',
-						name: 'Гироскутер Smart Balance Well 8.5 Рок',
-						discountPercent: '45',
-						price: '10990',
-						new: true,
-						aqua: true,
-					})
-					+productCard({
-						image: 'product-1.jpg',
-						category: 'Сигвеи',
-						name: 'Гироскутер Smart Balance Well 6.5 Хип-Хоп',
-						discountPercent: '',
-						price: '5990',
-						hit: true,
-					})
-					+productCard({
-						image: 'product-1.jpg',
-						category: 'Сигвеи',
-						name: 'Гироскутер Smart Balance Well 6.5 Хип-Хоп',
-						discountPercent: '20',
-						price: '5990',
-						new: true,
-						aqua: true,
-						hit: true,
-					})
-					+productCard({
-						image: 'product-1.jpg',
-						category: 'Сигвеи',
-						name: 'Гироскутер Smart Balance Well 8.5 Рок',
-						discountPercent: '45',
-						price: '10990',
-						new: true,
-						aqua: true,
-					})
-					+productCard({
-						image: 'product-1.jpg',
-						category: 'Сигвеи',
-						name: 'Гироскутер Smart Balance Well 8.5 Рок',
-						discountPercent: '45',
-						price: '10990',
-						new: true,
-						aqua: true,
-					})
-					+productCard({
-						image: 'product-1.jpg',
-						category: 'Сигвеи',
-						name: 'Гироскутер Smart Balance Well 6.5 Хип-Хоп',
-						discountPercent: '',
-						price: '5990',
-						hit: true,
-					})
-					+productCard({
-						image: 'product-1.jpg',
-						category: 'Сигвеи',
-						name: 'Гироскутер Smart Balance Well 6.5 Хип-Хоп',
-						discountPercent: '15',
-						price: '8100',
-						hit: true,
-						aqua: true,
-					})
-					+productCard({
-						image: 'product-1.jpg',
-						category: 'Сигвеи',
-						name: 'Гироскутер Smart Balance Well 6.5 Хип-Хоп',
-						discountPercent: '',
-						price: '5990',
-						hit: true,
-					})
-					+productCard({
-						image: 'product-1.jpg',
-						category: 'Сигвеи',
-						name: 'Гироскутер Smart Balance Well 6.5 Хип-Хоп',
-						discountPercent: '15',
-						price: '8100',
-						hit: true,
-						aqua: true,
-					})
+				h2.favorite__title.section-title Избранное
+				.favorite__login
+					h4.favorite__login-title Войдите или зарегистрируйтесь
+					button.favorite__login-button.button.button--blue Войти
+				.favorite__content
+					.favorite__controls
+						select.favorite__select
+							option.favorite__option(value="expensive") Все товары
+							option.favorite__option(value="Все товары") Все товары
+							option.favorite__option(value="Все товары") Все товары
+						select.favorite__select
+							option.favorite__option(value="expensive") Сначала дорогие
+							option.favorite__option(value="cheap") Сначала дешевые
+							option.favorite__option(value="rating") По рейтингу
+							option.favorite__option(value="popular") По популярности
+					.products__products.favorite__grid
+						+productCard({
+							image: 'product-1.jpg',
+							category: 'Сигвеи',
+							name: 'Гироскутер Smart Balance Well 6.5 Хип-Хоп',
+							discountPercent: '20',
+							price: '5990',
+							new: true,
+							aqua: true,
+							hit: true,
+						})
+						+productCard({
+							image: 'product-1.jpg',
+							category: 'Сигвеи',
+							name: 'Гироскутер Smart Balance Well 8.5 Рок',
+							discountPercent: '45',
+							price: '10990',
+							new: true,
+							aqua: true,
+						})
+						+productCard({
+							image: 'product-1.jpg',
+							category: 'Сигвеи',
+							name: 'Гироскутер Smart Balance Well 8.5 Рок',
+							discountPercent: '45',
+							price: '10990',
+							new: true,
+							aqua: true,
+						})
+						+productCard({
+							image: 'product-1.jpg',
+							category: 'Сигвеи',
+							name: 'Гироскутер Smart Balance Well 6.5 Хип-Хоп',
+							discountPercent: '',
+							price: '5990',
+							hit: true,
+						})
+						+productCard({
+							image: 'product-1.jpg',
+							category: 'Сигвеи',
+							name: 'Гироскутер Smart Balance Well 6.5 Хип-Хоп',
+							discountPercent: '20',
+							price: '5990',
+							new: true,
+							aqua: true,
+							hit: true,
+						})
+						
 		include components/footer
 		include utils/scripts
