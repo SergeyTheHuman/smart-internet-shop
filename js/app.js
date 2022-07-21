@@ -1,10 +1,11 @@
 import { isWebp } from './components/isWebp.js'
-import Swiper from 'swiper/bundle'
 import { Accordion as AccISV } from './components/accordion.js'
 import Accordion from 'accordion-js'
-import './components/custom-select.js'
 import noUiSlider from 'nouislider'
 import { Tabs } from './components/tabs.js'
+import './components/swipers.js'
+import './components/selects.js'
+import './components/yandexMap.js'
 
 isWebp()
 
@@ -81,87 +82,11 @@ if ($priceRange && $inputPriceFrom && $inputPriceTo) {
 	})
 }
 
-if (document.querySelector('.hero__swiper')) {
-	const heroSwiper = new Swiper('.hero__swiper', {
-		slidesPerView: 1,
-		spaceBetween: 20,
-		speed: 800,
-		pagination: {
-			el: '.hero__swiper-pagination',
-			type: 'bullets',
-			clickable: true,
-		},
-		autoplay: {
-			delay: 2000,
-		},
-	})
-}
-
-if (document.querySelector('.compare-swiper')) {
-	const compareSwiper = new Swiper('.compare-swiper', {
-		slidesPerView: 1,
-		spaceBetween: 20,
-		grabCursor: true,
-		navigation: {
-			prevEl: '.compare-button-prev',
-			nextEl: '.compare-button-next',
-		},
-		pagination: {
-			el: '.compare-pagination',
-			type: 'bullets',
-		},
-		breakpoints: {
-			375: {
-				slidesPerView: 1.4,
-			},
-			550: {
-				slidesPerView: 2,
-			},
-			992: {
-				slidesPerView: 'auto',
-				spaceBetween: 10,
-			},
-			1280: {
-				slidesPerView: 3,
-				spaceBetween: 10,
-			},
-		},
-	})
-}
-
-if (document.querySelector('.product-one__thumbs')) {
-	const thumbsSwiper = new Swiper('.product-one__thumbs', {
-		slidesPerView: 3,
-		spaceBetween: 8,
-		grabCursor: true,
-		navigation: {
-			prevEl: '.thumbs__prev',
-			nextEl: '.thumbs__next',
-		},
-	})
-}
-
 if (document.querySelector('.catalog-section__filters-wrapper')) {
 	const accordionFilters = new Accordion('.catalog-section__filters-wrapper', {
 		duration: 300,
 		showMultiple: true,
 	})
-}
-
-if (document.querySelector('.catalog-products__select')) {
-	customSelect('.catalog-products__select')
-}
-
-if (document.querySelector('.compare-choice__select')) {
-	customSelect('.compare-choice__select')
-}
-
-if (document.querySelectorAll('.viewed__select')) {
-	document.querySelectorAll('.viewed__select').forEach((el) => customSelect(el))
-}
-
-if (document.querySelectorAll('.favorite__select')) {
-	document.querySelectorAll('.favorite__select').forEach((el) => customSelect(el))
 }
 
 window.addEventListener('resize', (e) => {
@@ -405,104 +330,4 @@ if ($productOne) {
 			$newPrice.textContent = `${mainprice} ₽`
 		}
 	})
-}
-
-if (document.getElementById('contacts__map')) {
-	function initYandexMap() {
-		let map = new ymaps.Map('contacts__map', {
-			center: [59.92459416911864, 30.378338001382485],
-			zoom: 12,
-		})
-
-		// Создание геообъекта с типом точка (метка) без текста.
-		const geoPoint1 = new ymaps.Placemark(
-			[59.944126447716435, 30.377038384421212], // куда вставить метку
-			{
-				balloonContent: `
-					<div class="myballoon"> 
-						<h5 class="myballoon__name">Магазин №3</h5>
-						<div class="myballoon__address">Невский 140</div>
-					</div>
-				`,
-			},
-			{
-				iconLayout: 'default#image', // значение 'default#image' обязательно
-				iconImageHref: '../images/content-icons/map-mark.svg', // путь к изображению
-				iconImageSize: [50, 50], // размер изображения
-				iconImageOffset: [0, 0], // сдвиг значка относительно точки привязки (задается, если "ножка" значка не находится в левом верхнем углу изображения)
-			}
-		)
-
-		// Создание геообъекта с типом точка (метка) c баллуном текста.
-		const geoPoint2 = new ymaps.Placemark(
-			[59.92532662191352, 30.402799747598326],
-			{
-				balloonContent: `
-					<div class="myballoon"> 
-						<h5 class="myballoon__name">Магазин №1</h5>
-						<div class="myballoon__address">Невский 140</div>
-					</div>
-				`,
-			},
-			{
-				iconLayout: 'default#image',
-				iconImageHref: '../images/content-icons/map-mark.svg',
-				iconImageSize: [40, 56],
-				iconImageOffset: [0, 0],
-			}
-		)
-
-		const geoPoint3 = new ymaps.Placemark(
-			[59.920994875490514, 30.33618297670637],
-			{
-				balloonContent: `
-					<div class="myballoon"> 
-						<h5 class="myballoon__name">Магазин №2</h5>
-						<div class="myballoon__address">Невский 140</div>
-					</div>
-				`,
-			},
-			{
-				iconLayout: 'default#image',
-				iconImageHref: '../images/content-icons/map-mark.svg',
-				iconImageSize: [40, 56],
-				iconImageOffset: [0, 0],
-			}
-		)
-
-		const geoPoint4 = new ymaps.Placemark(
-			[59.936729938080944, 30.37284483731999],
-			{
-				balloonContent: `
-					<div class="myballoon"> 
-						<h5 class="myballoon__name">Магазин №4</h5>
-						<div class="myballoon__address">Невский 140</div>
-					</div>
-				`,
-			},
-			{
-				iconLayout: 'default#image',
-				iconImageHref: '../images/content-icons/map-mark.svg',
-				iconImageSize: [40, 56],
-				iconImageOffset: [0, 0],
-			}
-		)
-
-		// Размещение геообъекта на карте.
-		map.geoObjects.add(geoPoint1)
-		map.geoObjects.add(geoPoint2)
-		map.geoObjects.add(geoPoint3)
-		map.geoObjects.add(geoPoint4)
-
-		map.controls.remove('geolocationControl') // удаляем геолокацию
-		map.controls.remove('searchControl') // удаляем поиск
-		map.controls.remove('trafficControl') // удаляем контроль трафика
-		map.controls.remove('typeSelector') // удаляем тип
-		map.controls.remove('fullscreenControl') // удаляем кнопку перехода в полноэкранный режим
-		map.controls.remove('rulerControl') // удаляем контрол правил
-		// map.controls.remove('zoomControl') // удаляем контрол зуммирования
-		// map.behaviors.disable(['scrollZoom']) // отключаем скролл карты (опционально)
-	}
-
-	ymaps.ready(initYandexMap)
 }
