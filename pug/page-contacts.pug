@@ -1,0 +1,61 @@
+doctype html
+html(lang="ru")
+	head
+		include utils/mixins
+		include utils/meta
+		include utils/links
+		//- include utils/fonts
+		title Contacts Page
+	body
+		include components/header
+		.container
+			.breadcrumbs
+				a(href="./index.html").breadcrumbs__item Главная
+				a(href="#").breadcrumbs__item.breadcrumbs__item--current Контакты
+
+		section.section.contacts
+			.container.contacts__container
+				h2.contacts__title.section-title Контакты
+				.contacts__info
+					.contacts__shops
+						.contacts__shop
+							address.contacts__shop-address СПб, Ул. Дыбенко д.23 к.1
+							a(tel='+78125092343').contacts__shop-phone +7 (812) 509-23-43
+						.contacts__shop
+							address.contacts__shop-address СПб, Пр. Энгельса д.113 к.2
+							a(tel='+78125095311').contacts__shop-phone +7 (812) 509-53-11
+						.contacts__shop
+							address.contacts__shop-address СПб, Ул. Ленсовета д.81
+							a(tel='+78126027402').contacts__shop-phone +7 (812) 602-74-02
+						.contacts__shop
+							address.contacts__shop-address СПб, ул. Тарасова д.10
+							a(tel='+79675550106').contacts__shop-phone +7 (967) 555-01-06
+					a(href="#").contacts__mail 
+						+svg('mail-icon', 'mail')
+						| smart-tekhnika@gmail.com
+					.contacts__work
+						+svg('clock-icon', 'clock')
+						div
+							span.contacts__span.contacts__span--gray Режим работы
+							span.contacts__span.contacts__span--bold Пн-вс с 10:00 до 21:00
+				.contacts__map#contacts__map
+				form.contacts__form.contacts-form
+					h4.contacts-form__title Связаться с нами
+					.contacts-form__col(data-contacts-col='first')
+						label.contacts-form__label.label Имя
+							input(type="text" name="name" placeholder='Введите имя' required).contacts-form__input.input
+						label.contacts-form__label.label Телефон
+							input(type="tel" name="phone" placeholder='Введите номер телефон' required).contacts-form__input.input
+						button(type="submit").contacts-form__button.button.button--blue Отправить
+					.contacts-form__col(data-contacts-col='last')
+						label.contacts-form__label.label Сообщение
+							textarea(name="message", cols="30", rows="10" placeholder='Введите сообщение').contacts-form__input.input
+						.contacts-form__checkbox.checkbox
+							label.checkbox__label 
+								input.checkbox__input--hidden(type="checkbox" name="agreement" value="Согласен")
+								.checkbox__input
+									+svg('.checkbox__svg','checked')
+								| Отправляя данную форму вы соглашаетесь с политикой конфиденциальности
+		include components/footer
+		script(src="https://api-maps.yandex.ru/2.1/?apikey=e2a57b7e-656f-493c-941e-fb1a44daefc4&lang=ru_RU")
+		include utils/scripts

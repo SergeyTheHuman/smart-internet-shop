@@ -1,0 +1,149 @@
+.contacts
+	&__container
+		margin-top: 30px
+		display: grid
+		grid-template-columns: repeat(3,1fr)
+		row-gap: 30px
+		column-gap: 20px
+		@media screen and ( max-width: 768px )
+			grid-template-columns: repeat(2,1fr)
+			row-gap: 20px
+		@media screen and ( max-width: 678px )
+			grid-template-columns: 1fr
+	&__title
+		grid-column: 1 / -1
+	&__info
+		@media screen and ( max-width: 375px )
+			margin: 0 -10px
+	&__shops
+		border-radius: 8px 8px 0 0
+		background-color: $color-light-blue
+		padding: 30px
+		position: relative
+		@media screen and ( max-width: 375px )
+			border-radius: 0
+		&::before
+			content: ''
+			position: absolute
+			bottom: 0
+			left: 20px
+			right: 20px
+			height: 1px
+			background-color: $color-gray
+	&__shop
+		padding: 15px 0px
+		&:last-child
+			padding-bottom: 0
+		&-address
+			font-weight: 600
+			line-height: 100%
+			margin-bottom: 10px
+		&-phone
+			font-weight: 600
+			font-size: 1.5rem
+			line-height: 100%
+			color: $color-dark-blue
+			cursor: pointer
+			display: block
+			@media screen and ( max-width: 480px )
+				font-size: 20px
+	&__mail
+		padding: 30px 15px 15px 30px
+		display: flex
+		align-items: center
+		gap: 10px
+		font-weight: 600
+		font-size: 1.5rem
+		line-height: 100%
+		color: $color-dark-blue
+		background-color: $color-light-blue
+		@media screen and ( max-width: 480px )
+			font-size: 1.125rem
+		svg
+			width: 24px
+			height: 24px
+	&__work
+		border-radius: 0 0 8px 8px
+		padding: 15px 15px 30px 30px
+		display: flex
+		gap: 10px
+		background-color: $color-light-blue
+		@media screen and ( max-width: 375px )
+			border-radius: 0
+		svg
+			width: 24px
+			height: 24px
+			color: $color-dark-blue
+	&__span
+		display: block
+		line-height: 100%
+		&:not(:last-child)
+			margin-bottom: 10px
+		&--gray
+			color: $color-dark-gray
+		&--bold
+			font-weight: 600
+			font-size: 1.25rem
+	&__map
+		grid-column: span 2
+		background-color: tomato
+		border-radius: 8px
+		overflow: hidden
+		@media screen and ( max-width: 768px )
+			grid-column: span 1
+		@media screen and ( max-width: 678px )
+			height: 300px
+	&__form
+		grid-column: 1 / -1
+
+.contacts-form
+	max-width: 925px
+	display: grid
+	grid-template-columns: repeat(2,1fr)
+	column-gap: 20px
+	@media screen and ( max-width: 678px )
+		grid-template-columns: 1fr
+	&__title
+		grid-column: 1 / -1
+		font-weight: 700
+		font-size: 2.25rem
+		line-height: 130%
+		margin-bottom: 30px
+	&__col
+		display: flex
+		flex-direction: column
+		&:first-child
+			max-width: 310px
+	&__button
+		margin-top: auto
+		@media screen and ( max-width: 678px )
+			margin-top: 20px
+	&__label
+		display: flex
+		flex-direction: column
+		gap: 8px
+		margin-bottom: 20px
+	&__input
+		padding: 14px 20px
+		font-weight: 400
+		font-size: 16px
+		line-height: 100%
+		font-family: inherit
+	textarea
+		resize: none
+		flex: 1 1 140px
+	&__checkbox
+		& .checkbox__label
+			align-items: flex-start
+		& .checkbox__input
+			flex-shrink: 0
+
+.myballoon
+	margin-right: 20px
+	&__name
+		font-size: 1.5rem
+	&__address
+		font-size: 1.25rem
+
+[class*="ground-pane"]
+	filter: grayscale(0.9) brightness(0.5) hue-rotate(180deg)
