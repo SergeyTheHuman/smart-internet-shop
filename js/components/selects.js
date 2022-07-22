@@ -15,3 +15,7 @@ if (document.querySelectorAll('.viewed__select')) {
 if (document.querySelectorAll('.favorite__select')) {
 	document.querySelectorAll('.favorite__select').forEach((el) => customSelect(el))
 }
+
+if (document.querySelectorAll('.account-personal__select')) {
+	document.querySelectorAll('.account-personal__select').forEach((el) => customSelect(el))
+}

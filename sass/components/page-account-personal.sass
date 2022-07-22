@@ -1,0 +1,47 @@
+.section__account-personal
+	@media screen and ( max-width: 992px )
+		& .account-main__wrapper
+			grid-template-columns: 1fr
+		& .account-sidebar
+			display: none
+
+.account-personal
+	display: grid
+	grid-template-columns: repeat(2, 1fr)
+	gap: 20px
+	@media screen and ( max-width: 650px )
+		grid-template-columns: 1fr
+	&__col
+		display: flex
+		flex-direction: column
+		gap: 20px
+	&__label
+		display: flex
+		flex-direction: column
+		gap: 10px
+		&--file
+			display: block
+	&__input
+		padding: 14.5px 20px
+		&[type='file']
+			padding: 0
+			width: 1px
+			height: 1px
+			opacity: 0
+			pointer-events: none
+		&--fake
+			cursor: pointer
+			padding: 0 20px
+			height: 46px
+			margin-top: 10px
+			display: flex
+			align-items: center
+			gap: 15px
+			svg
+				width: 24px
+				height: 24px
+	&__save
+		margin-top: auto
+		background-color: $color-dark-blue
+		font-weight: 400
+		max-height: 46px

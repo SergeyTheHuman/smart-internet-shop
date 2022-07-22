@@ -1,0 +1,66 @@
+doctype html
+html(lang="ru")
+	head
+		include utils/mixins
+		include utils/meta
+		include utils/links
+		//- include utils/fonts
+		title Account personal Page
+	body
+		include components/header-logined
+		.container
+			.breadcrumbs
+				a(href="./index.html").breadcrumbs__item Главная
+				a(href="./page-account-main.html").breadcrumbs__item Личный кабинет
+				a(href="#").breadcrumbs__item.breadcrumbs__item--current Личные данные
+
+		section.account-main.section__account-personal.section
+			.container.account-main__container
+				h2.account-main__title.section-title Общие сведения
+				.account-main__wrapper
+					sidebar.account-sidebar
+						ul.account-sidebar__list
+							li.account-sidebar__li
+								a(href="./page-account-main.html").account-sidebar__link Общие сведения
+							li.account-sidebar__li.account-sidebar__li--current
+								a(href="./page-account-personal.html").account-sidebar__link Личные данные
+							li.account-sidebar__li 
+								a(href="./page-account-history.html").account-sidebar__link История покупок
+							li.account-sidebar__li
+								a(href="./page-account-favorite.html").account-sidebar__link Избранное
+							li.account-sidebar__li 
+								a(href="./page-account-pass.html").account-sidebar__link Сменить пароль
+							li.account-sidebar__li 
+								a(href="./index.html").account-sidebar__link.account-sidebar__link--exit Выйти
+					.account-personal
+						.account-personal__col
+							label.account-personal__label.label Имя
+								input(type="text" name="name" placeholder='Введите имя' required).account-personal__input.input
+							label.account-personal__label.label Эл. почта
+								input(type="email" name="email" placeholder='Введите e-mail' required).account-personal__input.input
+							label.account-personal__label.label Телефон
+								input(type="tel" name="phone" placeholder='Введите номер телефона' required).account-personal__input.input
+							label.account-personal__label.label Город
+								input(type="text" name="city" placeholder='Введите город' required).account-personal__input.input
+							label.account-personal__label.label Индекс
+								input(type="text" name="index" placeholder='Введите индекс' required).account-personal__input.input
+						.account-personal__col
+							label.account-personal__label.label Адрес
+								input(type="text" name="address" placeholder='Введите адрес' required).account-personal__input.input
+							label.account-personal__label.label Предпочитаемый способ оплаты
+								select.account-personal__select
+									option.favorite__option(value="card") Картой
+									option.favorite__option(value="cash") Наличными
+									option.favorite__option(value="paypal") Paypal
+							label.account-personal__label.label Предпочитаемый способ доставки
+								select.account-personal__select
+									option.favorite__option(value="courier") Курьером
+									option.favorite__option(value="pickup") Самовывоз
+							label.account-personal__label.account-personal__label--file.label Аватар
+								input(type="file" name="avatar" placeholder='asd' required).account-personal__input
+								.account-personal__input--fake.input Загрузить изображение
+									+svg('file', 'file')
+							button.account-personal__save.button.button--blue Сохранить
+								
+		include components/footer
+		include utils/scripts
