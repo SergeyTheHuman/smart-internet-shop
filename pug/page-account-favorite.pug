@@ -1,0 +1,111 @@
+doctype html
+html(lang="ru")
+	head
+		include utils/mixins
+		include utils/meta
+		include utils/links
+		//- include utils/fonts
+		title Account favorite Page
+	body
+		include components/header-logined
+		.container
+			.breadcrumbs
+				a(href="./index.html").breadcrumbs__item Главная
+				a(href="./page-account-main.html").breadcrumbs__item Личный кабинет
+				a(href="#").breadcrumbs__item.breadcrumbs__item--current Общие сведения
+
+		section.account-favorite.favorite.section
+			.container.favorite__container
+				h2.favorite__title.section-title Избранное
+				sidebar.account-sidebar
+					ul.account-sidebar__list
+						li.account-sidebar__li
+							a(href="./page-account-main.html").account-sidebar__link Общие сведения
+						li.account-sidebar__li 
+							a(href="./page-account-personal.html").account-sidebar__link Личные данные
+						li.account-sidebar__li 
+							a(href="./page-account-history.html").account-sidebar__link История покупок
+						li.account-sidebar__li.account-sidebar__li--current
+							a(href="./page-account-favorite.html").account-sidebar__link Избранное
+						li.account-sidebar__li 
+							a(href="./page-account-pass.html").account-sidebar__link Сменить пароль
+						li.account-sidebar__li 
+							a(href="./index.html").account-sidebar__link.account-sidebar__link--exit Выйти
+				.favorite__content
+					.favorite__controls
+						select.favorite__select
+							option.favorite__option(value="expensive") Все товары
+							option.favorite__option(value="Все товары") Все товары
+							option.favorite__option(value="Все товары") Все товары
+						select.favorite__select
+							option.favorite__option(value="expensive") Сначала дорогие
+							option.favorite__option(value="cheap") Сначала дешевые
+							option.favorite__option(value="rating") По рейтингу
+							option.favorite__option(value="popular") По популярности
+					.products__products.favorite__grid
+						+productCard({
+							image: 'product-1.jpg',
+							category: 'Сигвеи',
+							name: 'Гироскутер Smart Balance Well 6.5 Хип-Хоп',
+							discountPercent: '20',
+							price: '5990',
+							new: true,
+							aqua: true,
+							hit: true,
+						})
+						+productCard({
+							image: 'product-1.jpg',
+							category: 'Сигвеи',
+							name: 'Гироскутер Smart Balance Well 8.5 Рок',
+							discountPercent: '45',
+							price: '10990',
+							new: true,
+							aqua: true,
+						})
+						+productCard({
+							image: 'product-1.jpg',
+							category: 'Сигвеи',
+							name: 'Гироскутер Smart Balance Well 8.5 Рок',
+							discountPercent: '45',
+							price: '10990',
+							new: true,
+							aqua: true,
+						})
+						+productCard({
+							image: 'product-1.jpg',
+							category: 'Сигвеи',
+							name: 'Гироскутер Smart Balance Well 8.5 Рок',
+							discountPercent: '45',
+							price: '10990',
+							new: true,
+							aqua: true,
+						})
+						+productCard({
+							image: 'product-1.jpg',
+							category: 'Сигвеи',
+							name: 'Гироскутер Smart Balance Well 6.5 Хип-Хоп',
+							discountPercent: '',
+							price: '5990',
+							hit: true,
+						})
+						+productCard({
+							image: 'product-1.jpg',
+							category: 'Сигвеи',
+							name: 'Гироскутер Smart Balance Well 6.5 Хип-Хоп',
+							discountPercent: '20',
+							price: '5990',
+							new: true,
+							aqua: true,
+							hit: true,
+						})
+						+productCard({
+							image: 'product-1.jpg',
+							category: 'Сигвеи',
+							name: 'Гироскутер Smart Balance Well 6.5 Хип-Хоп',
+							discountPercent: '',
+							price: '5990',
+							hit: true,
+						})
+						
+		include components/footer
+		include utils/scripts

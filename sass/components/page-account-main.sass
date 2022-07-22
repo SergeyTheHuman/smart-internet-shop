@@ -59,30 +59,3 @@
 			@media screen and ( max-width: 1023.98px )
 				width: 100%
 
-.account-sidebar
-	@media screen and ( max-width: 767.98px )
-		display: none
-	&__list
-		border: 1px solid #EAEAF0
-		border-radius: 8px
-		overflow: hidden
-	&__li
-		background-color: $color-white
-		transition: background-color 0.3s ease
-		@media screen and ( any-hover: hover )
-			&:hover
-				background-color: $color-light-blue
-		&--current
-			pointer-events: none
-			color: $color-white
-			background-color: $color-blue
-	&__link
-		padding: 17px 20px
-		font-weight: 500
-		font-size: 1rem
-		line-height: 120%
-		cursor: pointer
-		display: block
-		&--exit
-			border-top: 1px solid #EAEAF0
-			color: #F15152

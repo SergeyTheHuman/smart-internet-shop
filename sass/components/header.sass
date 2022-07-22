@@ -488,10 +488,11 @@
 	color: $color-dark-gray
 	background-color: transparent
 	overflow: visible
-	&.header__login--active
-		.header__login-menu
-			opacity: 1
-			pointer-events: unset
+	@media screen and ( max-width: 1023.98px )
+		&.header__login--active
+			.header__login-menu
+				opacity: 1
+				pointer-events: unset
 	@media screen and ( any-hover: hover )
 		&:hover
 			svg
