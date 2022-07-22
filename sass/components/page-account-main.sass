@@ -1,0 +1,88 @@
+.account-main
+	&__container
+		margin-top: 30px
+	&__title
+		margin-bottom: 30px
+	&__wrapper
+		display: grid
+		grid-template-columns: 305px 1fr
+		gap: 10%
+		@media screen and ( max-width: 1023.98px )
+			gap: 30px
+		@media screen and ( max-width: 767.98px )
+			grid-template-columns: 1fr
+	&__info
+		&-name
+			font-weight: 700
+			font-size: 1.75rem
+			line-height: 120%
+			margin-bottom: 30px
+			@media screen and ( max-width: 767.98px )
+				font-weight: 600
+				font-size: 1.25rem
+		&-row
+			display: flex
+			align-items: center
+			flex-wrap: wrap
+			gap: 30px
+			margin-bottom: 20px
+		&-photo
+			width: 100px
+			height: 100px
+			border-radius: 5px
+			object-fit: cover
+			object-position: center
+		&-text
+			display: flex
+			flex-direction: column
+			gap: 10px
+		&-register,
+		&-order
+			font-size: 17px
+			line-height: 21px
+		&-descr
+			font-size: 1rem
+			line-height: 130%
+			margin-bottom: 20px
+			a
+				font-weight: 600
+				font-size: 1rem
+				line-height: 130%
+				color: $color-dark-blue
+				@media screen and ( any-hover: hover )
+					&:hover
+						text-decoration: underline
+		&-button-control
+			background-color: $color-dark-blue
+			font-weight: 400
+			width: 55%
+			@media screen and ( max-width: 1023.98px )
+				width: 100%
+
+.account-sidebar
+	@media screen and ( max-width: 767.98px )
+		display: none
+	&__list
+		border: 1px solid #EAEAF0
+		border-radius: 8px
+		overflow: hidden
+	&__li
+		background-color: $color-white
+		transition: background-color 0.3s ease
+		@media screen and ( any-hover: hover )
+			&:hover
+				background-color: $color-light-blue
+		&--current
+			pointer-events: none
+			color: $color-white
+			background-color: $color-blue
+	&__link
+		padding: 17px 20px
+		font-weight: 500
+		font-size: 1rem
+		line-height: 120%
+		cursor: pointer
+		display: block
+		&--exit
+			border-top: 1px solid #EAEAF0
+			color: #F15152

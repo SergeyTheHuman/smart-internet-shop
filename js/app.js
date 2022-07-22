@@ -24,6 +24,7 @@ const $headerHeartBtn = document.querySelector('.button__icon--header-heart')
 const $headerHeartSpan = document.querySelector('.header__heart span')
 const $headerCompareBtn = document.querySelector('.button__icon--header-compare')
 const $headerCartBtn = document.querySelector('.button__icon--header-cart')
+const $headerLoginBtn = document.querySelector('.header__login')
 
 // header buttons on mobile
 const $buttonMore = document.querySelector('.nav__list')
@@ -204,7 +205,13 @@ document.addEventListener('click', (e) => {
 		e.preventDefault()
 		console.log('Нажата кнопка корзины')
 	}
-
+	if (e.target.classList.contains('header__login')) {
+		e.target.classList.toggle('header__login--active')
+	}
+	if (!e.target.closest('.header__login-menu') && !e.target.classList.contains('header__login')) {
+		$headerLoginBtn.classList.remove('header__login--active')
+	}
+	
 	// Buttons
 	if (e.target.classList.contains('button__icon--cart')) {
 		const self = e.target

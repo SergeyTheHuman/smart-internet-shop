@@ -483,3 +483,56 @@
 				&:hover
 					color: $color-blue
 					transform: scale(1.1)
+
+.header__login
+	color: $color-dark-gray
+	background-color: transparent
+	overflow: visible
+	&.header__login--active
+		.header__login-menu
+			opacity: 1
+			pointer-events: unset
+	@media screen and ( any-hover: hover )
+		&:hover
+			svg
+				color: $color-blue
+			.header__login-menu
+				opacity: 1
+				pointer-events: unset
+	&-menu
+		color: $color-black
+		text-align: left
+		padding-top: 10px
+		margin-top: -10px
+		position: absolute
+		right: 0
+		top: 100%
+		z-index: 100
+		width: 200px
+		opacity: 0
+		pointer-events: none
+		transition: opacity 0.3s ease
+	&-list
+		border: 1px solid #EAEAF0
+		border-radius: 8px
+		overflow: hidden
+	&-li
+		background-color: $color-white
+		transition: background-color 0.3s ease
+		@media screen and ( any-hover: hover )
+			&:hover
+				background-color: $color-light-blue
+		&--current
+			pointer-events: none
+			color: $color-white
+			background-color: $color-blue
+	&-link
+		padding: 17px 20px
+		font-weight: 500
+		font-size: 1rem
+		line-height: 120%
+		cursor: pointer
+		display: block
+		&--exit
+			border-top: 1px solid #EAEAF0
+			color: #F15152

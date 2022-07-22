@@ -1,0 +1,46 @@
+doctype html
+html(lang="ru")
+	head
+		include utils/mixins
+		include utils/meta
+		include utils/links
+		//- include utils/fonts
+		title Account main Page
+	body
+		include components/header-logined
+		.container
+			.breadcrumbs
+				a(href="./index.html").breadcrumbs__item Главная
+				a(href="./page-account-main.html").breadcrumbs__item Личный кабинет
+				a(href="#").breadcrumbs__item.breadcrumbs__item--current Общие сведения
+
+		section.account-main.section
+			.container.account-main__container
+				h2.account-main__title.section-title Общие сведения
+				.account-main__wrapper
+					sidebar.account-sidebar
+						ul.account-sidebar__list
+							li.account-sidebar__li.account-sidebar__li--current
+								a(href="#").account-sidebar__link Общие сведения
+							li.account-sidebar__li 
+								a(href="#").account-sidebar__link Личные данные
+							li.account-sidebar__li 
+								a(href="#").account-sidebar__link История покупок
+							li.account-sidebar__li 
+								a(href="#").account-sidebar__link Избранное
+							li.account-sidebar__li 
+								a(href="#").account-sidebar__link Сменить пароль
+							li.account-sidebar__li 
+								a(href="./index.html").account-sidebar__link.account-sidebar__link--exit Выйти
+					.account-main__info
+						.account-main__info-name Андрей
+						.account-main__info-row
+							img(src="@img/reviews/sereja.jpg", alt="#").account-main__info-photo
+							.account-main__info-text
+								.account-main__info-register Дата регистрации: #[span 02.04.2021]
+								.account-main__info-order Заказов: #[span 1]
+						.account-main__info-descr Добро пожаловать в панель управления. Здесь вы можете #[a(href="#") изменить свои регистрационные данные] и #[a(href="#") cменить пароль]. Зарегистрированные пользователи имеют доступ к #[a(href="#") истории заказов] и возможность #[a(href="#") добавлять в избранное товары для будущих покупок].
+						button.account-main__info-button-control.button.button--blue Панель управления
+								
+		include components/footer
+		include utils/scripts
