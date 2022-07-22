@@ -1,0 +1,57 @@
+doctype html
+html(lang="ru")
+	head
+		include utils/mixins
+		include utils/meta
+		include utils/links
+		//- include utils/fonts
+		title Account password Page
+	body
+		include components/header-logined
+		.container
+			.breadcrumbs
+				a(href="./index.html").breadcrumbs__item Главная
+				a(href="./page-account-main.html").breadcrumbs__item Личный кабинет
+				a(href="#").breadcrumbs__item.breadcrumbs__item--current Сменить пароль
+
+		section.account-main.section
+			.container.account-main__container
+				h2.account-main__title.section-title Сменить пароль
+				.account-main__wrapper
+					sidebar.account-sidebar
+						ul.account-sidebar__list
+							li.account-sidebar__li
+								a(href="./page-account-main.html").account-sidebar__link Общие сведения
+							li.account-sidebar__li
+								a(href="./page-account-personal.html").account-sidebar__link Личные данные
+							li.account-sidebar__li 
+								a(href="./page-account-history.html").account-sidebar__link История покупок
+							li.account-sidebar__li
+								a(href="./page-account-favorite.html").account-sidebar__link Избранное
+							li.account-sidebar__li.account-sidebar__li--current
+								a(href="./page-account-pass.html").account-sidebar__link Сменить пароль
+							li.account-sidebar__li 
+								a(href="./index.html").account-sidebar__link.account-sidebar__link--exit Выйти
+					.account-pass
+						label.account-pass__label.label Введите старый пароль
+							.account-pass__input-wrapper.account-pass__input-wrapper--success
+								+svg('lock', 'lock')
+								input(type="password" name="old-password" placeholder='Введите старый пароль' required).account-pass__input
+								+svg('account-pass__watch','watch')
+								+svg('account-pass__watch-off','watch-off')
+						label.account-pass__label.label Введите новый пароль
+							.account-pass__input-wrapper.account-pass__input-wrapper--wrong
+								+svg('lock', 'lock')
+								input(type="password" name="old-password" placeholder='Введите старый пароль' required).account-pass__input
+								+svg('account-pass__watch','watch')
+								+svg('account-pass__watch-off','watch-off')
+						label.account-pass__label.label Повторите новый пароль
+							.account-pass__input-wrapper
+								+svg('lock', 'lock')
+								input(type="password" name="old-password" placeholder='Повторите старый пароль' required).account-pass__input
+								+svg('account-pass__watch','watch')
+								+svg('account-pass__watch-off','watch-off')
+						button.account-pass__save.button.button--blue Сохранить изменения
+							
+		include components/footer
+		include utils/scripts

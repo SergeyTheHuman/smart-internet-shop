@@ -1,0 +1,99 @@
+.account-pass
+	display: grid
+	gap: 20px
+	max-width: 400px
+	padding-right: 30px
+	@media screen and (max-width: 767.98px)
+		padding-right: 40px
+		max-width: none
+	@media screen and ( max-width: 480px )
+		padding-right: 0px
+	&__label
+		display: flex
+		flex-direction: column
+		gap: 10px
+		user-select: none
+	&__input
+		border: none
+		font-size: 1rem
+		color: $color-black
+		padding: 10px 10px
+		flex-grow: 1
+		@media screen and ( max-width: 375px )
+			width: 190px
+	&__input-wrapper
+		padding: 0 10px
+		display: flex
+		align-items: center
+		justify-content: space-between
+		gap: 10px
+		border: 1px solid #EAEAF0
+		border-radius: 5px
+		max-height: 46px
+		@media screen and ( max-width: 480.02px )
+			padding: 0
+		&--success
+			border: 1px solid #22A44E
+			position: relative
+			@media screen and ( min-width: 480.02px )
+				&::after
+					content: ''
+					width: 24px
+					height: 24px
+					position: absolute
+					right: -35px
+					top: 50%
+					transform: translateY(-50%)
+					background-image: url('@img/content-icons/success.svg')
+					background-size: contain
+					background-position: center
+					background-repeat: no-repeat
+		&--wrong
+			border: 1px solid #F15152
+			position: relative
+			@media screen and ( min-width: 480.02px )
+				&::after
+					content: ''
+					width: 24px
+					height: 24px
+					position: absolute
+					right: -35px
+					top: 50%
+					transform: translateY(-50%)
+					background-image: url('@img/content-icons/wrong.svg')
+					background-size: contain
+					background-position: center
+					background-repeat: no-repeat
+		svg
+			padding: 10px 10px
+			width: 44px
+			height: 44px
+			object-fit: contain
+		.lock
+			color: $color-gray
+		.account-pass__watch-off
+			display: none
+		.account-pass__watch,
+		.account-pass__watch-off
+			cursor: pointer
+			@media screen and ( any-hover: hover )
+				transition: color 0.3s ease
+				&:hover
+					color: $color-blue
+		&.password-show
+			.account-pass__watch
+				display: none
+			.account-pass__watch-off
+				display: block
+	&__show
+		display: none
+		width: 250px
+		font-size: 1rem
+		color: $color-black
+		padding: 14.5px 10px
+		flex-grow: 1
+	&__save
+		margin-top: auto
+		background-color: $color-dark-blue
+		font-weight: 400
+		max-height: 46px

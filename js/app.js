@@ -211,7 +211,7 @@ document.addEventListener('click', (e) => {
 	if (!e.target.closest('.header__login-menu') && !e.target.classList.contains('header__login')) {
 		$headerLoginBtn.classList.remove('header__login--active')
 	}
-	
+
 	// Buttons
 	if (e.target.classList.contains('button__icon--cart')) {
 		const self = e.target
@@ -264,6 +264,20 @@ document.addEventListener('click', (e) => {
 		const mainImg = mainImgParent.querySelector('.product-one__main-img')
 
 		mainImg.setAttribute('src', src)
+	}
+
+	// Account password show
+	if (e.target.classList.contains('account-pass__watch') || e.target.parentNode.classList.contains('account-pass__watch')) {
+		const $currentInputWrapper = e.target.closest('.account-pass__input-wrapper')
+		const $currentInput = $currentInputWrapper.querySelector('input')
+		$currentInput.setAttribute('type', 'text')
+		$currentInputWrapper.classList.add('password-show')
+	}
+	if (e.target.classList.contains('account-pass__watch-off') || e.target.parentNode.classList.contains('account-pass__watch-off')) {
+		const $currentInputWrapper = e.target.closest('.account-pass__input-wrapper')
+		const $currentInput = $currentInputWrapper.querySelector('input')
+		$currentInput.setAttribute('type', 'password')
+		$currentInputWrapper.classList.remove('password-show')
 	}
 })
 
