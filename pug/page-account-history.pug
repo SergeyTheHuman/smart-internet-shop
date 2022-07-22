@@ -1,0 +1,104 @@
+doctype html
+html(lang="ru")
+	head
+		include utils/mixins
+		include utils/meta
+		include utils/links
+		//- include utils/fonts
+		title Account history Page
+	body
+		include components/header-logined
+		.container
+			.breadcrumbs
+				a(href="./index.html").breadcrumbs__item Главная
+				a(href="./page-account-main.html").breadcrumbs__item Личный кабинет
+				a(href="#").breadcrumbs__item.breadcrumbs__item--current История покупок
+
+		section.account-main.section.section__account-history
+			.container.account-main__container
+				h2.account-main__title.section-title История покупок
+				.account-main__wrapper
+					sidebar.account-sidebar
+						ul.account-sidebar__list
+							li.account-sidebar__li
+								a(href="./page-account-main.html").account-sidebar__link Общие сведения
+							li.account-sidebar__li
+								a(href="./page-account-personal.html").account-sidebar__link Личные данные
+							li.account-sidebar__li.account-sidebar__li--current
+								a(href="./page-account-history.html").account-sidebar__link История покупок
+							li.account-sidebar__li
+								a(href="./page-account-favorite.html").account-sidebar__link Избранное
+							li.account-sidebar__li
+								a(href="./page-account-pass.html").account-sidebar__link Сменить пароль
+							li.account-sidebar__li 
+								a(href="./index.html").account-sidebar__link.account-sidebar__link--exit Выйти
+					.account-history
+						.account-history__subtitle История покупок
+						.account-history__content
+							.account-history__item.ac
+								.account-history__item-trigger.ac-header.ac-trigger
+									.account-history__item-caption
+										span.account-history__item-number Заказ #9
+											span.account-history__item-date от 04.07.2021
+										span.account-history__item-info 2 товара на сумму 15 600 ₽
+										span.account-history__item-status.account-history__item-status--pending В процессе
+								.ac-panel 
+									.account-history__item-body Lorem ipsum dolor sit amet consectetur adipisicing elit. A excepturi voluptates culpa necessitatibus aspernatur fugiat, vero ab quia hic eligendi laborum dicta iste rerum aut obcaecati veniam voluptatum quibusdam doloribus modi doloremque nemo. Ipsa eveniet molestias, repellat repudiandae exercitationem laboriosam dicta vero minus nisi magni labore cum aperiam quidem voluptatibus odit rem beatae impedit! Quis dolore vel quod nemo enim ex officia deleniti odit aut eveniet officiis, sapiente cumque laborum alias ab suscipit maxime ducimus perspiciatis ad provident? Labore, repellendus. Perspiciatis, voluptates sed. Facere nesciunt, animi soluta delectus beatae ab dicta saepe maxime reiciendis eius nam aliquam porro rerum quasi enim, eligendi excepturi. Totam, earum ullam. Consequuntur dolores natus mollitia ea debitis voluptate, omnis incidunt necessitatibus, quisquam fugiat, itaque excepturi quae minus a libero iusto fugit voluptatem repellendus autem laborum ipsum delectus eum? Doloremque iste dolor, deserunt error animi molestiae officia mollitia incidunt impedit voluptatum deleniti. Omnis molestiae quia ipsa distinctio, ipsum ipsam qui possimus. Accusamus odit autem, sit consequatur, assumenda beatae voluptatibus officiis exercitationem, non rem animi vitae dolorum consequuntur repellat debitis voluptates facere neque? Libero saepe quod adipisci excepturi quo quia beatae repellendus itaque ex tempora, veritatis enim veniam exercitationem porro fuga error provident tenetur iste commodi modi!
+							.account-history__item.ac
+								.account-history__item-trigger.ac-header.ac-trigger
+									.account-history__item-caption
+										span.account-history__item-number Заказ #8
+											span.account-history__item-date от 14.07.2021
+										span.account-history__item-info 2 товара на сумму 25 600 ₽
+										span.account-history__item-status.account-history__item-status--ok Выполнен
+								.ac-panel 
+									.account-history__item-body Lorem ipsum dolor sit amet consectetur adipisicing elit. A excepturi voluptates culpa necessitatibus aspernatur fugiat, vero ab quia hic eligendi laborum dicta iste rerum aut obcaecati veniam voluptatum quibusdam doloribus modi doloremque nemo. Ipsa eveniet molestias, repellat repudiandae exercitationem laboriosam dicta vero minus nisi magni labore cum aperiam quidem voluptatibus odit rem beatae impedit! Quis dolore vel quod nemo enim ex officia deleniti odit aut eveniet officiis, sapiente cumque laborum alias ab suscipit maxime ducimus perspiciatis ad provident? Labore, repellendus. Perspiciatis, voluptates sed. Facere nesciunt, animi soluta delectus beatae ab dicta saepe maxime reiciendis eius nam aliquam porro rerum quasi enim, eligendi excepturi. Totam, earum ullam. Consequuntur dolores natus mollitia ea debitis voluptate, omnis incidunt necessitatibus, quisquam fugiat, itaque excepturi quae minus a libero iusto fugit voluptatem repellendus autem laborum ipsum delectus eum? Doloremque iste dolor, deserunt error animi molestiae officia mollitia incidunt impedit voluptatum deleniti. Omnis molestiae quia ipsa distinctio, ipsum ipsam qui possimus. Accusamus odit autem, sit consequatur, assumenda beatae voluptatibus officiis exercitationem, non rem animi vitae dolorum consequuntur repellat debitis voluptates facere neque? Libero saepe quod adipisci excepturi quo quia beatae repellendus itaque ex tempora, veritatis enim veniam exercitationem porro fuga error provident tenetur iste commodi modi!
+							.account-history__item.ac
+								.account-history__item-trigger.ac-header.ac-trigger
+									.account-history__item-caption
+										span.account-history__item-number Заказ #5
+											span.account-history__item-date от 04.07.2021
+										span.account-history__item-info 2 товара на сумму 15 600 ₽
+										span.account-history__item-status.account-history__item-status--ok Выполнен
+								.ac-panel 
+									.account-history__item-body Lorem ipsum dolor sit amet consectetur adipisicing elit. A excepturi voluptates culpa necessitatibus aspernatur fugiat, vero ab quia hic eligendi laborum dicta iste rerum aut obcaecati veniam voluptatum quibusdam doloribus modi doloremque nemo. Ipsa eveniet molestias, repellat repudiandae exercitationem laboriosam dicta vero minus nisi magni labore cum aperiam quidem voluptatibus odit rem beatae impedit! Quis dolore vel quod nemo enim ex officia deleniti odit aut eveniet officiis, sapiente cumque laborum alias ab suscipit maxime ducimus perspiciatis ad provident? Labore, repellendus. Perspiciatis, voluptates sed. Facere nesciunt, animi soluta delectus beatae ab dicta saepe maxime reiciendis eius nam aliquam porro rerum quasi enim, eligendi excepturi. Totam, earum ullam. Consequuntur dolores natus mollitia ea debitis voluptate, omnis incidunt necessitatibus, quisquam fugiat, itaque excepturi quae minus a libero iusto fugit voluptatem repellendus autem laborum ipsum delectus eum? Doloremque iste dolor, deserunt error animi molestiae officia mollitia incidunt impedit voluptatum deleniti. Omnis molestiae quia ipsa distinctio, ipsum ipsam qui possimus. Accusamus odit autem, sit consequatur, assumenda beatae voluptatibus officiis exercitationem, non rem animi vitae dolorum consequuntur repellat debitis voluptates facere neque? Libero saepe quod adipisci excepturi quo quia beatae repellendus itaque ex tempora, veritatis enim veniam exercitationem porro fuga error provident tenetur iste commodi modi!
+							.account-history__item.ac
+								.account-history__item-trigger.ac-header.ac-trigger
+									.account-history__item-caption
+										span.account-history__item-number Заказ #9
+											span.account-history__item-date от 24.07.2021
+										span.account-history__item-info 5 товара на сумму 15 621 ₽
+										span.account-history__item-status.account-history__item-status--ok Выполнен
+								.ac-panel 
+									.account-history__item-body Lorem ipsum dolor sit amet consectetur adipisicing elit. A excepturi voluptates culpa necessitatibus aspernatur fugiat, vero ab quia hic eligendi laborum dicta iste rerum aut obcaecati veniam voluptatum quibusdam doloribus modi doloremque nemo. Ipsa eveniet molestias, repellat repudiandae exercitationem laboriosam dicta vero minus nisi magni labore cum aperiam quidem voluptatibus odit rem beatae impedit! Quis dolore vel quod nemo enim ex officia deleniti odit aut eveniet officiis, sapiente cumque laborum alias ab suscipit maxime ducimus perspiciatis ad provident? Labore, repellendus. Perspiciatis, voluptates sed. Facere nesciunt, animi soluta delectus beatae ab dicta saepe maxime reiciendis eius nam aliquam porro rerum quasi enim, eligendi excepturi. Totam, earum ullam. Consequuntur dolores natus mollitia ea debitis voluptate, omnis incidunt necessitatibus, quisquam fugiat, itaque excepturi quae minus a libero iusto fugit voluptatem repellendus autem laborum ipsum delectus eum? Doloremque iste dolor, deserunt error animi molestiae officia mollitia incidunt impedit voluptatum deleniti. Omnis molestiae quia ipsa distinctio, ipsum ipsam qui possimus. Accusamus odit autem, sit consequatur, assumenda beatae voluptatibus officiis exercitationem, non rem animi vitae dolorum consequuntur repellat debitis voluptates facere neque? Libero saepe quod adipisci excepturi quo quia beatae repellendus itaque ex tempora, veritatis enim veniam exercitationem porro fuga error provident tenetur iste commodi modi!
+							.account-history__item.ac
+								.account-history__item-trigger.ac-header.ac-trigger
+									.account-history__item-caption
+										span.account-history__item-number Заказ #34
+											span.account-history__item-date от 04.08.2021
+										span.account-history__item-info 1 товар на сумму 2 600 ₽
+										span.account-history__item-status.account-history__item-status--pending В процессе
+								.ac-panel 
+									.account-history__item-body Lorem ipsum dolor sit amet consectetur adipisicing elit. A excepturi voluptates culpa necessitatibus aspernatur fugiat, vero ab quia hic eligendi laborum dicta iste rerum aut obcaecati veniam voluptatum quibusdam doloribus modi doloremque nemo. Ipsa eveniet molestias, repellat repudiandae exercitationem laboriosam dicta vero minus nisi magni labore cum aperiam quidem voluptatibus odit rem beatae impedit! Quis dolore vel quod nemo enim ex officia deleniti odit aut eveniet officiis, sapiente cumque laborum alias ab suscipit maxime ducimus perspiciatis ad provident? Labore, repellendus. Perspiciatis, voluptates sed. Facere nesciunt, animi soluta delectus beatae ab dicta saepe maxime reiciendis eius nam aliquam porro rerum quasi enim, eligendi excepturi. Totam, earum ullam. Consequuntur dolores natus mollitia ea debitis voluptate, omnis incidunt necessitatibus, quisquam fugiat, itaque excepturi quae minus a libero iusto fugit voluptatem repellendus autem laborum ipsum delectus eum? Doloremque iste dolor, deserunt error animi molestiae officia mollitia incidunt impedit voluptatum deleniti. Omnis molestiae quia ipsa distinctio, ipsum ipsam qui possimus. Accusamus odit autem, sit consequatur, assumenda beatae voluptatibus officiis exercitationem, non rem animi vitae dolorum consequuntur repellat debitis voluptates facere neque? Libero saepe quod adipisci excepturi quo quia beatae repellendus itaque ex tempora, veritatis enim veniam exercitationem porro fuga error provident tenetur iste commodi modi!
+							.account-history__item.ac
+								.account-history__item-trigger.ac-header.ac-trigger
+									.account-history__item-caption
+										span.account-history__item-number Заказ #4
+											span.account-history__item-date от 04.07.2021
+										span.account-history__item-info 4 товара на сумму 25 600 ₽
+										span.account-history__item-status.account-history__item-status--ok Выполнен
+								.ac-panel 
+									.account-history__item-body Lorem ipsum dolor sit amet consectetur adipisicing elit. A excepturi voluptates culpa necessitatibus aspernatur fugiat, vero ab quia hic eligendi laborum dicta iste rerum aut obcaecati veniam voluptatum quibusdam doloribus modi doloremque nemo. Ipsa eveniet molestias, repellat repudiandae exercitationem laboriosam dicta vero minus nisi magni labore cum aperiam quidem voluptatibus odit rem beatae impedit! Quis dolore vel quod nemo enim ex officia deleniti odit aut eveniet officiis, sapiente cumque laborum alias ab suscipit maxime ducimus perspiciatis ad provident? Labore, repellendus. Perspiciatis, voluptates sed. Facere nesciunt, animi soluta delectus beatae ab dicta saepe maxime reiciendis eius nam aliquam porro rerum quasi enim, eligendi excepturi. Totam, earum ullam. Consequuntur dolores natus mollitia ea debitis voluptate, omnis incidunt necessitatibus, quisquam fugiat, itaque excepturi quae minus a libero iusto fugit voluptatem repellendus autem laborum ipsum delectus eum? Doloremque iste dolor, deserunt error animi molestiae officia mollitia incidunt impedit voluptatum deleniti. Omnis molestiae quia ipsa distinctio, ipsum ipsam qui possimus. Accusamus odit autem, sit consequatur, assumenda beatae voluptatibus officiis exercitationem, non rem animi vitae dolorum consequuntur repellat debitis voluptates facere neque? Libero saepe quod adipisci excepturi quo quia beatae repellendus itaque ex tempora, veritatis enim veniam exercitationem porro fuga error provident tenetur iste commodi modi!
+							
+
+						.pagination
+							a.pagination__item.pagination__item--disabled.pagination__item--prev
+							a.pagination__item.pagination__item--current 1
+							a.pagination__item 2
+							a.pagination__item.pagination__item--more …
+							a.pagination__item 15
+							a.pagination__item.pagination__item--next
+						
+							
+		include components/footer
+		include utils/scripts

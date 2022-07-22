@@ -90,6 +90,13 @@ if (document.querySelector('.catalog-section__filters-wrapper')) {
 	})
 }
 
+if (document.querySelector('.account-history__content')) {
+	const accordionFilters = new Accordion('.account-history__content', {
+		duration: 300,
+		showMultiple: true,
+	})
+}
+
 window.addEventListener('resize', (e) => {
 	// Changing text content of catalog
 	if (window.innerWidth < 992) {
