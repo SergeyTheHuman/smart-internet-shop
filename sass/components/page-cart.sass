@@ -1,0 +1,448 @@
+.cart
+	&__container
+		margin-top: 60px
+		display: grid
+		grid-template-columns: repeat(3,1fr)
+		gap: 20px
+		@media screen and ( max-width: 1100px )
+			grid-template-columns: 1fr
+			gap: 40px
+	&__title
+		grid-column: 1 / -1
+		margin-bottom: 50px
+	&__wrapper
+		grid-column: span 2
+		@media screen and ( max-width: 1100px )
+			grid-column: span 1
+	&__item
+		margin-top: 0
+		border-radius: 8px
+		&:not(:last-child)
+			margin-bottom: 40px
+		&.is-active
+			.cart__item-thumbnails
+				max-height: 0
+				margin-top: 0
+				img
+					border: 0
+					max-width: 0
+					opacity: 0
+		.ac-header.align-bottom
+			align-items: flex-end
+		.ac-header
+			display: flex
+			justify-content: space-between
+			align-items: center
+			padding: 30px
+			@media screen and ( max-width: 768px )
+				padding: 15px
+				flex-direction: column
+				align-items: stretch !important
+			&::after
+				display: none
+		&-trigger
+			padding: 0
+			font-weight: 700
+			font-size: 1.75rem
+			line-height: 120%
+			@media screen and ( max-width: 768px )
+				font-size: 1.25rem
+		&-thumbnails
+			will-change: max-heigth
+			transition: all 0.3s ease
+			display: flex
+			margin-top: 30px
+			gap: 20px
+			flex-wrap: wrap
+			@media screen and ( max-width: 768px )
+				margin-top: 20px
+			img
+				will-change: max-heigth
+				opacity: 1
+				transition: all 0.3s ease
+				width: 80px
+				height: 80px
+				max-height: 80px
+				object-fit: contain
+				object-position: center
+				border: 1px solid #EAEAF0
+				border-radius: 4px
+				@media screen and ( max-width: 768px )
+					width: 60px
+					height: 60px
+		&-change
+			user-select: none
+			font-weight: 700
+			font-size: 1rem
+			padding: 12px 0
+			min-width: 200px
+			line-height: 130%
+			color: $color-blue
+			border: 1px solid $color-blue
+			border-radius: 4px
+			transition: all 0.3s ease
+			@media screen and ( max-width: 768px )
+				margin-top: 20px
+			@media screen and ( any-hover: hover )
+				&:hover
+					background-color: $color-blue
+					color: $color-white
+		&-products
+			padding: 0px 30px 0 30px
+			img
+				width: 80px
+				height: 80px
+				object-fit: contain
+				object-position: center
+				border-radius: 4px
+				@media screen and ( max-width: 480px )
+					width: 40px
+					height: 40px
+			@media screen and ( max-width: 480px )
+				padding: 0px 15px 0 15px
+		&-product
+			padding: 30px 0
+			display: flex
+			justify-content: space-between
+			align-items: center
+			gap: 10px
+			@media screen and ( max-width: 768px )
+				flex-wrap: wrap
+			&:first-child
+				padding-top: 0
+			&:not(:last-child)
+				border-bottom: 1px solid #C8CACB
+		&-caption
+			display: flex
+			align-items: center
+			gap: 20px
+			@media screen and ( max-width: 768px )
+				order: 1
+			@media screen and ( max-width: 480px )
+				gap: 10px
+				margin-bottom: 20px
+		&-name
+			max-width: 280px
+			@media screen and ( max-width: 992px )
+				max-width: 224px
+			@media screen and ( max-width: 480px )
+				font-size: 14px
+				max-width: 170px
+		&-control
+			display: flex
+			align-items: center
+			gap: 7px
+			@media screen and ( max-width: 768px )
+				order: 4
+			button
+				font-size: 25px
+				font-weight: 500
+				padding: 0
+		&-plus
+			transition: color 0.3s ease
+			@media screen and ( any-hover: hover )
+				&:hover
+					color: $color-blue
+		&-minus
+			position: relative
+			width: 20px
+			height: 20px
+			@media screen and ( any-hover: hover )
+				&:hover
+					&::before
+						background-color: $color-blue
+			&:before
+				content: ''
+				position: absolute
+				top: 50%
+				left: 50%
+				transform: translate(-50%,-50%)
+				width: 60%
+				height: 2px
+				background-color: $color-black
+				transition: background-color 0.3s ease
+		&-input
+			pointer-events: none
+			width: 48px
+			height: 48px
+			text-align: center
+			font-family: inherit
+		&-prices
+			line-height: 130%
+			display: flex
+			justify-content: center
+			flex-direction: column
+			gap: 5px
+			@media screen and ( max-width: 768px )
+				width: 48%
+				order: 3
+		&-oldprice
+			font-weight: 700
+			font-size: 1rem
+			text-decoration-line: line-through
+			color: $color-dark-gray
+		&-newprice
+			font-weight: 700
+			font-size: 1.5rem
+		&-remove
+			@media screen and ( max-width: 768px )
+				order: 2
+			@media screen and ( any-hover: hover )
+				&:hover
+					svg
+						transform: scale(1.1)
+						color: $color-blue
+			svg
+				width: 20px
+				height: 20px
+				color: $color-dark-gray
+				transition: all 0.3s ease
+
+.cart__order
+	&-wrapper
+		background-color: $color-light-blue
+		border-radius: 8px
+		padding: 30px
+		@media screen and ( max-width: 768px )
+			padding: 15px
+	&-title
+		font-weight: 700
+		font-size: 1.75rem
+		line-height: 120%
+		@media screen and ( max-width: 768px )
+			font-size: 1.5rem
+	&-span
+		font-size: 1.25rem
+		line-height: 120%
+		color: $color-black
+		@media screen and ( max-width: 768px )
+			font-size: 1rem
+		&--gray
+			color: $color-dark-gray
+	&-summ,
+	&-delivery
+		margin-top: 20px
+	&-summ,
+	&-delivery,
+	&-total
+		display: flex
+		justify-content: space-between
+		gap: 15px
+	&-total
+		margin-top: 60px
+		align-items: flex-end
+		position: relative
+		&::before
+			content: ''
+			position: absolute
+			top: -30px
+			left: 0
+			width: 100%
+			height: 1px
+			background-color: $color-gray
+	&-title
+		font-weight: 600
+		font-size: 1.25rem
+		line-height: 120%
+	&-totalprice
+		font-weight: 700
+		font-size: 2.25rem
+		line-height: 130%
+		@media screen and ( max-width: 768px )
+			font-size: 1.5rem
+	&-button
+		background-color: $color-dark-gray
+		border: none
+		font-weight: 400
+		width: 100%
+		margin-top: 20px
+	&-checkbox
+		padding: 0 30px
+		margin-top: 20px
+		@media screen and ( max-width: 768px )
+			padding: 0 15px
+		& .checkbox__label
+			@media screen and ( max-width: 768px )
+				font-size: 14px
+		& .checkbox__input
+			flex-shrink: 0
+		& a
+			display: inline
+			transition: all 0.3s ease
+			color: $color-blue
+			@media screen and ( any-hover: hover )
+				&:hover
+					color: $color-dark-blue
+					text-decoration: underline
+
+.delivery-method
+	&__top
+		padding: 0 30px
+		padding-bottom: 30px
+		display: grid
+		grid-template-columns: repeat(2, 1fr)
+		grid-template-rows: auto 1fr
+		column-gap: 30px
+		position: relative
+		@media screen and ( max-width: 565px )
+			display: block
+			padding: 0 15px
+			padding-bottom: 30px
+		&::after
+			content: ''
+			position: absolute
+			bottom: 0
+			left: 30px
+			right: 30px
+			height: 1px
+			background-color: $color-gray
+		& .custom-select-container
+			max-height: 46px
+			@media screen and ( max-width: 565px )
+				margin-bottom: 20px
+	&__select-subtitle
+		grid-column: 1 / -1
+		margin-bottom: 8px
+	&__radio
+		grid-column: 2/3
+		display: flex
+		flex-direction: column
+		gap: 20px
+		& input
+			&:checked ~ span
+				color: $color-blue
+		.radio.chosen
+			border-color: $color-blue
+		.radio
+			padding: 14px 20px
+			border: 2px solid #EAEAF0
+			transition: border-color 0.3s ease
+			border-radius: 5px
+
+	&__bottom
+		&.delivery
+			.delivery-method__bottom-delivery
+				display: block
+		&.self
+			.delivery-method__bottom-self
+				display: block
+		&-delivery,
+		&-self
+			display: none
+			padding: 30px
+			@media screen and ( max-width: 565px )
+				padding: 15px
+				padding-top: 30px
+		&-self
+			@media screen and ( max-width: 650px )
+				padding: 15px
+				padding-top: 30px
+		&-delivery
+		&-form
+			display: grid
+			grid-template-columns: repeat(2,1fr)
+			grid-template-rows: 1fr 72px
+			gap: 20px
+			@media screen and ( max-width: 565px )
+				display: block
+
+.bottom-delivery-form
+	&__col
+		display: flex
+		flex-direction: column
+		gap: 20px
+		@media screen and ( max-width: 565px )
+			margin-bottom: 20px
+	&__select
+		@media screen and ( max-width: 565px )
+			width: 150px
+	&__select-label
+		margin-bottom: 10px
+	&__textarea
+		resize: none
+	&__textarea-label
+		grid-column: 1 /-1
+		display: flex
+		flex-direction: column
+		gap: 10px
+	&__label
+		display: flex
+		flex-direction: column
+		gap: 10px
+	&__input
+		padding: 15px 10px 14px 10px
+		border-radius: 4px
+
+.delivery-bottom-self
+	display: grid
+	grid-template-columns: repeat(5, 1fr)
+	grid-template-rows: 330px
+	gap: 30px
+	overflow: hidden
+	@media screen and ( max-width: 768px )
+		grid-template-columns: repeat(2, 1fr)
+	@media screen and ( max-width: 565px )
+		display: block
+	&__left
+		grid-column: span 3
+		@media screen and ( max-width: 768px )
+			grid-column: span 1
+	&__caption
+		margin-bottom: 30px
+	&__addresses
+		height: 100%
+		overflow-y: auto
+		display: flex
+		flex-direction: column
+		gap: 20px
+		@media screen and ( max-width: 565px )
+			max-height: 330px
+	&__radio-label
+		& .radio__text
+			display: flex
+			flex-direction: column
+			gap: 10px
+			color: $color-black
+			font-size: 1.25rem
+			@media screen and ( max-width: 565px )
+				font-size: 1rem
+			span
+				font-size: 1rem
+				color: $color-dark-gray
+				@media screen and ( max-width: 565px )
+					font-size: 0.75rem
+	&__map
+		grid-column: span 2
+		background-color: $color-blue
+		@media screen and ( max-width: 768px )
+			grid-column: span 1
+		@media screen and ( max-width: 565px )
+			display: none
+
+.cart__item-pay-method
+	padding: 30px
+	padding-top: 0
+	@media screen and ( max-width: 768px )
+		padding: 15px
+		padding-top: 0
+	.pay-method__select-wrapper
+		width: 50%
+		@media screen and ( max-width: 768px )
+			width: 100%
+		& .custom-select-panel
+			position: static
+
+.cart__item-getter
+	padding: 30px
+	padding-top: 0
+	@media screen and ( max-width: 768px )
+		padding: 15px
+		padding-top: 0
+
+.bottom-getter-form
+	&__checkbox
+		grid-column: 1 / -1
+		span
+			color: $color-black
+		.checkbox__input
+			flex-shrink: 0

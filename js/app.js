@@ -51,6 +51,25 @@ const $buttonContactsPage = document.querySelector('.contacts-form__button')
 const $contactsFormFirstColumn = document.querySelector('[data-contacts-col="first"]')
 const $contactsFormLastColumn = document.querySelector('[data-contacts-col="last"]')
 
+// cart page
+const $deliveryMethodBottom = document.querySelector('.delivery-method__bottom')
+const $deliveryMethodRadioWrappers = document.querySelectorAll('.delivery-method__radio-label')
+const $deliveryRadioInputs = document.querySelectorAll('input[type="radio"][name="delivery-type"]')
+
+if ($deliveryMethodRadioWrappers && $deliveryRadioInputs && $deliveryMethodBottom) {
+	$deliveryRadioInputs.forEach((input) => {
+		const $inputParent = input.parentNode
+		input.addEventListener('change', () => {
+			console.log('asd')
+			$deliveryMethodBottom.classList.remove(`delivery`)
+			$deliveryMethodBottom.classList.remove(`self`)
+			$deliveryMethodRadioWrappers.forEach((el) => el.classList.remove('chosen'))
+			$inputParent.classList.add('chosen')
+			$deliveryMethodBottom.classList.add(`${input.value}`)
+		})
+	})
+}
+
 if (document.querySelector('.product-tabs')) {
 	const productTabs = new Tabs('.product-tabs')
 }
@@ -90,6 +109,13 @@ if (document.querySelector('.catalog-section__filters-wrapper')) {
 	})
 }
 
+if (document.querySelector('.cart__wrapper')) {
+	const accordionFilters = new Accordion('.cart__wrapper', {
+		duration: 300,
+		showMultiple: true,
+	})
+}
+
 if (document.querySelector('.account-history__content')) {
 	const accordionFilters = new Accordion('.account-history__content', {
 		duration: 300,
@@ -99,10 +125,12 @@ if (document.querySelector('.account-history__content')) {
 
 window.addEventListener('resize', (e) => {
 	// Changing text content of catalog
-	if (window.innerWidth < 992) {
-		$catalogTitle.textContent = 'Каталог'
-	} else {
-		$catalogTitle.textContent = 'Каталог товаров'
+	if ($catalogTitle) {
+		if (window.innerWidth < 992) {
+			$catalogTitle.textContent = 'Каталог'
+		} else {
+			$catalogTitle.textContent = 'Каталог товаров'
+		}
 	}
 
 	// Checkbox on compare page
@@ -126,10 +154,12 @@ window.addEventListener('resize', (e) => {
 
 document.addEventListener('DOMContentLoaded', () => {
 	// Changing text content of catalog
-	if (window.innerWidth < 992) {
-		$catalogTitle.textContent = 'Каталог'
-	} else {
-		$catalogTitle.textContent = 'Каталог товаров'
+	if ($catalogTitle) {
+		if (window.innerWidth < 992) {
+			$catalogTitle.textContent = 'Каталог'
+		} else {
+			$catalogTitle.textContent = 'Каталог товаров'
+		}
 	}
 
 	// Checkbox on compare page
@@ -209,7 +239,6 @@ document.addEventListener('click', (e) => {
 		console.log('Нажата кнопка сравнения')
 	}
 	if (e.target.classList.contains('button__icon--header-cart')) {
-		e.preventDefault()
 		console.log('Нажата кнопка корзины')
 	}
 	if (e.target.classList.contains('header__login')) {

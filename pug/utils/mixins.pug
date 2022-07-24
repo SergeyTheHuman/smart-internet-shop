@@ -46,7 +46,7 @@ mixin sectionProducts(data = {linkText: `Все товары`})
 		.container.products__container
 			h2.products__title.section-title= data.title
 			if data.linkText!='-'
-				a(href="#").products__category.section-all.section-all--border= data.linkText
+				a(href="./page-catalog.html").products__category.section-all.section-all--border= data.linkText
 			.products__products
 				if block
 					block

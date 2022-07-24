@@ -1,0 +1,255 @@
+
+doctype html
+html(lang="ru")
+	head
+		include utils/mixins
+		include utils/meta
+		include utils/links
+		//- include utils/fonts
+		title Cart Page
+	body
+		//- include components/header
+		header.header
+			.header__top
+				.container.header__top-container
+					a(href="./index.html").header__logo.logo
+						img.header__logo-img(src='@img/content-icons/logo.svg')
+					.header__content
+						.header__info
+							a(href="tel:+78126605054").header__info-phone +7 (812) 660-50-54
+							a(href="tel:+79581119503").header__info-phone +7 (958) 111-95-03
+							.header__info-schedule Пн-вс: с 10:00 до 21:00
+						.header__actions
+							form.header__search.search
+								button.search__button.button.button__icon.button__icon--header-search(type="submit")
+									+svg('search__button-icon','search')
+								input.search__input(type="text" placeholder="Поиск")
+							a(href="./page-viewed.html").header__viewed.button.button__icon.button__icon--header-viewed
+								+svg('viewed', 'watch')
+							a(href="./page-favorite.html").header__heart.button.button__icon.button__icon--header-heart
+								+svg('heart', 'favorite')
+								+svg('heart-checked', 'favorite-checked')
+								span 7
+							a(href="./page-compare.html").header__compare.button.button__icon.button__icon--header-compare
+								+svg('compare', 'compare')
+								span 5
+							a(href="./page-cart.html").header__cart.button.button__icon.button__icon--header-cart
+								+svg('cart','cart')
+							button.header__login.button.button--blue Войти
+		section.cart
+			.container.cart__container
+				h2.cart__title.section-title Оформление заказа
+				.cart__wrapper
+					.ac.cart__item
+						.ac-header.ac-trigger.align-bottom
+							.cart__item-header-top
+								button.cart__item-trigger.btn-reset(type="button") Ваш заказ
+								.cart__item-thumbnails
+									img(src="@img/products/product-1.jpg", alt="product-1")
+									img(src="@img/products/product-1.jpg", alt="product-1")
+									img(src="@img/products/product-1.jpg", alt="product-1")
+									img(src="@img/products/product-1.jpg", alt="product-1")
+							button.cart__item-change.btn-reset(type="button") Изменить
+						.ac-panel
+							.cart__item-products
+								.cart__item-product
+									.cart__item-caption
+										img(src="@img/products/product-1.jpg", alt="product-1")
+										h4.cart__item-name Гироскутер Smart Balance Well 6.5 Хип-Хоп (АКВАЗАЩИТА)
+									.cart__item-control
+										button.btn-reset.cart__item-minus
+										input(type="text" value='1').input.cart__item-input
+										button.btn-reset.cart__item-plus +
+									.cart__item-prices
+										span.cart__item-oldprice 5400 ₽
+										span.cart__item-newprice 4990 ₽
+									button.btn-reset.cart__item-remove 
+										+svg('trash-icon', 'trash')
+								.cart__item-product
+									.cart__item-caption
+										img(src="@img/products/product-1.jpg", alt="product-1")
+										h4.cart__item-name Гироскутер Smart Balance Well 6.5 Хип-Хоп (АКВАЗАЩИТА)
+									.cart__item-control
+										button.btn-reset.cart__item-minus
+										input(type="text" value='1').input.cart__item-input
+										button.btn-reset.cart__item-plus +
+									.cart__item-prices
+										span.cart__item-oldprice 5400 ₽
+										span.cart__item-newprice 4990 ₽
+									button.btn-reset.cart__item-remove 
+										+svg('trash-icon', 'trash')
+								.cart__item-product
+									.cart__item-caption
+										img(src="@img/products/product-1.jpg", alt="product-1")
+										h4.cart__item-name Гироскутер Smart Balance Well 6.5 Хип-Хоп (АКВАЗАЩИТА)
+									.cart__item-control
+										button.btn-reset.cart__item-minus
+										input(type="text" value='1').input.cart__item-input
+										button.btn-reset.cart__item-plus +
+									.cart__item-prices
+										span.cart__item-oldprice 5400 ₽
+										span.cart__item-newprice 4990 ₽
+									button.btn-reset.cart__item-remove 
+										+svg('trash-icon', 'trash')
+								.cart__item-product
+									.cart__item-caption
+										img(src="@img/products/product-1.jpg", alt="product-1")
+										h4.cart__item-name Гироскутер Smart Balance Well 6.5 Хип-Хоп (АКВАЗАЩИТА)
+									.cart__item-control
+										button.btn-reset.cart__item-minus
+										input(type="text" value='1').input.cart__item-input
+										button.btn-reset.cart__item-plus +
+									.cart__item-prices
+										span.cart__item-oldprice 5400 ₽
+										span.cart__item-newprice 4990 ₽
+									button.btn-reset.cart__item-remove 
+										+svg('trash-icon', 'trash')
+					.ac.cart__item
+						.ac-header.ac-trigger 
+							.cart__item-header-top
+								button.cart__item-trigger.btn-reset(type="button") Способ получения
+							button.cart__item-change.btn-reset(type="button") Изменить	
+						.ac-panel
+							.cart__item-delivery-method.delivery-method
+								.delivery-method__top
+									.delivery-method__select-subtitle Ваш город
+									select.delivery-method__select
+										option.catalog-products__option(value="1") Санкт-Петербург
+										option.catalog-products__option(value="2") Москва
+										option.catalog-products__option(value="3") Красноярск
+										option.catalog-products__option(value="4") Киров
+										option.catalog-products__option(value="5") Белгород
+										option.catalog-products__option(value="6") Курск
+										option.catalog-products__option(value="7") Томск
+										option.catalog-products__option(value="8") Орел
+										option.catalog-products__option(value="9") Тула
+										option.catalog-products__option(value="10") Ростов-на-Дону
+										option.catalog-products__option(value="11") Новороссийск
+										option.catalog-products__option(value="12") Челябинск
+										option.catalog-products__option(value="13") Геленджик
+									.delivery-method__radio
+										label.delivery-method__radio-label.radio.chosen
+											input.radio__input(type="radio" name="delivery-type" value="delivery" checked)
+											span.radio__text Доставка
+										label.delivery-method__radio-label.radio
+											input.radio__input(type="radio" name="delivery-type" value="self")
+											span.radio__text Самовывоз
+								.delivery-method__bottom.delivery
+									.delivery-method__bottom-delivery
+										form.delivery-method__bottom-form.bottom-delivery-form
+											.bottom-delivery-form__col
+												.bottom-delivery-form__select-wrapper
+													h5.bottom-delivery-form__select-label Дата
+													select.bottom-delivery-form__select
+														option.catalog-products__option(value="1") Завтра, 11 июля, вс
+														option.catalog-products__option(value="2") Послезавтра, 12 июля, пн
+														option.catalog-products__option(value="3") 13 июля, вт
+														option.catalog-products__option(value="4") 14 июля, ср
+														option.catalog-products__option(value="5") 15 июля, чт
+														option.catalog-products__option(value="6") 16 июля, пт
+														option.catalog-products__option(value="7") 17 июля, сб
+												.bottom-delivery-form__select-wrapper
+													h5.bottom-delivery-form__select-label Время
+													select.bottom-delivery-form__select
+														option.catalog-products__option(value="1") 9:00-12:00 #[span 280 ₽]
+														option.catalog-products__option(value="1") 12:00-15:00 #[span (бесплатно)]
+														option.catalog-products__option(value="2") 15:00-18:00 #[span (бесплатно)]
+														option.catalog-products__option(value="3") 18:00-21:00 #[span 280 ₽]
+											.bottom-delivery-form__col
+												label.bottom-delivery-form__label.label Улица, дом/корпус
+													input(type="text" name="name" required).bottom-delivery-form__input.input
+												label.bottom-delivery-form__label.label Квартира
+													input(type="text" name="flat" required).bottom-delivery-form__input.input
+											label.bottom-delivery-form__textarea-label.label Комментарий курьеру
+												textarea(resize="none").bottom-delivery-form__textarea.input
+									.delivery-method__bottom-self
+										.delivery-method__bottom-self-wrapper.delivery-bottom-self
+											.delivery-bottom-self__left
+												.delivery-bottom-self__caption Товар доступен в 9 магазинах
+												.delivery-bottom-self__addresses
+													label.delivery-bottom-self__radio-label.radio
+														input.radio__input(type="radio" name="address" value="1" checked)
+														span.radio__text г. Санкт-Петербург, Бульвар Новаторов, 75 #[span ПН-ВС 09:00 — 22:00]
+													label.delivery-bottom-self__radio-label.radio
+														input.radio__input(type="radio" name="address" value="2")
+														span.radio__text г. Санкт-Петербург, пер. Матюшенко, 28 #[span ПН-ВС 10:00 — 23:00]
+													label.delivery-bottom-self__radio-label.radio
+														input.radio__input(type="radio" name="address" value="2")
+														span.radio__text г. Санкт-Петербург, пр-кт. Просвещения, 87, литер А, корп. 1 корп #[span ПН-ВС 09:00 — 22:00]
+													label.delivery-bottom-self__radio-label.radio
+														input.radio__input(type="radio" name="address" value="2")
+														span.radio__text г. Санкт-Петербург, пер. Матюшенко, 28 #[span ПН-ВС 10:00 — 23:00]
+													label.delivery-bottom-self__radio-label.radio
+														input.radio__input(type="radio" name="address" value="1" checked)
+														span.radio__text г. Санкт-Петербург, Бульвар Новаторов, 75 #[span ПН-ВС 09:00 — 22:00]
+													label.delivery-bottom-self__radio-label.radio
+														input.radio__input(type="radio" name="address" value="2")
+														span.radio__text г. Санкт-Петербург, пер. Матюшенко, 28 #[span ПН-ВС 10:00 — 23:00]
+													label.delivery-bottom-self__radio-label.radio
+														input.radio__input(type="radio" name="address" value="2")
+														span.radio__text г. Санкт-Петербург, пр-кт. Просвещения, 87, литер А, корп. 1 корп #[span ПН-ВС 09:00 — 22:00]
+													label.delivery-bottom-self__radio-label.radio
+														input.radio__input(type="radio" name="address" value="2")
+														span.radio__text г. Санкт-Петербург, пер. Матюшенко, 28 #[span ПН-ВС 10:00 — 23:00]
+													label.delivery-bottom-self__radio-label.radio
+														input.radio__input(type="radio" name="address" value="2")
+														span.radio__text г. Санкт-Петербург, пр-кт. Просвещения, 87, литер А, корп. 1 корп #[span ПН-ВС 09:00 — 22:00]
+											.delivery-bottom-self__map#delivery-bottom-self__map
+					.ac.cart__item
+						.ac-header.ac-trigger 
+							.cart__item-header-top
+								button.cart__item-trigger.btn-reset(type="button") Способ оплаты
+							button.cart__item-change.btn-reset(type="button") Изменить	
+						.ac-panel
+							.cart__item-pay-method
+								.pay-method__select-wrapper
+									select.pay-method__select
+										option.catalog-products__option(value="1") Наличными
+										option.catalog-products__option(value="2") Картой
+										option.catalog-products__option(value="3") Paypal
+					.ac.cart__item
+						.ac-header.ac-trigger 
+							.cart__item-header-top
+								button.cart__item-trigger.btn-reset(type="button") Получатель
+							button.cart__item-change.btn-reset(type="button") Изменить	
+						.ac-panel
+							.cart__item-getter
+								form.delivery-method__bottom-form.bottom-getter-form.bottom-delivery-form
+									.bottom-delivery-form__col
+										label.bottom-delivery-form__label.label Имя
+											input(type="text" name="name" required).bottom-delivery-form__input.input
+										label.bottom-delivery-form__label.label Номер телефона
+											input(type="tel" name="phone" required).bottom-delivery-form__input.input
+									.bottom-delivery-form__col
+										label.bottom-delivery-form__label.label Фамилия
+											input(type="text" name="surname" required).bottom-delivery-form__input.input
+										label.bottom-delivery-form__label.label Эл. почта
+											input(type="email" name="email" required).bottom-delivery-form__input.input
+									.bottom-getter-form__checkbox.checkbox
+										label.checkbox__label 
+											input.checkbox__input--hidden(type="checkbox" name="argeed" value="Да")
+											.checkbox__input
+												+svg('.checkbox__svg','checked')
+											span Не перезванивать мне для подтверждения заказа
+				.cart__order
+					.cart__order-wrapper
+						h3.cart__order-title Итого	
+						.cart__order-summ 
+							span.cart__order-span.cart__order-span--gray 2 товара на сумму
+							span.cart__order-span 22 580 ₽
+						.cart__order-delivery
+							span.cart__order-span.cart__order-span--gray Стоимость доставки
+							span.cart__order-span бесплатно
+						.cart__order-total
+							span.cart__order-title К оплате
+							span.cart__order-totalprice 22 580 ₽
+						button.cart__order-button.button.button--blue Оформить заказ
+					.cart__order-checkbox.checkbox
+						label.checkbox__label 
+							input.checkbox__input--hidden(type="checkbox" name="argeed" value="Да")
+							.checkbox__input
+								+svg('.checkbox__svg','checked')
+							span Подтверждая заказ, я принимаю условия #[a(href="#") пользовательского соглашения]
+		include components/footer
+		script(src="https://api-maps.yandex.ru/2.1/?apikey=e2a57b7e-656f-493c-941e-fb1a44daefc4&lang=ru_RU")
+		include utils/scripts

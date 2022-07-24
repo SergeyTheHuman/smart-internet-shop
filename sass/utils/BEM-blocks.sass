@@ -381,3 +381,44 @@
 		&--exit
 			border-top: 1px solid #EAEAF0
 			color: #F15152
+
+// =============== RADIO ================
+.radio
+	position: relative
+	&__input
+		position: absolute
+		width: 1px
+		height: 1px
+		opacity: 0
+		&:checked ~ span::before
+			opacity: 1
+		&:checked ~ span::after
+			border-color: $color-blue
+	&__text
+		position: relative
+		padding-left: 30px
+		color: $color-gray
+		transition: color 0.3s ease
+		&::before
+			content: ''
+			position: absolute
+			left: 4px
+			top: 50%
+			transform: translateY(-50%)
+			width: 12px
+			height: 12px
+			background-color: $color-blue
+			border-radius: 100%
+			opacity: 0
+			transition: opacity 0.3s ease
+		&::after
+			content: ''
+			position: absolute
+			left: 0
+			top: 50%
+			transform: translateY(-50%)
+			width: 20px
+			height: 20px
+			border: 2px solid $color-gray
+			border-radius: 100%
+			transition: border-color 0.3s ease
