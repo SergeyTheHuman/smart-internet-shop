@@ -13,8 +13,9 @@ header.header
 						button.search__button.button.button__icon.button__icon--header-search(type="submit")
 							+svg('search__button-icon','search')
 						input.search__input(type="text" placeholder="Поиск")
-					a(href="./page-viewed.html").header__viewed.button.button__icon.button__icon--header-viewed
+					a(href="./page-viewed.html").header__viewed.viewed-checked.button.button__icon.button__icon--header-viewed
 						+svg('viewed', 'watch')
+						span 13
 					a(href="./page-favorite.html").header__heart.button.button__icon.button__icon--header-heart
 						+svg('heart', 'favorite')
 						+svg('heart-checked', 'favorite-checked')
@@ -22,13 +23,14 @@ header.header
 					a(href="./page-compare.html").header__compare.button.button__icon.button__icon--header-compare
 						+svg('compare', 'compare')
 						span 5
-					a(href="./page-cart.html").header__cart.button.button__icon.button__icon--header-cart
+					a(href="./page-cart.html").header__cart.button.button__icon.button__icon--header-cart.cart-checked
 						+svg('cart','cart')
+						span 4
 					button.header__login.button.button--blue Войти
 	.header__menu
 		.container.header__menu-container
 			nav.header__menu-nav.nav
-				.nav__home
+				a(href="./index.html").nav__home
 					.nav__home-icon
 						+svg('nav__home-svg', 'home')
 					h4.nav__home-title Главная

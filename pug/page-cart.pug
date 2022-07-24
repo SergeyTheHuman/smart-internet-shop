@@ -7,35 +7,9 @@ html(lang="ru")
 		include utils/links
 		//- include utils/fonts
 		title Cart Page
-	body
-		//- include components/header
-		header.header
-			.header__top
-				.container.header__top-container
-					a(href="./index.html").header__logo.logo
-						img.header__logo-img(src='@img/content-icons/logo.svg')
-					.header__content
-						.header__info
-							a(href="tel:+78126605054").header__info-phone +7 (812) 660-50-54
-							a(href="tel:+79581119503").header__info-phone +7 (958) 111-95-03
-							.header__info-schedule Пн-вс: с 10:00 до 21:00
-						.header__actions
-							form.header__search.search
-								button.search__button.button.button__icon.button__icon--header-search(type="submit")
-									+svg('search__button-icon','search')
-								input.search__input(type="text" placeholder="Поиск")
-							a(href="./page-viewed.html").header__viewed.button.button__icon.button__icon--header-viewed
-								+svg('viewed', 'watch')
-							a(href="./page-favorite.html").header__heart.button.button__icon.button__icon--header-heart
-								+svg('heart', 'favorite')
-								+svg('heart-checked', 'favorite-checked')
-								span 7
-							a(href="./page-compare.html").header__compare.button.button__icon.button__icon--header-compare
-								+svg('compare', 'compare')
-								span 5
-							a(href="./page-cart.html").header__cart.button.button__icon.button__icon--header-cart
-								+svg('cart','cart')
-							button.header__login.button.button--blue Войти
+	body(data-cart)
+		include components/header
+		
 		section.cart
 			.container.cart__container
 				h2.cart__title.section-title Оформление заказа
