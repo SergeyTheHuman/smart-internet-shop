@@ -1,0 +1,167 @@
+.vacancies
+	margin-top: 30px
+	&__container
+		display: grid
+		grid-template-columns: 1fr 370px
+		column-gap: 5vw
+		@media screen and ( max-width: 1024px )
+			grid-template-columns: 1fr
+			row-gap: 30px
+	&__title
+		grid-column: 1 / -1
+		margin-bottom: 40px
+		@media screen and ( max-width: 1024px )
+			margin-bottom: 0
+	&__accordion-wrapper
+		.catalog-section__filter
+			margin-top: 0
+			&:last-child
+				& .catalog-filter__button
+					&::before
+						display: none
+			&.is-active
+				& .catalog-filter__button
+					&::before
+						opacity: 0
+						transform: translateY(-100px)
+		.catalog-filter
+			padding: 10px 30px
+			border-radius: 0
+			&:first-child
+				border-radius: 8px 8px 0px 0px
+			&:last-child
+				border-radius: 0px 0px 8px 8px
+		.ac-trigger
+			padding: 0
+			height: 48px
+			position: relative
+			&:focus, &:hover
+				background-color: $color-light-blue
+				color: $color-blue
+			&::after
+				right: 0
+			&::before
+				content: ''
+				position: absolute
+				bottom: -10px
+				left: 0
+				right: 0
+				height: 1px
+				background-color: $color-gray
+				transition: opacity 0.5s ease, transform 0.5s ease
+		.catalog-filter__content-wrapper
+			margin: 0 -30px
+
+.vacancies-accordion
+	&__content
+		padding: 20px 30px 30px 30px
+		border-left: 1px solid #EAEAF0
+		border-right: 1px solid #EAEAF0
+	&__item
+		&:not(:last-child)
+			margin-bottom: 40px
+		&-subtitle
+			font-weight: 600
+			font-size: 1.5rem
+			line-height: 120%
+			margin-bottom: 20px
+		&-ul
+		&-li
+			padding-left: 18px
+			position: relative
+			&:not(:last-child)
+				margin-bottom: 10px
+			&::before
+				content: ''
+				position: absolute
+				top: 50%
+				left: 0
+				transform: translateY(-50%)
+				width: 8px
+				height: 8px
+				background-color: $color-blue
+				border-radius: 100%
+
+.vacancies__form
+	padding: 30px
+	border: 1px solid #EAEAF0
+	border-radius: 8px
+	&-title
+		margin-bottom: 20px
+		font-weight: 600
+		font-size: 1.5rem
+		line-height: 120%
+	&-label
+		display: flex
+		flex-direction: column
+		gap: 8px
+		margin-bottom: 20px
+		@media screen and ( max-width: 1024px )
+			display: inline-flex
+			width: 48%
+			&:nth-child(even)
+				margin-right: 2%
+		@media screen and ( max-width: 650px )
+			width: unset
+			display: flex
+			&:nth-child(even)
+				margin-right: 0
+	&-input
+		padding: 14px 16px
+		font-size: 1rem
+		&--file
+			display: none
+	.account-personal__input--fake
+		margin-top: 0
+	&-span
+		font-weight: 400
+		font-size: 0.8125rem
+		line-height: 100%
+		color: $color-dark-gray
+	&-textarea
+		font-family: inherit
+		font-size: 1rem
+		height: 110px
+		resize: none
+		padding: 14px 16px
+		background: #FFFFFF
+		border: 1px solid #EAEAF0
+		border-radius: 5px
+	&-button
+		width: 100%
+		margin-bottom: 20px
+	&-checkbox
+		margin-bottom: 20px
+		.checkbox__input
+			flex-shrink: 0
+		span
+			color: $color-black
+		a
+			display: inline
+			color: $color-blue
+			@media screen and ( any-hover: hover )
+				transition: color 0.3s ease
+				&:hover
+					color: $color-dark-blue
+					text-decoration: underline
+	&-info
+		border-top: 1px solid #C8CACB
+		padding-top: 20px
+		margin-bottom: 10px
+		font-weight: 600
+		font-size: 1.5rem
+		line-height: 120%
+		@media screen and ( max-width: 650px )
+			font-size: 1rem
+	&-phone
+		font-weight: 700
+		font-size: 1.75rem
+		line-height: 120%
+		color: $color-blue
+		@media screen and ( max-width: 650px )
+			font-size: 1.25rem
+		@media screen and ( any-hover: hover )
+			transition: color 0.3s ease
+			&:hover
+				color: $color-dark-blue
+				text-decoration: underline

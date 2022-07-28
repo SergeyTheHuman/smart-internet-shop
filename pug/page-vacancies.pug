@@ -1,0 +1,163 @@
+doctype html
+html(lang="ru")
+	head
+		include utils/mixins
+		include utils/meta
+		include utils/links
+		//- include utils/fonts
+		title Vacancies Page
+	body
+		include components/header
+		.container
+			.breadcrumbs
+				a(href="./index.html").breadcrumbs__item Главная
+				a(href="#").breadcrumbs__item.breadcrumbs__item--current Вакансии
+
+		section.section.vacancies
+			.container.vacancies__container
+				h2.vacancies__title.section-title Вакансии
+				.vacancies__accordion-wrapper
+					.ac.catalog-section__filter.catalog-filter
+						h2.ac-header.catalog-filter__title
+							button(type="button").ac-trigger.catalog-filter__button Старший продавец
+						.ac-panel.catalog-filter__content-wrapper
+							.vacancies__accordion-content.vacancies-accordion__content
+								.vacancies-accordion__item
+									h4.vacancies-accordion__item-subtitle Мы ищем тех, кто:
+									ul.vacancies-accordion__item-ul
+										li.vacancies-accordion__item-li Активен! Активен и еще раз активен;
+										li.vacancies-accordion__item-li Действительно хочет работать и постоянно развиваться;
+										li.vacancies-accordion__item-li Понимает, что уровень продаж зависит от него, а не от настроения, умственного развития и других характеристик клиента;
+										li.vacancies-accordion__item-li Коммуникабелен и клиентоориентирован;
+										li.vacancies-accordion__item-li Предпочитает тратить энергию на обучение, а не на оправдание и споры;
+										li.vacancies-accordion__item-li Хочет заработок бизнес-класса, а не на мороженое в парке!
+								.vacancies-accordion__item
+									h4.vacancies-accordion__item-subtitle Требования
+									ul.vacancies-accordion__item-ul
+										li.vacancies-accordion__item-li Опыт работы в любом сегменте e-commerce;
+										li.vacancies-accordion__item-li Вежливость и терпеливость в общении с клиентами;
+										li.vacancies-accordion__item-li Готовность к работе в ненормированном графике.
+								.vacancies-accordion__item
+									h4.vacancies-accordion__item-subtitle Условия
+									ul.vacancies-accordion__item-ul
+										li.vacancies-accordion__item-li Продажа классных хайповых товаров;
+										li.vacancies-accordion__item-li Работа со входящим трафиком как по телефону так и в магазине;
+										li.vacancies-accordion__item-li Специальный прайс на все товары для себя и самых близких;
+										li.vacancies-accordion__item-li Зарплата без лимита. Верхний предел дохода ограничивается только Вашей ленью!;
+										li.vacancies-accordion__item-li Официальное трудоустройство по ТК РФ.
+					.ac.catalog-section__filter.catalog-filter
+						h2.ac-header.catalog-filter__title
+							button(type="button").ac-trigger.catalog-filter__button Менеджер по продажам
+						.ac-panel.catalog-filter__content-wrapper
+							.vacancies__accordion-content
+							.vacancies__accordion-content.vacancies-accordion__content
+								.vacancies-accordion__item
+									h4.vacancies-accordion__item-subtitle Мы ищем тех, кто:
+									ul.vacancies-accordion__item-ul
+										li.vacancies-accordion__item-li Активен! Активен и еще раз активен;
+										li.vacancies-accordion__item-li Действительно хочет работать и постоянно развиваться;
+										li.vacancies-accordion__item-li Понимает, что уровень продаж зависит от него, а не от настроения, умственного развития и других характеристик клиента;
+										li.vacancies-accordion__item-li Коммуникабелен и клиентоориентирован;
+										li.vacancies-accordion__item-li Предпочитает тратить энергию на обучение, а не на оправдание и споры;
+										li.vacancies-accordion__item-li Хочет заработок бизнес-класса, а не на мороженое в парке!
+								.vacancies-accordion__item
+									h4.vacancies-accordion__item-subtitle Требования
+									ul.vacancies-accordion__item-ul
+										li.vacancies-accordion__item-li Опыт работы в любом сегменте e-commerce;
+										li.vacancies-accordion__item-li Вежливость и терпеливость в общении с клиентами;
+										li.vacancies-accordion__item-li Готовность к работе в ненормированном графике.
+								.vacancies-accordion__item
+									h4.vacancies-accordion__item-subtitle Условия
+									ul.vacancies-accordion__item-ul
+										li.vacancies-accordion__item-li Продажа классных хайповых товаров;
+										li.vacancies-accordion__item-li Работа со входящим трафиком как по телефону так и в магазине;
+										li.vacancies-accordion__item-li Специальный прайс на все товары для себя и самых близких;
+										li.vacancies-accordion__item-li Зарплата без лимита. Верхний предел дохода ограничивается только Вашей ленью!;
+										li.vacancies-accordion__item-li Официальное трудоустройство по ТК РФ.								
+					.ac.catalog-section__filter.catalog-filter
+						h2.ac-header.catalog-filter__title
+							button(type="button").ac-trigger.catalog-filter__button Директор магазина
+						.ac-panel.catalog-filter__content-wrapper
+							.vacancies__accordion-content
+							.vacancies__accordion-content.vacancies-accordion__content
+								.vacancies-accordion__item
+									h4.vacancies-accordion__item-subtitle Мы ищем тех, кто:
+									ul.vacancies-accordion__item-ul
+										li.vacancies-accordion__item-li Активен! Активен и еще раз активен;
+										li.vacancies-accordion__item-li Действительно хочет работать и постоянно развиваться;
+										li.vacancies-accordion__item-li Понимает, что уровень продаж зависит от него, а не от настроения, умственного развития и других характеристик клиента;
+										li.vacancies-accordion__item-li Коммуникабелен и клиентоориентирован;
+										li.vacancies-accordion__item-li Предпочитает тратить энергию на обучение, а не на оправдание и споры;
+										li.vacancies-accordion__item-li Хочет заработок бизнес-класса, а не на мороженое в парке!
+								.vacancies-accordion__item
+									h4.vacancies-accordion__item-subtitle Требования
+									ul.vacancies-accordion__item-ul
+										li.vacancies-accordion__item-li Опыт работы в любом сегменте e-commerce;
+										li.vacancies-accordion__item-li Вежливость и терпеливость в общении с клиентами;
+										li.vacancies-accordion__item-li Готовность к работе в ненормированном графике.
+								.vacancies-accordion__item
+									h4.vacancies-accordion__item-subtitle Условия
+									ul.vacancies-accordion__item-ul
+										li.vacancies-accordion__item-li Продажа классных хайповых товаров;
+										li.vacancies-accordion__item-li Работа со входящим трафиком как по телефону так и в магазине;
+										li.vacancies-accordion__item-li Специальный прайс на все товары для себя и самых близких;
+										li.vacancies-accordion__item-li Зарплата без лимита. Верхний предел дохода ограничивается только Вашей ленью!;
+										li.vacancies-accordion__item-li Официальное трудоустройство по ТК РФ.
+					.ac.catalog-section__filter.catalog-filter
+						h2.ac-header.catalog-filter__title
+							button(type="button").ac-trigger.catalog-filter__button Кладовщик
+						.ac-panel.catalog-filter__content-wrapper
+							.vacancies__accordion-content
+							.vacancies__accordion-content.vacancies-accordion__content
+								.vacancies-accordion__item
+									h4.vacancies-accordion__item-subtitle Мы ищем тех, кто:
+									ul.vacancies-accordion__item-ul
+										li.vacancies-accordion__item-li Активен! Активен и еще раз активен;
+										li.vacancies-accordion__item-li Действительно хочет работать и постоянно развиваться;
+										li.vacancies-accordion__item-li Понимает, что уровень продаж зависит от него, а не от настроения, умственного развития и других характеристик клиента;
+										li.vacancies-accordion__item-li Коммуникабелен и клиентоориентирован;
+										li.vacancies-accordion__item-li Предпочитает тратить энергию на обучение, а не на оправдание и споры;
+										li.vacancies-accordion__item-li Хочет заработок бизнес-класса, а не на мороженое в парке!
+								.vacancies-accordion__item
+									h4.vacancies-accordion__item-subtitle Требования
+									ul.vacancies-accordion__item-ul
+										li.vacancies-accordion__item-li Опыт работы в любом сегменте e-commerce;
+										li.vacancies-accordion__item-li Вежливость и терпеливость в общении с клиентами;
+										li.vacancies-accordion__item-li Готовность к работе в ненормированном графике.
+								.vacancies-accordion__item
+									h4.vacancies-accordion__item-subtitle Условия
+									ul.vacancies-accordion__item-ul
+										li.vacancies-accordion__item-li Продажа классных хайповых товаров;
+										li.vacancies-accordion__item-li Работа со входящим трафиком как по телефону так и в магазине;
+										li.vacancies-accordion__item-li Специальный прайс на все товары для себя и самых близких;
+										li.vacancies-accordion__item-li Зарплата без лимита. Верхний предел дохода ограничивается только Вашей ленью!;
+										li.vacancies-accordion__item-li Официальное трудоустройство по ТК РФ.								
+				form.vacancies__form 
+					h4.vacancies__form-title Присоединяйся к команде
+					label.vacancies__form-label.label Имя
+						input(type="text" name="name" placeholder='Введите имя' required).vacancies__form-input.input
+					label.vacancies__form-label.label Фамилия
+						input(type="text" name="surname" placeholder='Введите Фамилия' required).vacancies__form-input.input
+					label.vacancies__form-label.label Отчество
+						input(type="text" name="father" placeholder='Введите Отчество' required).vacancies__form-input.input
+					label.vacancies__form-label.label Телефон
+						input(type="tel" name="phone" placeholder='Введите номер телефона' required).vacancies__form-input.input
+					label.vacancies__form-label.account-personal__label.account-personal__label--file.label Добавьте файл резюме
+						input(type="file" accept=".pdf,.doc,.docx" name="avatar" placeholder='asd' required).vacancies__form-input--file.account-personal__input
+						.account-personal__input--fake.input Загрузить резюме
+							+svg('file', 'file')
+						span.vacancies__form-span Форматы файлов: .pdf, .doc, .docx
+					label.vacancies__form-label.label Сопроводительное письмо
+						textarea( placeholder='Введите сообщение').vacancies__form-textarea
+					button(type="submit").vacancies__form-button.button.button--blue Отправить
+					.vacancies__form-checkbox.checkbox
+						label.checkbox__label 
+							input.checkbox__input--hidden(type="checkbox" name="agreement" value="Согласен")
+							.checkbox__input
+								+svg('.checkbox__svg','checked')
+							span Отправляя данную форму вы соглашаетесь с #[a(href="#") политикой конфиденциальности]
+					.vacancies__form-info Номер отдела кадров
+					a(href="tel:+79960670096").vacancies__form-phone +7 (996) 067-00-96
+
+		include components/footer
+		include utils/scripts

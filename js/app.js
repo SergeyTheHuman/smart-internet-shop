@@ -108,6 +108,12 @@ if (document.querySelector('.catalog-section__filters-wrapper')) {
 		showMultiple: true,
 	})
 }
+if (document.querySelector('.vacancies__accordion-wrapper')) {
+	const accordionFilters = new Accordion('.vacancies__accordion-wrapper', {
+		duration: 300,
+		showMultiple: false,
+	})
+}
 
 if (document.querySelector('.cart__wrapper')) {
 	const accordionFilters = new Accordion('.cart__wrapper', {
