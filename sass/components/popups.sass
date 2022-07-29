@@ -1,0 +1,101 @@
+.fancybox__slide
+	@media screen and ( max-width: 425px )
+		padding: 0
+.fancybox__slide::after
+	@media screen and ( max-width: 425px )
+		margin: 0
+
+// LOGIN POPUP	
+.login-popup
+	border-radius: 8px
+	& a
+		cursor: pointer
+	@media screen and ( max-width: 425px )
+		width: 100vw
+	&.fancybox__content
+		padding: 0
+	& .carousel__button
+		display: none
+	&__title
+		border-top-left-radius: 8px
+		border-top-right-radius: 8px
+		padding: 20px 30px
+		background-color: $color-light-blue
+		font-weight: 600
+		font-size: 1.5rem
+		line-height: 120%
+		display: flex
+		justify-content: space-between
+		align-items: center
+		svg
+			cursor: pointer
+			width: 48px
+			height: 48px
+			padding: 12px
+			color: #F15152
+	&__content
+		margin-top: -2px
+		padding: 20px 30px 30px 30px
+		background-color: $color-white
+		border-bottom-left-radius: 8px
+		border-bottom-right-radius: 8px
+		@media screen and ( max-width: 425px )
+			padding: 20px
+			border-radius: 0
+			.login-popup__input-wrapper
+				gap: 0px
+				& .account-pass__input
+					padding: 10px 5px
+		& > a
+			display: block
+			color: $color-blue
+			@media screen and ( any-hover: hover )
+				transition: color 0.3s ease
+				&:hover
+					color: $color-dark-blue
+					text-decoration: underline
+		& > *:not(:last-child)
+			margin-bottom: 20px
+	&__label
+		margin-bottom: 20px
+		display: flex
+		flex-direction: column
+		gap: 8px
+		&--pass
+			margin-bottom: 10px !important
+	&__input
+		&--email
+			font-size: 1rem
+			padding: 14px 16px 14px 24px
+	&__button
+		width: 100%
+		background-color: $color-dark-blue
+		font-weight: 400
+	&__register
+		text-align: center
+
+// REGISTER POPUP	
+.register-popup
+	border-radius: 8px
+	& a
+		cursor: pointer
+	@media screen and ( max-width: 425px )
+		width: 100vw
+	&.fancybox__content
+		padding: 0
+	& .carousel__button
+		display: none
+	&__agreement
+		font-weight: 500
+		font-size: 0.875rem
+		max-width: 60%
+		@media screen and ( max-width: 425px )
+			max-width: none
+		a
+			color: $color-dark-blue
+			cursor: pointer
+			@media screen and ( any-hover: hover )
+				transition: color 0.3s ease
+				&:hover
+					color: $color-dark-blue
+					text-decoration: underline

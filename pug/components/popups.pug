@@ -1,0 +1,48 @@
+.popup.login-popup#login-popup(style="display:none;")
+	.login-popup__wrapper
+		h3.login-popup__title Вход
+			svg.cross(data-fancybox-close)
+				use(xlink:href= `@svg/cross`) 
+		form#login-form.login-popup__content
+			label.login-popup__label.label Эл. почта или телефон
+				input(type="text" name="name" placeholder='Введите имя' required).login-popup__input--email.input
+			label.login-popup__label.login-popup__label--pass.account-pass__label.label Пароль
+				.login-popup__input-wrapper.account-pass__input-wrapper
+					//.account-pass__input-wrapper--wrong
+					+svg('lock', 'lock')
+					input(type="password" name="old-password" placeholder='Введите старый пароль' required).account-pass__input
+					+svg('account-pass__watch','watch')
+					+svg('account-pass__watch-off','watch-off')
+			a(href="#").login-popup__forgot Забыли пароль?
+			.login-popup__checkbox.checkbox
+				label.checkbox__label 
+					input.checkbox__input--hidden(type="checkbox" name="agreement" value="Согласен")
+					.checkbox__input
+						+svg('.checkbox__svg','checked')
+					| Запомнить меня
+			button(type="submit").login-popup__button.button.button--blue Войти
+			a(data-fancybox data-src="#register-popup").login-popup__register Зарегистрироваться
+
+.popup.register-popup#register-popup(style="display:none;")
+	.login-popup__wrapper
+		h3.login-popup__title Регистрация
+			svg.cross(data-fancybox-close)
+				use(xlink:href= `@svg/cross`) 
+		form#register-form.login-popup__content
+			label.login-popup__label.label Имя
+				input(type="text" name="name" placeholder='Введите имя' required).login-popup__input--email.input
+			label.login-popup__label.label Эл. почта
+				input(type="text" name="name" placeholder='Введите e-mail' required).login-popup__input--email.input
+			label.login-popup__label.label Номер телефона
+				input(type="tel" name="name" placeholder='Введите телефон' required).login-popup__input--email.input
+			label.login-popup__label.login-popup__label--pass.account-pass__label.label Пароль
+				.login-popup__input-wrapper.account-pass__input-wrapper
+					//.account-pass__input-wrapper--wrong
+					+svg('lock', 'lock')
+					input(type="password" name="old-password" placeholder='Введите старый пароль' required).account-pass__input
+					+svg('account-pass__watch','watch')
+					+svg('account-pass__watch-off','watch-off')
+			.register-popup__agreement Регистрируясь, вы соглашаетесь с #[a(href='#') пользовательским соглашением]
+			button(type="submit").login-popup__button.button.button--blue Зарегистрироваться
+			a(data-fancybox data-src="#login-popup").login-popup__register Я уже зарегистрирован
+

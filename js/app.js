@@ -6,6 +6,7 @@ import { Tabs } from './components/tabs.js'
 import './components/swipers.js'
 import './components/selects.js'
 import './components/yandexMap.js'
+import './components/fancybox.js'
 
 isWebp()
 
@@ -394,3 +395,15 @@ if ($productOne) {
 		}
 	})
 }
+
+const loginForm = document.getElementById('login-form')
+const registerForm = document.getElementById('register-form')
+
+loginForm.addEventListener('submit', (e) => {
+	e.preventDefault()
+	window.location.pathname = '/page-account-main.html'
+})
+registerForm.addEventListener('submit', (e) => {
+	e.preventDefault()
+	window.location.pathname = '/page-account-main.html'
+})
